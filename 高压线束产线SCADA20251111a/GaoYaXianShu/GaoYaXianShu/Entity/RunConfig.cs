@@ -75,6 +75,12 @@ namespace GaoYaXianShu.Entity
         [Category("焊接机")]
         public int 焊接机端口号 { get; set; }
 
+        [Category("激光雕刻机服务器")]
+        public string 激光雕刻机服务器IP地址 { get; set; }
+
+        [Category("激光雕刻机服务器")]
+        public int 激光雕刻机服务器端口号 { get; set; }
+
         [Category("PLC")]
         public string PLC的IP地址 { get; set; }
 
