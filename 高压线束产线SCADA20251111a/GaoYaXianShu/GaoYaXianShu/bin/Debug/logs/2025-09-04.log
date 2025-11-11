@@ -1,0 +1,4 @@
+2025-09-04 09:51:37.2291|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/4 9:51:37...用户取消了操作
+
+2025-09-04 09:51:48.7385|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/4 9:51:48...用户确认关闭窗体，开始释放资源
+

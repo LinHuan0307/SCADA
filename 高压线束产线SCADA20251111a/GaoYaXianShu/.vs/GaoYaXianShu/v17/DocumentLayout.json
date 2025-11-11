@@ -1,0 +1,479 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\resetautoflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\resetautoflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\runlogicmaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\runlogicmaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\sevice\\tcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\sevice\\tcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\passstationrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\passstationrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\mesclosedpassstation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\mesclosedpassstation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\mescloseddataupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\mescloseddataupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\matirialbindrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\matirialbindrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\instationrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\instationrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\manumaterialbind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\manumaterialbind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\getwelderdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\getwelderdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\getsn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\getsn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\datauploadrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\datauploadrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\entity\\runtimecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\entity\\runtimecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\entity\\batchcodeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\entity\\batchcodeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\entity\\welderdata\\welderdataentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\entity\\welderdata\\welderdataentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\sevice\\mesapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\sevice\\mesapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\helper\\webapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\helper\\webapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\helper\\runconfighelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\helper\\runconfighelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\helper\\tcpclienthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\helper\\tcpclienthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\entity\\runconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\entity\\runconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\gaoyaxianshu\\gaoyaxianshu\\m_form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\m_form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\gaoyaxianshu\\m_form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\m_form\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\gaoyaxianshu\\m_form\\mainform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\m_form\\mainform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\gaoyaxianshu\\helper\\hslasyncomronudphelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\helper\\hslasyncomronudphelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\gaoyaxianshu\\config\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\config\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\gaoyaxianshu\\m_form\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\m_form\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RunLogicManeger.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\RunLogicManeger.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\RunLogicManeger.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\RunLogicManeger.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\RunLogicManeger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:43:29.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ResetAutoFlow.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\ResetAutoFlow.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\ResetAutoFlow.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\ResetAutoFlow.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\ResetAutoFlow.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA0wB0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:43:21.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MESClosedPassStation.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MESClosedPassStation.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\MESClosedPassStation.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MESClosedPassStation.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\MESClosedPassStation.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:43:15.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MESClosedDataUpload.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MESClosedDataUpload.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\MESClosedDataUpload.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MESClosedDataUpload.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\MESClosedDataUpload.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwCwAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:42:43.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ManuMaterialBind.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\ManuMaterialBind.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\ManuMaterialBind.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\ManuMaterialBind.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\ManuMaterialBind.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:36:38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InStationRunLogic.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\InStationRunLogic.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\InStationRunLogic.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\InStationRunLogic.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\InStationRunLogic.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAUwC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:36:29.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetSN.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\GetSN.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\GetSN.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\GetSN.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\GetSN.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAUwCcAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:35:38.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Program.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Program.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Program.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Program.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAuwE0AAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T00:52:00.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TCPClientService.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Sevice\\TCPClientService.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Sevice\\TCPClientService.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Sevice\\TCPClientService.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Sevice\\TCPClientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:14:46.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RuntimeContext.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\RuntimeContext.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\RuntimeContext.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\RuntimeContext.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Entity\\RuntimeContext.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvxQAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:29:29.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BatchCodeEntity.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\BatchCodeEntity.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\BatchCodeEntity.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\BatchCodeEntity.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Entity\\BatchCodeEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:13:36.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PassStationRunLogic.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\PassStationRunLogic.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\PassStationRunLogic.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\PassStationRunLogic.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\PassStationRunLogic.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAUwC0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:03:33.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "WelderDataEntity.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\WelderData\\WelderDataEntity.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\WelderData\\WelderDataEntity.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\WelderData\\WelderDataEntity.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Entity\\WelderData\\WelderDataEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T02:08:11.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MesApiService.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Sevice\\MesApiService.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Sevice\\MesApiService.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Sevice\\MesApiService.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Sevice\\MesApiService.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAYwF4AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:47:09.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MatirialBindRunLogic.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MatirialBindRunLogic.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\MatirialBindRunLogic.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MatirialBindRunLogic.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\MatirialBindRunLogic.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAQwDAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:03:27.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "WebApiClient.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\WebApiClient.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\WebApiClient.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\WebApiClient.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Helper\\WebApiClient.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAcwCkAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:36:12.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DataUploadRunLogic.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\DataUploadRunLogic.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\DataUploadRunLogic.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\DataUploadRunLogic.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\DataUploadRunLogic.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAUwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T00:56:26.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetWelderData.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\GetWelderData.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\GetWelderData.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\GetWelderData.cs",
+              "RelativeToolTip": "GaoYaXianShu\\RunLogic\\GetWelderData.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAqwDcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T00:55:46.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RunConfigHelper.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\RunConfigHelper.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\RunConfigHelper.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\RunConfigHelper.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Helper\\RunConfigHelper.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAuwBQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:06:14.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RunConfig.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\RunConfig.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\RunConfig.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\RunConfig.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Entity\\RunConfig.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAcwEgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T01:05:28.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TCPClientHelper.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\TCPClientHelper.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\TCPClientHelper.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\TCPClientHelper.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Helper\\TCPClientHelper.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAcwDkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T00:47:27.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.cs",
+              "RelativeToolTip": "GaoYaXianShu\\m_Form\\MainForm.cs",
+              "ViewState": "AQIAAIYBAAAAAAAAAAAmwDkCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T00:30:03.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MainForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "GaoYaXianShu\\m_Form\\MainForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T07:27:56.722Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MainForm.resx",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.resx",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.resx",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.resx",
+              "RelativeToolTip": "GaoYaXianShu\\m_Form\\MainForm.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-10-30T06:29:01.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "HslAsyncOmronUdpHelper.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\HslAsyncOmronUdpHelper.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\HslAsyncOmronUdpHelper.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\HslAsyncOmronUdpHelper.cs",
+              "RelativeToolTip": "GaoYaXianShu\\Helper\\HslAsyncOmronUdpHelper.cs",
+              "ViewState": "AQIAAMUAAAAAAAAAAAA0wOgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T06:53:32.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "NLog.config",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Config\\NLog.config",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\Config\\NLog.config",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\Config\\NLog.config",
+              "RelativeToolTip": "GaoYaXianShu\\Config\\NLog.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-10-30T06:39:56.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.Designer.cs",
+              "ToolTip": "D:\\Program\\\u9AD8\u538B\u7EBF\u675F\\\u6279\u6B21\u7801\u7ED1\u5B9A20251030a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.Designer.cs",
+              "RelativeToolTip": "GaoYaXianShu\\m_Form\\MainForm.Designer.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T06:29:01.591Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<RuntimeContextConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <批次码绑定列表>
+    <批次码列表项>
+      <批次物料名>asd</批次物料名>
+      <批次码>asd</批次码>
+      <物料总数>123</物料总数>
+      <已使用>345</已使用>
+    </批次码列表项>
+  </批次码绑定列表>
+  <运行逻辑对象列表>
+  </运行逻辑对象列表>
+</RuntimeContextConfig>

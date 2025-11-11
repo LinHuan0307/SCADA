@@ -1,0 +1,88 @@
+2025-09-03 14:07:23.1693|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:07:23...初始化PLC读写对象失败
+
+2025-09-03 14:09:24.1223|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:09:24...初始化PLC读写对象失败
+
+2025-09-03 14:11:14.4696|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:11:10...初始化PLC读写对象失败
+
+2025-09-03 14:12:22.2311|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:12:22...初始化PLC读写对象失败
+
+2025-09-03 14:15:04.4004|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:15:04...初始化PLC读写对象失败
+
+2025-09-03 14:21:57.0574|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:21:57...初始化PLC读写对象失败
+
+2025-09-03 14:23:13.4266|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:23:13...初始化PLC读写对象失败
+
+2025-09-03 14:23:44.7384|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:23:44...输入异常，请重新输入
+
+2025-09-03 14:26:32.5627|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:26:32...初始化PLC读写对象失败
+
+2025-09-03 14:26:50.1991|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:26:50...输入异常，请重新输入
+
+2025-09-03 14:36:00.3950|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:36:00...初始化PLC读写对象失败
+
+2025-09-03 14:38:28.9807|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:38:28...初始化PLC读写对象失败
+
+2025-09-03 14:49:46.9819|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:49:46...初始化PLC读写对象失败
+
+2025-09-03 14:50:11.5900|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 14:50:11...初始化PLC读写对象失败
+
+2025-09-03 16:27:01.3076|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:27:01...输入异常，请重新输入
+
+2025-09-03 16:28:15.2347|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:28:15...输入异常，请重新输入
+
+2025-09-03 16:28:24.8703|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:28:24...输入异常，请重新输入
+
+2025-09-03 16:28:27.6997|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:28:27...输入异常，请重新输入
+
+2025-09-03 16:29:19.4888|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:29:19...输入异常，请重新输入
+
+2025-09-03 16:29:22.2633|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:29:22...输入异常，请重新输入
+
+2025-09-03 16:35:58.3666|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:35:58...用户取消了操作
+
+2025-09-03 16:36:06.9771|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:36:06...用户取消了操作
+
+2025-09-03 16:36:34.4435|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:36:34...添加批次成功
+
+2025-09-03 16:36:43.8413|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:36:43...用户取消了操作
+
+2025-09-03 16:36:52.8246|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:36:52...用户取消了操作
+
+2025-09-03 16:36:55.5800|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:36:55...添加批次成功
+
+2025-09-03 16:42:24.6805|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:42:24...用户取消了操作
+
+2025-09-03 16:42:31.6356|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:42:31...用户取消了操作
+
+2025-09-03 16:43:04.1510|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:04...重新执行流程异常！获取当前流程字异常！System.Collections.ObjectModel.ReadOnlyCollection`1[FluentResults.IError]
+
+2025-09-03 16:43:10.5586|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:10...重新执行流程异常！获取当前流程字异常！System.Collections.ObjectModel.ReadOnlyCollection`1[FluentResults.IError]
+
+2025-09-03 16:43:14.7283|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:14...重新执行流程异常！获取当前流程字异常！System.Collections.ObjectModel.ReadOnlyCollection`1[FluentResults.IError]
+
+2025-09-03 16:43:18.2504|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:18...重新执行流程异常！获取当前流程字异常！System.Collections.ObjectModel.ReadOnlyCollection`1[FluentResults.IError]
+
+2025-09-03 16:43:18.8051|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:18...重新执行流程异常！获取当前流程字异常！System.Collections.ObjectModel.ReadOnlyCollection`1[FluentResults.IError]
+
+2025-09-03 16:43:19.3997|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:19...重新执行流程异常！获取当前流程字异常！System.Collections.ObjectModel.ReadOnlyCollection`1[FluentResults.IError]
+
+2025-09-03 16:43:27.9351|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:27...用户取消了操作
+
+2025-09-03 16:44:03.6639|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:43:46...重新执行流程异常！获取当前流程字异常！System.Collections.ObjectModel.ReadOnlyCollection`1[FluentResults.IError]
+
+2025-09-03 16:50:48.4190|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:50:48...用户取消了操作
+
+2025-09-03 16:50:50.5408|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:50:50...用户取消了操作
+
+2025-09-03 16:50:56.6204|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:50:52...重新执行流程异常！获取当前流程字异常！Error with Message='未实例化.'
+
+2025-09-03 16:51:10.2839|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:51:10...重新执行流程异常！获取当前流程字异常！Error with Message='未实例化.'
+
+2025-09-03 16:51:13.3114|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 16:51:13...重新执行流程异常！获取当前流程字异常！Error with Message='未实例化.'
+
+2025-09-03 17:11:03.4173|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 17:11:03...用户确认关闭窗体，开始释放资源
+
+2025-09-03 17:11:32.0910|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 17:11:32...用户取消关闭，窗体继续运行
+
+2025-09-03 17:11:37.1901|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/9/3 17:11:37...用户确认关闭窗体，开始释放资源
+

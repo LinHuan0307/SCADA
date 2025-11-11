@@ -1,0 +1,34 @@
+2025-10-17 10:43:54.3630|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 10:43:54...用户确认关闭窗体，开始释放资源
+
+2025-10-17 10:46:20.3110|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 10:46:20...用户确认关闭窗体，开始释放资源
+
+2025-10-17 10:49:40.4348|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 10:49:40...用户确认关闭窗体，开始释放资源
+
+2025-10-17 11:02:47.6150|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:02:47...[发送心跳信号]失败!Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+
+2025-10-17 11:02:48.6624|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:02:48...[发送心跳信号]失败!Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+
+2025-10-17 11:02:49.6709|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:02:49...[发送心跳信号]失败!Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+
+2025-10-17 11:04:37.2298|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:04:37...[发送心跳信号]失败!Error with Message='在其上下文中，该请求的地址无效。'
+
+2025-10-17 11:04:38.2762|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:04:38...[发送心跳信号]失败!Error with Message='在其上下文中，该请求的地址无效。'
+
+2025-10-17 11:04:39.2846|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:04:39...[发送心跳信号]失败!Error with Message='在其上下文中，该请求的地址无效。'
+
+2025-10-17 11:06:09.5222|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:06:09...[发送心跳信号]失败!Error with Message='在其上下文中，该请求的地址无效。'
+
+2025-10-17 11:07:41.3425|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:07:41...[获取流程字]失败!Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+
+2025-10-17 11:09:27.8097|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:09:27...[获取流程字]失败!Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+
+2025-10-17 11:11:15.7827|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:11:15...[流程字反馈：收到进站申请]失败!Error with Message='在其上下文中，该请求的地址无效。'
+
+2025-10-17 11:11:15.7827|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:11:15...向PLC写入流程字反馈收到申请进站信号异常
+
+2025-10-17 11:11:15.7957|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:11:15...[设置MES反馈：进站失败]失败!Error with Message='在其上下文中，该请求的地址无效。'
+
+2025-10-17 11:11:15.7957|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:11:15...向PLC写入MES反馈信号进站失败信号异常
+
+2025-10-17 11:11:16.8051|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|2025/10/17 11:11:16...[获取流程字]失败!Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+
