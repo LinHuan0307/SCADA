@@ -75,7 +75,8 @@ namespace GaoYaXianShu.RunLogic
 
         private async Task<Result<bool>> 申请数据上传Async()
         {
-            string SN = string.Empty;//托盘线束的SN
+            string Left_SN = string.Empty;//托盘左线束的SN
+            string Right_SN = string.Empty;//托盘右线束的SN
             ushort TrayCode;//托盘号
             try
             {
@@ -87,17 +88,18 @@ namespace GaoYaXianShu.RunLogic
                 }
 
                 //从界面获取参数
-                SN = m_UIManeger.Get_Tb_XianShuSN().Value;
+                Left_SN = m_UIManeger.Get_Tb_LeftXianShuSN().Value;
+                Right_SN = m_UIManeger.Get_Tb_RightXianShuSN().Value;
                 TrayCode = m_UIManeger.Get_Tb_TrayCode().Value;
 
-                //向MES申请数据上传。
-                TestData m_XianShutestData = new TestData
+                //向MES申请数据上传。左线束
+                TestData m_LeftXianShutestData = new TestData
                 {
                     LineCode = m_RunConfig.产线编码,
                     RealValue = "",
                     Result = "true",
                     WarningMsg = "",
-                    SnNumber = SN,
+                    SnNumber = Left_SN,
                     EndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                     StationCode = m_RunConfig.工位编码,
                     StationName = m_RunConfig.工位名字,
@@ -128,14 +130,57 @@ namespace GaoYaXianShu.RunLogic
                             }
                     }
                 };
-                var SN_DataUpload_response = await m_MESApi.TestDataPost(m_XianShutestData);
-                if (SN_DataUpload_response.IsFailed)
+                var Left_SN_DataUpload_response = await m_MESApi.TestDataPost(m_LeftXianShutestData);
+                if (Left_SN_DataUpload_response.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog("托盘SN申请数据上传异常");
+                    m_UIManeger.AppendErrorLog("托盘右SN申请数据上传异常");
                     return Result.Fail("false");
                 }
 
-                
+                //向MES申请数据上传。右线束
+                TestData m_RightXianShu_testData = new TestData
+                {
+                    LineCode = m_RunConfig.产线编码,
+                    RealValue = "",
+                    Result = "true",
+                    WarningMsg = "",
+                    SnNumber = Right_SN,
+                    EndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                    StationCode = m_RunConfig.工位编码,
+                    StationName = m_RunConfig.工位名字,
+                    TestName = m_RunConfig.工位名字,
+                    //这里要和MES沟通下
+                    TestType = "",
+                    StartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                    CreateTime = DateTime.Now,
+                    TestDataList = new List<TestDataList>()
+                    {
+                            new TestDataList()
+                            {
+                                TestItemName = "压力值",
+                                TestItemStand = "",
+                                TestItemValue = "",
+                                TestItemResult = "true",
+                                CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                                Remark =  "",
+                            },
+                            new TestDataList()
+                            {
+                                TestItemName = "压力值",
+                                TestItemStand = "",
+                                TestItemValue = "",
+                                TestItemResult = "true",
+                                CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                                Remark = "",
+                            }
+                    }
+                };
+                var Right_SN_DataUpload_response = await m_MESApi.TestDataPost(m_RightXianShu_testData);
+                if (Right_SN_DataUpload_response.IsFailed)
+                {
+                    m_UIManeger.AppendErrorLog("托盘右SN申请数据上传异常");
+                    return Result.Fail("false");
+                }
 
                 return Result.Ok();
             }

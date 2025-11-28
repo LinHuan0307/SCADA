@@ -62,20 +62,33 @@ namespace GaoYaXianShu.RunLogic
 
         private async Task<Result<bool>> 申请获取SN()
         {
-            
-            //向MES申请SN，保存到界面
-            var 申请SN反馈 = await m_MESApi.GetSN();
-            if (!申请SN反馈.IsSuccess)
+            try
             {
-                m_UIManeger.AppendErrorLog("获取线束Sn异常");
-                return Result.Fail("false");
-            }
-            //保存到线束
-            m_UIManeger.Set_Tb_XianShuSN(申请SN反馈.Value);
+                //向MES申请SN，保存到界面
+                var 申请SN反馈 = await m_MESApi.GetSN();
+                if (!申请SN反馈.IsSuccess)
+                {
+                    m_UIManeger.AppendErrorLog("获取左线束Sn异常");
+                    return Result.Fail("false");
+                }
+                //保存到左线束
+                m_UIManeger.Set_Tb_LeftXianShuSN(申请SN反馈.Value);
 
-                
-            return Result.Ok();
-            
+                //向MES申请SN，保存到界面
+                申请SN反馈 = await m_MESApi.GetSN();
+                if (!申请SN反馈.IsSuccess)
+                {
+                    m_UIManeger.AppendErrorLog("获取右线束SN异常");
+                    return Result.Fail("false");
+                }
+                //保存到右线束
+                m_UIManeger.Set_Tb_RightXianShuSN(申请SN反馈.Value);
+                return Result.Ok();
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

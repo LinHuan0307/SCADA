@@ -65,7 +65,7 @@ namespace GaoYaXianShu
             //在这里引入控件
             m_UIManeger.init(this, this.Light_PLCStatus,this.Light_SerialPortStatus,this.Light_MesStatus,
                 this.LightInStation,this.LightTestStart,this.LightTestEnd,this.LightOutStation,
-                this.Tb_AutoFlow,this.Tb_XianShuSN,this.Tb_TrayCode,this.Tb_StartTestTime,
+                this.Tb_AutoFlow,this.Tb_LeftXianShuSN,this.Tb_RightXianShuSN,this.Tb_TrayCode,this.Tb_StartTestTime,
                 this.Tb_FinishTestTime,this.Lb_WorkStation,this.Lb_InStation,this.Lb_TestStart,this.Lb_TestFinish,
                 this.Lb_OutStation,this.ScrollingText_Alarm,this.Rtb_Log,this.Dgv_BatchCode,this.propertyGrid1);
 

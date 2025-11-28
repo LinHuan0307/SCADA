@@ -81,7 +81,8 @@ namespace GaoYaXianShu.RunLogic
 
         private async Task<Result<bool>> 申请出站Async()
         {
-            string SN = string.Empty;//托盘线束的SN
+            string Left_SN = string.Empty;//托盘左线束的SN
+            string Right_SN = string.Empty;//托盘右线束的SN
             ushort TrayCode;//托盘号
             try
             {
@@ -94,23 +95,39 @@ namespace GaoYaXianShu.RunLogic
                 }
 
                 //获取PLC中保存的SN号
-                var 获取SN反馈 = await m_pLCService.Get_SN();
-                if (获取SN反馈.IsFailed)
+                var 获取左SN反馈 = await m_pLCService.Get_LeftSN();
+                if (获取左SN反馈.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog("从PLC获取SN异常");
+                    m_UIManeger.AppendErrorLog("从PLC获取左SN异常");
                     return Result.Fail("false");
                 }
-                SN = 获取SN反馈.Value;
+                Left_SN = 获取左SN反馈.Value;
                 //设置界面Sn
-                m_UIManeger.Set_Tb_XianShuSN(SN);
-                //Sn正则表达式判断
-                var isMatch = SN_regex.IsMatch(SN);
+                m_UIManeger.Set_Tb_LeftXianShuSN(Left_SN);
+                //左Sn正则表达式判断
+                var isMatch = SN_regex.IsMatch(Left_SN);
                 if (!isMatch)
                 {
-                    m_UIManeger.AppendErrorLog($"SN正则匹配异常！SN号：{SN}\r正则表达式：{m_RunConfig.SN的正则表达式}");
+                    m_UIManeger.AppendErrorLog($"左SN正则匹配异常！SN号：{Left_SN}\r正则表达式：{m_RunConfig.SN的正则表达式}");
                     return Result.Fail("false");
                 }
-                
+                //从PLC获取右SN号
+                var Get_RightSNresponse = await m_pLCService.Get_RightSN();
+                if (Get_RightSNresponse.IsFailed)
+                {
+                    m_UIManeger.AppendErrorLog("从PLC获取右SN异常");
+                    return Result.Fail("false");
+                }
+                Right_SN = Get_RightSNresponse.Value;
+                //设置SN到界面
+                m_UIManeger.Set_Tb_RightXianShuSN(Right_SN);
+                //右线束SN正则校验
+                isMatch = SN_regex.IsMatch(Right_SN);
+                if (!isMatch)
+                {
+                    m_UIManeger.AppendErrorLog($"右SN正则匹配异常！SN号：{Right_SN}\r正则表达式：{m_RunConfig.SN的正则表达式}");
+                    return Result.Fail("false");
+                }
                 //获取托盘号
                 var 获取托盘号反馈 = await m_pLCService.Get_TrayCode();
                 if (获取托盘号反馈.IsFailed)
@@ -124,18 +141,23 @@ namespace GaoYaXianShu.RunLogic
 
 
                 ////从界面获取参数
-                //SN = m_UIManeger.Get_Tb_LeftXianShuSN().Value;
+                //Left_SN = m_UIManeger.Get_Tb_LeftXianShuSN().Value;
                 //Right_SN = m_UIManeger.Get_Tb_RightXianShuSN().Value;
                 //TrayCode = m_UIManeger.Get_Tb_TrayCode().Value;
 
                 ////向MES申请出站
-                //var Left_SN_PassStation_response = await m_MESApi.PassStation(SN, TrayCode.ToString());
+                //var Left_SN_PassStation_response = await m_MESApi.PassStation(Left_SN, TrayCode.ToString());
                 //if (Left_SN_PassStation_response.IsFailed)
                 //{
-                //    m_UIManeger.AppendErrorLog("线束向MES申请出站异常");
+                //    m_UIManeger.AppendErrorLog("左线束向MES申请出站异常");
                 //    return Result.Fail("false");
                 //}
-                
+                //var Right_SN_PassStation_response = await m_MESApi.PassStation(Right_SN, TrayCode.ToString());
+                //if (Right_SN_PassStation_response.IsFailed)
+                //{
+                //    m_UIManeger.AppendErrorLog("右线束向MES申请出站异常");
+                //    return Result.Fail("false");
+                //}
 
                 return Result.Ok();
             }

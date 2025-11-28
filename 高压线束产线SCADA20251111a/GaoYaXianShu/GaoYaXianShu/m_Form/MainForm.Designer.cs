@@ -56,8 +56,6 @@
             this.uiLabel9 = new Sunny.UI.UILabel();
             this.uiLabel10 = new Sunny.UI.UILabel();
             this.Light_PLCStatus = new Sunny.UI.UILight();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.uiLight1 = new Sunny.UI.UILight();
             this.Tbc_Main = new Sunny.UI.UITabControl();
             this.Tb_MainForm = new System.Windows.Forms.TabPage();
             this.uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
@@ -83,8 +81,10 @@
             this.uiLabel7 = new Sunny.UI.UILabel();
             this.Tb_TrayCode = new Sunny.UI.UITextBox();
             this.uiTableLayoutPanel13 = new Sunny.UI.UITableLayoutPanel();
+            this.Tb_RightXianShuSN = new Sunny.UI.UITextBox();
             this.uiLabel2 = new Sunny.UI.UILabel();
-            this.Tb_XianShuSN = new Sunny.UI.UITextBox();
+            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.Tb_LeftXianShuSN = new Sunny.UI.UITextBox();
             this.Tb_DataMenege = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.uiLine11 = new Sunny.UI.UILine();
@@ -135,6 +135,8 @@
             this.ScrollingText_Alarm = new Sunny.UI.UIScrollingText();
             this.Lb_WorkStation = new Sunny.UI.UILabel();
             this.TimefleshTimer = new System.Windows.Forms.Timer(this.components);
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.uiLight1 = new Sunny.UI.UILight();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
             this.uiTableLayoutPanel5.SuspendLayout();
@@ -409,30 +411,6 @@
             this.Light_PLCStatus.TabIndex = 4;
             this.Light_PLCStatus.Text = "uiLight1";
             this.Light_PLCStatus.Click += new System.EventHandler(this.Light_PLCStatus_Click);
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel1.Location = new System.Drawing.Point(243, 0);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(39, 44);
-            this.uiLabel1.TabIndex = 7;
-            this.uiLabel1.Text = "焊接机";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiLight1
-            // 
-            this.uiLight1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiLight1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLight1.Location = new System.Drawing.Point(288, 3);
-            this.uiLight1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiLight1.Name = "uiLight1";
-            this.uiLight1.Radius = 33;
-            this.uiLight1.Size = new System.Drawing.Size(33, 38);
-            this.uiLight1.TabIndex = 8;
-            this.uiLight1.Text = "uiLight1";
             // 
             // Tbc_Main
             // 
@@ -859,8 +837,10 @@
             this.uiTableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.62825F));
             this.uiTableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.uiTableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.37175F));
+            this.uiTableLayoutPanel13.Controls.Add(this.Tb_RightXianShuSN, 3, 0);
             this.uiTableLayoutPanel13.Controls.Add(this.uiLabel2, 0, 0);
-            this.uiTableLayoutPanel13.Controls.Add(this.Tb_XianShuSN, 1, 0);
+            this.uiTableLayoutPanel13.Controls.Add(this.uiLabel3, 2, 0);
+            this.uiTableLayoutPanel13.Controls.Add(this.Tb_LeftXianShuSN, 1, 0);
             this.uiTableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel13.Location = new System.Drawing.Point(3, 137);
             this.uiTableLayoutPanel13.Name = "uiTableLayoutPanel13";
@@ -869,6 +849,24 @@
             this.uiTableLayoutPanel13.Size = new System.Drawing.Size(914, 61);
             this.uiTableLayoutPanel13.TabIndex = 2;
             this.uiTableLayoutPanel13.TagString = null;
+            // 
+            // Tb_RightXianShuSN
+            // 
+            this.Tb_RightXianShuSN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Tb_RightXianShuSN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tb_RightXianShuSN.FillReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Tb_RightXianShuSN.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Tb_RightXianShuSN.Location = new System.Drawing.Point(558, 5);
+            this.Tb_RightXianShuSN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Tb_RightXianShuSN.MinimumSize = new System.Drawing.Size(1, 16);
+            this.Tb_RightXianShuSN.Name = "Tb_RightXianShuSN";
+            this.Tb_RightXianShuSN.Padding = new System.Windows.Forms.Padding(5);
+            this.Tb_RightXianShuSN.ReadOnly = true;
+            this.Tb_RightXianShuSN.ShowText = false;
+            this.Tb_RightXianShuSN.Size = new System.Drawing.Size(352, 51);
+            this.Tb_RightXianShuSN.TabIndex = 3;
+            this.Tb_RightXianShuSN.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Tb_RightXianShuSN.Watermark = "";
             // 
             // uiLabel2
             // 
@@ -879,26 +877,38 @@
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(94, 61);
             this.uiLabel2.TabIndex = 0;
-            this.uiLabel2.Text = "线束SN";
+            this.uiLabel2.Text = "左线束SN";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Tb_XianShuSN
+            // uiLabel3
             // 
-            this.Tb_XianShuSN.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Tb_XianShuSN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Tb_XianShuSN.FillReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Tb_XianShuSN.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Tb_XianShuSN.Location = new System.Drawing.Point(104, 5);
-            this.Tb_XianShuSN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Tb_XianShuSN.MinimumSize = new System.Drawing.Size(1, 16);
-            this.Tb_XianShuSN.Name = "Tb_XianShuSN";
-            this.Tb_XianShuSN.Padding = new System.Windows.Forms.Padding(5);
-            this.Tb_XianShuSN.ReadOnly = true;
-            this.Tb_XianShuSN.ShowText = false;
-            this.Tb_XianShuSN.Size = new System.Drawing.Size(346, 51);
-            this.Tb_XianShuSN.TabIndex = 2;
-            this.Tb_XianShuSN.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Tb_XianShuSN.Watermark = "";
+            this.uiLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel3.Font = new System.Drawing.Font("宋体", 18F);
+            this.uiLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel3.Location = new System.Drawing.Point(457, 0);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(94, 61);
+            this.uiLabel3.TabIndex = 1;
+            this.uiLabel3.Text = "右线束SN";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Tb_LeftXianShuSN
+            // 
+            this.Tb_LeftXianShuSN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Tb_LeftXianShuSN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tb_LeftXianShuSN.FillReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Tb_LeftXianShuSN.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Tb_LeftXianShuSN.Location = new System.Drawing.Point(104, 5);
+            this.Tb_LeftXianShuSN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Tb_LeftXianShuSN.MinimumSize = new System.Drawing.Size(1, 16);
+            this.Tb_LeftXianShuSN.Name = "Tb_LeftXianShuSN";
+            this.Tb_LeftXianShuSN.Padding = new System.Windows.Forms.Padding(5);
+            this.Tb_LeftXianShuSN.ReadOnly = true;
+            this.Tb_LeftXianShuSN.ShowText = false;
+            this.Tb_LeftXianShuSN.Size = new System.Drawing.Size(346, 51);
+            this.Tb_LeftXianShuSN.TabIndex = 2;
+            this.Tb_LeftXianShuSN.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Tb_LeftXianShuSN.Watermark = "";
             // 
             // Tb_DataMenege
             // 
@@ -1708,6 +1718,30 @@
             // 
             this.TimefleshTimer.Tick += new System.EventHandler(this.TimefleshTimer_Tick);
             // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel1.Location = new System.Drawing.Point(243, 0);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(39, 44);
+            this.uiLabel1.TabIndex = 7;
+            this.uiLabel1.Text = "焊接机";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiLight1
+            // 
+            this.uiLight1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiLight1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLight1.Location = new System.Drawing.Point(288, 3);
+            this.uiLight1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiLight1.Name = "uiLight1";
+            this.uiLight1.Radius = 33;
+            this.uiLight1.Size = new System.Drawing.Size(33, 38);
+            this.uiLight1.TabIndex = 8;
+            this.uiLight1.Text = "uiLight1";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1808,8 +1842,10 @@
         private Sunny.UI.UILabel uiLabel7;
         private Sunny.UI.UITextBox Tb_TrayCode;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel13;
+        private Sunny.UI.UITextBox Tb_RightXianShuSN;
         private Sunny.UI.UILabel uiLabel2;
-        private Sunny.UI.UITextBox Tb_XianShuSN;
+        private Sunny.UI.UILabel uiLabel3;
+        private Sunny.UI.UITextBox Tb_LeftXianShuSN;
         private System.Windows.Forms.TabPage Tb_DataMenege;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Sunny.UI.UILine uiLine11;

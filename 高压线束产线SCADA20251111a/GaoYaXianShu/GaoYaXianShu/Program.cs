@@ -85,7 +85,9 @@ namespace GaoYaXianShu
             //注册批次码输入窗体.瞬时生命周期
             Build.RegisterType<BatchCodeInputForm>().InstancePerDependency();
             //注册手动物料码输入窗体.瞬时生命周期
-            Build.RegisterType<MaterialCodeInputForm>().InstancePerDependency();
+            Build.RegisterType<LSN_materialCodeInputForm>().InstancePerDependency();
+            //注册手动物料码输入窗体.瞬时生命周期
+            Build.RegisterType<RSN_materialCodeInputForm>().InstancePerDependency();
             //注册本地数据库驱动
             Build.RegisterType<LocalDbDAL>().InstancePerLifetimeScope();
             //实例化主窗体
