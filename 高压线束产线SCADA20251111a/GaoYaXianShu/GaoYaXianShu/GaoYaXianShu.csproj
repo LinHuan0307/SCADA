@@ -186,6 +186,12 @@
     <Compile Include="m_Form\LSN_materialCodeInputForm.Designer.cs">
       <DependentUpon>LSN_materialCodeInputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="m_Form\SculptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="m_Form\SculptureForm.Designer.cs">
+      <DependentUpon>SculptureForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RunLogic\DataUploadRunLogic.cs" />
     <Compile Include="DB\LocalDbDAL.cs" />
     <Compile Include="DB\LogContext.cs" />
@@ -228,6 +234,7 @@
     <Compile Include="Sevice\RunConfigService.cs" />
     <Compile Include="Sevice\RuntimeContextService.cs" />
     <Compile Include="Sevice\TCPClientService.cs" />
+    <Compile Include="Sevice\TCPListenerService.cs" />
     <Compile Include="UIService\UIManeger.cs" />
     <EmbeddedResource Include="m_Form\BatchCodeInputForm.resx">
       <DependentUpon>BatchCodeInputForm.cs</DependentUpon>
@@ -252,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="m_Form\LSN_materialCodeInputForm.resx">
       <DependentUpon>LSN_materialCodeInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="m_Form\SculptureForm.resx">
+      <DependentUpon>SculptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
