@@ -400,15 +400,15 @@ namespace GaoYaXianShu.Sevice
             }
         }
         /// <summary>
-        /// 获取SN号
+        /// 获取左SN号
         /// </summary>
         /// <returns></returns>
-        public async Task<Result<string>> Get_SN()
+        public async Task<Result<string>> Get_LeftSN()
         {
-            string PHeader = "[获取线束SN]";
+            string PHeader = "[获取左线束SN]";
             try
             {
-                var res = await m_PLC.ReadStringAsync(m_RunConfig.SN的起始地址, m_RunConfig.SN字符长度, Encoding.ASCII);
+                var res = await m_PLC.ReadStringAsync(m_RunConfig.左SN的起始地址, m_RunConfig.左SN字符长度, Encoding.ASCII);
                 if (res.IsFailed)
                 {
                     m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
@@ -423,16 +423,16 @@ namespace GaoYaXianShu.Sevice
             }
         }
         /// <summary>
-        /// 设置SN号
+        /// 设置左SN号
         /// </summary>
         /// <param name="Num"></param>
         /// <returns></returns>
-        public async Task<Result> Set_SN(string sn)
+        public async Task<Result> Set_LeftSN(string sn)
         {
-            string PHeader = "[设置线束SN]]";
+            string PHeader = "[设置左线束SN]]";
             try
             {
-                var res = await m_PLC.WriteStringAsync(m_RunConfig.SN的起始地址, sn, Encoding.ASCII);
+                var res = await m_PLC.WriteStringAsync(m_RunConfig.左SN的起始地址, sn, Encoding.ASCII);
                 if (res.IsFailed)
                 {
                     m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
@@ -449,6 +449,57 @@ namespace GaoYaXianShu.Sevice
 
         }
 
+        /// <summary>
+        /// 获取右SN号
+        /// </summary>
+        /// <returns></returns>
+        public async Task<Result<string>> Get_RightSN()
+        {
+            string PHeader = "[获取右线束SN]]";
+            try
+            {
+                var res = await m_PLC.ReadStringAsync(m_RunConfig.右SN的起始地址, m_RunConfig.右SN字符长度, Encoding.ASCII);
+                if (res.IsFailed)
+                {
+                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    return Result.Fail($"{PHeader}失败!");
+                }
+                return Result.Ok(res.Value);
+            }
+            catch (Exception ex)
+            {
+                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                return Result.Fail($"{PHeader}失败!");
+            }
+            
+
+        }
+        /// <summary>
+        /// 设置右SN号
+        /// </summary>
+        /// <param name="Num"></param>
+        /// <returns></returns>
+        public async Task<Result> Set_RightSN(string sn)
+        {
+            string PHeader = "[设置右线束SN]]";
+            try
+            {
+                var res = await m_PLC.WriteStringAsync(m_RunConfig.右SN的起始地址, sn, Encoding.ASCII);
+                if (res.IsFailed)
+                {
+                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    return Result.Fail($"{PHeader}失败!");
+                }
+                return Result.Ok();
+            }
+            catch (Exception ex)
+            {
+                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                return Result.Fail($"{PHeader}失败!");
+            }
+            
+
+        }
         /// <summary>
         /// 获取托盘号
         /// </summary>

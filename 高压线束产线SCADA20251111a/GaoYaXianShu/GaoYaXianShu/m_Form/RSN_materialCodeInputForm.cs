@@ -19,7 +19,7 @@ using System.Windows.Forms;
 
 namespace GaoYaXianShu.m_Form
 {
-    public partial class MaterialCodeInputForm : UIForm
+    public partial class RSN_materialCodeInputForm : UIForm
     {
         //输入的批次码
         public List<materialCodeBindEntity> materialCodeBindList;
@@ -27,8 +27,9 @@ namespace GaoYaXianShu.m_Form
         private SerialPort m_ScanPort;
         private RunConfig m_RunConfig;
         private UIManeger m_UIManeger;
+        private Regex MaterialSN_regex;
         private MesApiService m_MESApi;
-        public MaterialCodeInputForm(
+        public RSN_materialCodeInputForm(
             RunConfigService runConfigService, 
             UIManeger uIManeger,
             MesApiService mesApiService
@@ -39,7 +40,6 @@ namespace GaoYaXianShu.m_Form
             m_RunConfig = runConfigService.m_RunConfig;
             m_UIManeger = uIManeger;
             m_MESApi = mesApiService;
-            
         }
 
         private async void materialCodeInputForm_LoadAsync(object sender, EventArgs e)
@@ -56,15 +56,13 @@ namespace GaoYaXianShu.m_Form
             this.Dgv_MaterialCode.DataSource = materialCodeBindList;
             //设置串口连接状态指示灯开启
             m_UIManeger.SetSerialPortStatus_Connection();
-            ////获取物料绑定列表
             //获取界面上的SN
-            var SN = m_UIManeger.Get_Tb_XianShuSN().Value;
-            //物料绑定反馈 = await m_MESApi.BindMaterial(rightSN, Sread);
+            var rightSN = m_UIManeger.Get_Tb_RightXianShuSN().Value;
             //获取物料绑定状态
-            var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(SN);
+            var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(rightSN);
             if (!申请获取绑定物料列表反馈.IsSuccess)
             {
-                m_UIManeger.AppendErrorLog("获取线束的物料绑定状态列表失败！");
+                m_UIManeger.AppendErrorLog("获取左线束的物料绑定状态列表失败！");
                 return;
             }
             var 物料绑定列表 = 申请获取绑定物料列表反馈.Value;
@@ -95,14 +93,14 @@ namespace GaoYaXianShu.m_Form
                 Thread.Sleep(50);
                 string Sread = m_ScanPort.ReadExisting().Trim().Replace("\r", string.Empty).Replace("\n", string.Empty);
                 //获取界面上的SN
-                var SN = m_UIManeger.Get_Tb_XianShuSN().Value;
+                var rightSN = m_UIManeger.Get_Tb_RightXianShuSN().Value;
                 //申请绑定物料
-                var 物料绑定反馈 = await m_MESApi.BindMaterial(SN, Sread);
+                var 物料绑定反馈 = await m_MESApi.BindMaterial(rightSN, Sread);
                 //获取物料绑定状态
-                var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(SN);
+                var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(rightSN);
                 if (!申请获取绑定物料列表反馈.IsSuccess)
                 {
-                    m_UIManeger.AppendErrorLog("获取线束的物料绑定状态列表失败！");
+                    m_UIManeger.AppendErrorLog("获取左线束的物料绑定状态列表失败！");
                     return;
                 }
                 var 物料绑定列表 = 申请获取绑定物料列表反馈.Value;
@@ -171,6 +169,7 @@ namespace GaoYaXianShu.m_Form
 
         private void Btn_Subject_Click(object sender, EventArgs e)
         {
+            
             if (!UIMessageBox.ShowAsk("强制通过会导致数据丢失，请问确定强制通过吗？若是，请人工记录数据！"))
             {
                 return;
@@ -181,9 +180,10 @@ namespace GaoYaXianShu.m_Form
                 m_UIManeger.SetSerialPortStatus_DisConnection();
                 this.DialogResult = DialogResult.OK;
             }
+            
         }
 
-        private void Btn_Object_Click(object sender, EventArgs e)
+        private void Btn_Cancel_Click(object sender, EventArgs e)
         {
             if (!UIMessageBox.ShowAsk("取消绑定会导致绑定流程执行异常，请问确定取消绑定吗？如果需要重新绑定，请在主界面点击[重新执行当前流程]按钮！"))
             {
@@ -196,6 +196,7 @@ namespace GaoYaXianShu.m_Form
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
+            
         }
     }
 }

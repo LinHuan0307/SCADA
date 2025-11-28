@@ -94,7 +94,7 @@ namespace GaoYaXianShu.Sevice
         }
 
         /// <summary>
-        /// 是否有物料可以绑定
+        /// 这里判断是否有两个物料。左右各一个。
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -107,7 +107,7 @@ namespace GaoYaXianShu.Sevice
                                                         .Select(批次码绑定列表项 => 批次码绑定列表项.物料总数).Count();
 
 
-            return 物料总数 > 已使用总数量;
+            return 物料总数 >= 已使用总数量 + 2;
         }
     }
 }

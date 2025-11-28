@@ -1,6 +1,6 @@
 ﻿namespace GaoYaXianShu.m_Form
 {
-    partial class MaterialCodeInputForm
+    partial class RSN_materialCodeInputForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialCodeInputForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RSN_materialCodeInputForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -79,7 +79,7 @@
             this.Btn_Cancel.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(124)))), ((int)(((byte)(32)))));
             this.Btn_Cancel.Style = Sunny.UI.UIStyle.Custom;
             this.Btn_Cancel.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Object_Click);
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
             // Btn_Subject
             // 
@@ -159,16 +159,15 @@
             this.uiScrollingText1.Active = true;
             resources.ApplyResources(this.uiScrollingText1, "uiScrollingText1");
             this.uiScrollingText1.Name = "uiScrollingText1";
-            this.uiScrollingText1.Style = Sunny.UI.UIStyle.Custom;
             // 
-            // MaterialCodeInputForm
+            // RSN_materialCodeInputForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(250)))));
             resources.ApplyResources(this, "$this");
             this.ControlBoxFillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(203)))), ((int)(((byte)(189)))));
             this.Controls.Add(this.uiTableLayoutPanel1);
-            this.Name = "MaterialCodeInputForm";
+            this.Name = "RSN_materialCodeInputForm";
             this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(172)))));
             this.Style = Sunny.UI.UIStyle.Custom;
             this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(172)))));

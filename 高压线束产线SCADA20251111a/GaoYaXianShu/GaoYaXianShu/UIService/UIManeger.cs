@@ -32,8 +32,8 @@ namespace GaoYaXianShu.UIService
         
         //文本框
         private UITextBox m_Tb_AutoFlow;
-        private UITextBox m_Tb_XianShuSN;
-        
+        private UITextBox m_Tb_LeftXianShuSN;
+        private UITextBox m_Tb_RightXianShuSN;
         private UITextBox m_Tb_TrayCode;
         private UITextBox m_Tb_StartTestTime;
         private UITextBox m_Tb_FinishTestTime;
@@ -74,7 +74,8 @@ namespace GaoYaXianShu.UIService
             UILight LightOutStation,
 
             UITextBox Tb_AutoFlow,
-            UITextBox Tb_XianShuSN,
+            UITextBox Tb_LeftXianShuSN,
+            UITextBox Tb_RightXianShuSN,
             UITextBox Tb_TrayCode,
             UITextBox Tb_StartTestTime,
             UITextBox Tb_FinishTestTime,
@@ -102,7 +103,8 @@ namespace GaoYaXianShu.UIService
                 m_LightOutStation = LightOutStation;
 
                 m_Tb_AutoFlow = Tb_AutoFlow;
-                m_Tb_XianShuSN = Tb_XianShuSN;
+                m_Tb_LeftXianShuSN = Tb_LeftXianShuSN;
+                m_Tb_RightXianShuSN = Tb_RightXianShuSN;
                 m_Tb_TrayCode = Tb_TrayCode;
                 m_Tb_StartTestTime = Tb_StartTestTime;
                 m_Tb_FinishTestTime = Tb_FinishTestTime;
@@ -491,17 +493,17 @@ namespace GaoYaXianShu.UIService
             }
         }
         /// <summary>
-        /// 设置线束SN
+        /// 设置左线束SN
         /// </summary>
         /// <param name="Sn"></param>
         /// <returns></returns>
-        public Result Set_Tb_XianShuSN(string Sn)
+        public Result Set_Tb_LeftXianShuSN(string Sn)
         {
             try
             {
                 m_This.Invoke(new Action(() =>
                 {
-                    m_Tb_XianShuSN.Text = Sn;
+                    m_Tb_LeftXianShuSN.Text = Sn;
                 }));
                 return Result.Ok();
             }
@@ -512,17 +514,17 @@ namespace GaoYaXianShu.UIService
 
         }
         /// <summary>
-        /// 获取线束SN
+        /// 获取左线束SN
         /// </summary>
         /// <returns></returns>
-        public Result<string> Get_Tb_XianShuSN()
+        public Result<string> Get_Tb_LeftXianShuSN()
         {
             try
             {
                 string Sn = string.Empty;
                 m_This.Invoke(new Action(() =>
                 {
-                    Sn = m_Tb_XianShuSN.Text;
+                    Sn = m_Tb_LeftXianShuSN.Text;
                 }));
                 return Result.Ok(Sn);
             }
@@ -531,7 +533,49 @@ namespace GaoYaXianShu.UIService
                 return Result.Fail(ex.Message);
             }
         }
+        /// <summary>
+        /// 设置右线束SN
+        /// </summary>
+        /// <param name="Sn"></param>
+        /// <returns></returns>
+        public Result Set_Tb_RightXianShuSN(string Sn)
+        {
+            try
+            {
+                m_This.Invoke(new Action(() =>
+                {
+                    m_Tb_RightXianShuSN.Text = Sn;
+                }));
+                return Result.Ok();
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail(ex.Message);
+            }
 
+        }
+       
+        
+        /// <summary>
+        /// 获取右线束SN
+        /// </summary>
+        /// <returns></returns>
+        public Result<string> Get_Tb_RightXianShuSN()
+        {
+            try
+            {
+                string Sn = string.Empty;
+                m_This.Invoke(new Action(() =>
+                {
+                    Sn = m_Tb_LeftXianShuSN.Text;
+                }));
+                return Result.Ok(Sn);
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail(ex.Message);
+            }
+        }
         /// <summary>
         /// 设置测试开始时间
         /// </summary>
