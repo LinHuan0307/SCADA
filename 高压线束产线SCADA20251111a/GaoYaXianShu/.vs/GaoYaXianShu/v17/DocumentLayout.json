@@ -3,19 +3,23 @@
   "WorkspaceRootPath": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\gaoyaxianshu\\uiservice\\uimaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\uiservice\\uimaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\codehub\\scada\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFscada20251111a\\gaoyaxianshu\\gaoyaxianshu\\m_form\\batchcodeinputform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\m_form\\batchcodeinputform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\codehub\\scada\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFscada20251111a\\gaoyaxianshu\\gaoyaxianshu\\m_form\\sculptureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\m_form\\sculptureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\codehub\\scada\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFscada20251111a\\gaoyaxianshu\\gaoyaxianshu\\uiservice\\uimaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\uiservice\\uimaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\codehub\\scada\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFscada20251111a\\gaoyaxianshu\\gaoyaxianshu\\m_form\\sculptureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\gaoyaxianshu\\m_form\\sculptureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\m_form\\sculptureform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|d:\\codehub\\scada\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFscada20251111a\\gaoyaxianshu\\gaoyaxianshu\\runlogic\\instationrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\gaoyaxianshu\\runlogic\\instationrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{294DD4EB-4609-474F-9884-E01993F9D41D}|GaoYaXianShu\\GaoYaXianShu.csproj|solutionrelative:gaoyaxianshu\\runlogic\\instationrunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -139,32 +143,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BatchCodeInputForm.cs",
+              "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\BatchCodeInputForm.cs",
+              "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\BatchCodeInputForm.cs",
+              "ToolTip": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\BatchCodeInputForm.cs",
+              "RelativeToolTip": "GaoYaXianShu\\m_Form\\BatchCodeInputForm.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAmwD8AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T00:37:10.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "UIManeger.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\UIService\\UIManeger.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\UIService\\UIManeger.cs",
               "ToolTip": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\UIService\\UIManeger.cs",
               "RelativeToolTip": "GaoYaXianShu\\UIService\\UIManeger.cs",
-              "ViewState": "AQIAAJACAAAAAAAAAAAmwJsCAAAqAAAA",
+              "ViewState": "AQIAAN4BAAAAAAAAAAAYwO0BAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-28T01:39:52.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SculptureForm.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\SculptureForm.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\SculptureForm.cs",
               "ToolTip": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\SculptureForm.cs",
               "RelativeToolTip": "GaoYaXianShu\\m_Form\\SculptureForm.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAgwHYAAAANAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAUwHYAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-28T01:19:48.474Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SculptureForm.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\SculptureForm.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\SculptureForm.cs",
@@ -176,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "RunLogicManeger.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\RunLogicManeger.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\RunLogicManeger.cs",
@@ -188,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ResetAutoFlow.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\ResetAutoFlow.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\ResetAutoFlow.cs",
@@ -200,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "MESClosedPassStation.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MESClosedPassStation.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\MESClosedPassStation.cs",
@@ -212,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "MESClosedDataUpload.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MESClosedDataUpload.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\MESClosedDataUpload.cs",
@@ -224,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ManuMaterialBind.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\ManuMaterialBind.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\ManuMaterialBind.cs",
@@ -236,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "InStationRunLogic.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\InStationRunLogic.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\InStationRunLogic.cs",
@@ -244,12 +261,11 @@
               "RelativeToolTip": "GaoYaXianShu\\RunLogic\\InStationRunLogic.cs",
               "ViewState": "AQIAAJAAAAAAAAAAAAAcwFIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T02:36:29.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T02:36:29.192Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "GetSN.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\GetSN.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\GetSN.cs",
@@ -261,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Program.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Program.cs",
@@ -273,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TCPClientService.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Sevice\\TCPClientService.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Sevice\\TCPClientService.cs",
@@ -285,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "RuntimeContext.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\RuntimeContext.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\RuntimeContext.cs",
@@ -297,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "BatchCodeEntity.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\BatchCodeEntity.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\BatchCodeEntity.cs",
@@ -309,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "PassStationRunLogic.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\PassStationRunLogic.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\PassStationRunLogic.cs",
@@ -321,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "WelderDataEntity.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\WelderData\\WelderDataEntity.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\WelderData\\WelderDataEntity.cs",
@@ -333,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "MesApiService.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Sevice\\MesApiService.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Sevice\\MesApiService.cs",
@@ -345,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "MatirialBindRunLogic.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\MatirialBindRunLogic.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\MatirialBindRunLogic.cs",
@@ -357,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "WebApiClient.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\WebApiClient.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\WebApiClient.cs",
@@ -369,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "DataUploadRunLogic.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\DataUploadRunLogic.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\DataUploadRunLogic.cs",
@@ -381,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "GetWelderData.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\RunLogic\\GetWelderData.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\RunLogic\\GetWelderData.cs",
@@ -393,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "RunConfigHelper.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\RunConfigHelper.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\RunConfigHelper.cs",
@@ -405,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "RunConfig.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Entity\\RunConfig.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Entity\\RunConfig.cs",
@@ -417,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "TCPClientHelper.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\TCPClientHelper.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\TCPClientHelper.cs",
@@ -429,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.cs",
@@ -441,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "MainForm.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.cs",
@@ -452,7 +468,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "MainForm.resx",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.resx",
               "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.resx",
@@ -463,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "HslAsyncOmronUdpHelper.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Helper\\HslAsyncOmronUdpHelper.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Helper\\HslAsyncOmronUdpHelper.cs",
@@ -475,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "NLog.config",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\Config\\NLog.config",
               "RelativeDocumentMoniker": "GaoYaXianShu\\Config\\NLog.config",
@@ -487,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "D:\\CodeHub\\SCADA\\\u9AD8\u538B\u7EBF\u675F\u4EA7\u7EBFSCADA20251111a\\GaoYaXianShu\\GaoYaXianShu\\m_Form\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "GaoYaXianShu\\m_Form\\MainForm.Designer.cs",
