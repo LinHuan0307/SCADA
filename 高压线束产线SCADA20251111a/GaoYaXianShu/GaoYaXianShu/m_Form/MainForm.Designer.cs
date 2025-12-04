@@ -884,6 +884,7 @@
             // 
             // Tb_XianShuSN
             // 
+            this.uiTableLayoutPanel13.SetColumnSpan(this.Tb_XianShuSN, 3);
             this.Tb_XianShuSN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Tb_XianShuSN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tb_XianShuSN.FillReadOnlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -895,7 +896,7 @@
             this.Tb_XianShuSN.Padding = new System.Windows.Forms.Padding(5);
             this.Tb_XianShuSN.ReadOnly = true;
             this.Tb_XianShuSN.ShowText = false;
-            this.Tb_XianShuSN.Size = new System.Drawing.Size(346, 51);
+            this.Tb_XianShuSN.Size = new System.Drawing.Size(806, 51);
             this.Tb_XianShuSN.TabIndex = 2;
             this.Tb_XianShuSN.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.Tb_XianShuSN.Watermark = "";
@@ -905,7 +906,7 @@
             this.Tb_DataMenege.Controls.Add(this.tableLayoutPanel2);
             this.Tb_DataMenege.Location = new System.Drawing.Point(0, 40);
             this.Tb_DataMenege.Name = "Tb_DataMenege";
-            this.Tb_DataMenege.Size = new System.Drawing.Size(200, 60);
+            this.Tb_DataMenege.Size = new System.Drawing.Size(932, 431);
             this.Tb_DataMenege.TabIndex = 1;
             this.Tb_DataMenege.Text = "数据查询";
             this.Tb_DataMenege.UseVisualStyleBackColor = true;
@@ -937,7 +938,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 60);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(932, 431);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // uiLine11
@@ -952,7 +953,7 @@
             this.uiLine11.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.uiLine11.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiLine11.Name = "uiLine11";
-            this.uiLine11.Size = new System.Drawing.Size(198, 26);
+            this.uiLine11.Size = new System.Drawing.Size(930, 26);
             this.uiLine11.TabIndex = 21;
             this.uiLine11.Text = "批次码历史数据查询";
             // 
@@ -980,7 +981,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 70);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(932, 70);
             this.tableLayoutPanel4.TabIndex = 14;
             // 
             // label4
@@ -1000,7 +1001,7 @@
             this.BtnQueryProductDataByTimespan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnQueryProductDataByTimespan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnQueryProductDataByTimespan.Font = new System.Drawing.Font("宋体", 14F);
-            this.BtnQueryProductDataByTimespan.Location = new System.Drawing.Point(109, 2);
+            this.BtnQueryProductDataByTimespan.Location = new System.Drawing.Point(841, 2);
             this.BtnQueryProductDataByTimespan.Margin = new System.Windows.Forms.Padding(2);
             this.BtnQueryProductDataByTimespan.MinimumSize = new System.Drawing.Size(1, 1);
             this.BtnQueryProductDataByTimespan.Name = "BtnQueryProductDataByTimespan";
@@ -1015,7 +1016,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(63, 0);
+            this.label3.Location = new System.Drawing.Point(429, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 35);
@@ -1042,7 +1043,7 @@
             this.Tb_ProductDataquerySNInput.Font = new System.Drawing.Font("宋体", 14F);
             this.Tb_ProductDataquerySNInput.Location = new System.Drawing.Point(78, 38);
             this.Tb_ProductDataquerySNInput.Name = "Tb_ProductDataquerySNInput";
-            this.Tb_ProductDataquerySNInput.Size = new System.Drawing.Size(26, 29);
+            this.Tb_ProductDataquerySNInput.Size = new System.Drawing.Size(758, 29);
             this.Tb_ProductDataquerySNInput.TabIndex = 15;
             // 
             // BtnQueryProductDataBySN
@@ -1050,7 +1051,7 @@
             this.BtnQueryProductDataBySN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnQueryProductDataBySN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnQueryProductDataBySN.Font = new System.Drawing.Font("宋体", 14F);
-            this.BtnQueryProductDataBySN.Location = new System.Drawing.Point(109, 37);
+            this.BtnQueryProductDataBySN.Location = new System.Drawing.Point(841, 37);
             this.BtnQueryProductDataBySN.Margin = new System.Windows.Forms.Padding(2);
             this.BtnQueryProductDataBySN.MinimumSize = new System.Drawing.Size(1, 1);
             this.BtnQueryProductDataBySN.Name = "BtnQueryProductDataBySN";
@@ -1065,13 +1066,13 @@
             this.DpProductDataEnd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DpProductDataEnd.FillColor = System.Drawing.Color.White;
             this.DpProductDataEnd.Font = new System.Drawing.Font("宋体", 12F);
-            this.DpProductDataEnd.Location = new System.Drawing.Point(139, 0);
+            this.DpProductDataEnd.Location = new System.Drawing.Point(505, 0);
             this.DpProductDataEnd.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.DpProductDataEnd.MaxLength = 19;
             this.DpProductDataEnd.MinimumSize = new System.Drawing.Size(47, 0);
             this.DpProductDataEnd.Name = "DpProductDataEnd";
             this.DpProductDataEnd.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.DpProductDataEnd.Size = new System.Drawing.Size(47, 35);
+            this.DpProductDataEnd.Size = new System.Drawing.Size(331, 35);
             this.DpProductDataEnd.SymbolDropDown = 61555;
             this.DpProductDataEnd.SymbolNormal = 61555;
             this.DpProductDataEnd.SymbolSize = 24;
@@ -1092,7 +1093,7 @@
             this.DpProductDataStart.MinimumSize = new System.Drawing.Size(47, 0);
             this.DpProductDataStart.Name = "DpProductDataStart";
             this.DpProductDataStart.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.DpProductDataStart.Size = new System.Drawing.Size(47, 35);
+            this.DpProductDataStart.Size = new System.Drawing.Size(331, 35);
             this.DpProductDataStart.SymbolDropDown = 61555;
             this.DpProductDataStart.SymbolNormal = 61555;
             this.DpProductDataStart.SymbolSize = 24;
@@ -1126,7 +1127,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 70);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(932, 70);
             this.tableLayoutPanel5.TabIndex = 9;
             // 
             // Tb_passStationDataquerySNInput
@@ -1136,7 +1137,7 @@
             this.Tb_passStationDataquerySNInput.Font = new System.Drawing.Font("宋体", 14F);
             this.Tb_passStationDataquerySNInput.Location = new System.Drawing.Point(109, 36);
             this.Tb_passStationDataquerySNInput.Name = "Tb_passStationDataquerySNInput";
-            this.Tb_passStationDataquerySNInput.Size = new System.Drawing.Size(1, 29);
+            this.Tb_passStationDataquerySNInput.Size = new System.Drawing.Size(726, 29);
             this.Tb_passStationDataquerySNInput.TabIndex = 16;
             this.Tb_passStationDataquerySNInput.Click += new System.EventHandler(this.BtnQueryProductDataBySN_Click);
             // 
@@ -1157,12 +1158,12 @@
             this.BtnQueryPassStationByTimespan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnQueryPassStationByTimespan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnQueryPassStationByTimespan.Font = new System.Drawing.Font("宋体", 14F);
-            this.BtnQueryPassStationByTimespan.Location = new System.Drawing.Point(109, 1);
+            this.BtnQueryPassStationByTimespan.Location = new System.Drawing.Point(839, 1);
             this.BtnQueryPassStationByTimespan.Margin = new System.Windows.Forms.Padding(1);
             this.BtnQueryPassStationByTimespan.MinimumSize = new System.Drawing.Size(1, 1);
             this.BtnQueryPassStationByTimespan.Name = "BtnQueryPassStationByTimespan";
             this.BtnQueryPassStationByTimespan.Radius = 1;
-            this.BtnQueryPassStationByTimespan.Size = new System.Drawing.Size(91, 31);
+            this.BtnQueryPassStationByTimespan.Size = new System.Drawing.Size(92, 31);
             this.BtnQueryPassStationByTimespan.TabIndex = 8;
             this.BtnQueryPassStationByTimespan.Text = "查询";
             this.BtnQueryPassStationByTimespan.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1172,7 +1173,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(79, 0);
+            this.label7.Location = new System.Drawing.Point(444, 0);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 33);
@@ -1192,7 +1193,7 @@
             this.DpPassStationStart.Name = "DpPassStationStart";
             this.DpPassStationStart.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.DpPassStationStart.Radius = 1;
-            this.DpPassStationStart.Size = new System.Drawing.Size(47, 33);
+            this.DpPassStationStart.Size = new System.Drawing.Size(315, 33);
             this.DpPassStationStart.SymbolDropDown = 61555;
             this.DpPassStationStart.SymbolNormal = 61555;
             this.DpPassStationStart.SymbolSize = 24;
@@ -1207,14 +1208,14 @@
             this.DpPassStationEnd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DpPassStationEnd.FillColor = System.Drawing.Color.White;
             this.DpPassStationEnd.Font = new System.Drawing.Font("宋体", 12F);
-            this.DpPassStationEnd.Location = new System.Drawing.Point(155, 0);
+            this.DpPassStationEnd.Location = new System.Drawing.Point(520, 0);
             this.DpPassStationEnd.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.DpPassStationEnd.MaxLength = 19;
             this.DpPassStationEnd.MinimumSize = new System.Drawing.Size(47, 0);
             this.DpPassStationEnd.Name = "DpPassStationEnd";
             this.DpPassStationEnd.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
             this.DpPassStationEnd.Radius = 1;
-            this.DpPassStationEnd.Size = new System.Drawing.Size(47, 33);
+            this.DpPassStationEnd.Size = new System.Drawing.Size(315, 33);
             this.DpPassStationEnd.SymbolDropDown = 61555;
             this.DpPassStationEnd.SymbolNormal = 61555;
             this.DpPassStationEnd.SymbolSize = 24;
@@ -1241,10 +1242,10 @@
             this.BtnQueryPassStationBySN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnQueryPassStationBySN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnQueryPassStationBySN.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnQueryPassStationBySN.Location = new System.Drawing.Point(111, 36);
+            this.BtnQueryPassStationBySN.Location = new System.Drawing.Point(841, 36);
             this.BtnQueryPassStationBySN.MinimumSize = new System.Drawing.Size(1, 1);
             this.BtnQueryPassStationBySN.Name = "BtnQueryPassStationBySN";
-            this.BtnQueryPassStationBySN.Size = new System.Drawing.Size(87, 31);
+            this.BtnQueryPassStationBySN.Size = new System.Drawing.Size(88, 31);
             this.BtnQueryPassStationBySN.TabIndex = 12;
             this.BtnQueryPassStationBySN.Text = "查询";
             this.BtnQueryPassStationBySN.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1294,7 +1295,7 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectedIndex = -1;
-            this.dataGridView1.Size = new System.Drawing.Size(194, 1);
+            this.dataGridView1.Size = new System.Drawing.Size(926, 45);
             this.dataGridView1.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dataGridView1.TabIndex = 1;
             // 
@@ -1311,7 +1312,7 @@
             this.uiLine1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiLine1.Name = "uiLine1";
             this.uiLine1.RectSize = 2;
-            this.uiLine1.Size = new System.Drawing.Size(198, 26);
+            this.uiLine1.Size = new System.Drawing.Size(930, 26);
             this.uiLine1.TabIndex = 8;
             this.uiLine1.Text = "过站数据查询";
             // 
@@ -1327,7 +1328,7 @@
             this.uiLine2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.uiLine2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiLine2.Name = "uiLine2";
-            this.uiLine2.Size = new System.Drawing.Size(198, 26);
+            this.uiLine2.Size = new System.Drawing.Size(930, 26);
             this.uiLine2.TabIndex = 15;
             this.uiLine2.Text = "产品数据查询";
             // 
@@ -1343,7 +1344,7 @@
             this.uiLine4.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.uiLine4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiLine4.Name = "uiLine4";
-            this.uiLine4.Size = new System.Drawing.Size(198, 26);
+            this.uiLine4.Size = new System.Drawing.Size(930, 26);
             this.uiLine4.TabIndex = 18;
             this.uiLine4.Text = "查询结果";
             // 
@@ -1357,12 +1358,12 @@
             this.tableLayoutPanel8.Controls.Add(this.BtnKeyBoard2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.BtnExportData, 2, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 10);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 381);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(200, 50);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(932, 50);
             this.tableLayoutPanel8.TabIndex = 20;
             // 
             // BtnKeyBoard2
@@ -1383,7 +1384,7 @@
             this.BtnExportData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnExportData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnExportData.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnExportData.Location = new System.Drawing.Point(97, 3);
+            this.BtnExportData.Location = new System.Drawing.Point(829, 3);
             this.BtnExportData.MinimumSize = new System.Drawing.Size(1, 1);
             this.BtnExportData.Name = "BtnExportData";
             this.BtnExportData.Size = new System.Drawing.Size(100, 44);
@@ -1416,7 +1417,7 @@
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(200, 70);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(932, 70);
             this.tableLayoutPanel7.TabIndex = 22;
             // 
             // Tb_BatchCodeInput
@@ -1426,7 +1427,7 @@
             this.Tb_BatchCodeInput.Font = new System.Drawing.Font("宋体", 14F);
             this.Tb_BatchCodeInput.Location = new System.Drawing.Point(80, 38);
             this.Tb_BatchCodeInput.Name = "Tb_BatchCodeInput";
-            this.Tb_BatchCodeInput.Size = new System.Drawing.Size(24, 29);
+            this.Tb_BatchCodeInput.Size = new System.Drawing.Size(756, 29);
             this.Tb_BatchCodeInput.TabIndex = 24;
             // 
             // label10
@@ -1464,7 +1465,7 @@
             this.Dp_BatchCodeHistoryStart.MinimumSize = new System.Drawing.Size(47, 0);
             this.Dp_BatchCodeHistoryStart.Name = "Dp_BatchCodeHistoryStart";
             this.Dp_BatchCodeHistoryStart.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.Dp_BatchCodeHistoryStart.Size = new System.Drawing.Size(47, 35);
+            this.Dp_BatchCodeHistoryStart.Size = new System.Drawing.Size(325, 35);
             this.Dp_BatchCodeHistoryStart.SymbolDropDown = 61555;
             this.Dp_BatchCodeHistoryStart.SymbolNormal = 61555;
             this.Dp_BatchCodeHistoryStart.SymbolSize = 24;
@@ -1479,7 +1480,7 @@
             this.uiLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiLabel4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel4.Location = new System.Drawing.Point(62, 0);
+            this.uiLabel4.Location = new System.Drawing.Point(428, 0);
             this.uiLabel4.Name = "uiLabel4";
             this.uiLabel4.Size = new System.Drawing.Size(77, 35);
             this.uiLabel4.TabIndex = 21;
@@ -1491,13 +1492,13 @@
             this.Dp_BatchCodeHistoryEnd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dp_BatchCodeHistoryEnd.FillColor = System.Drawing.Color.White;
             this.Dp_BatchCodeHistoryEnd.Font = new System.Drawing.Font("宋体", 12F);
-            this.Dp_BatchCodeHistoryEnd.Location = new System.Drawing.Point(145, 0);
+            this.Dp_BatchCodeHistoryEnd.Location = new System.Drawing.Point(511, 0);
             this.Dp_BatchCodeHistoryEnd.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.Dp_BatchCodeHistoryEnd.MaxLength = 19;
             this.Dp_BatchCodeHistoryEnd.MinimumSize = new System.Drawing.Size(47, 0);
             this.Dp_BatchCodeHistoryEnd.Name = "Dp_BatchCodeHistoryEnd";
             this.Dp_BatchCodeHistoryEnd.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.Dp_BatchCodeHistoryEnd.Size = new System.Drawing.Size(47, 35);
+            this.Dp_BatchCodeHistoryEnd.Size = new System.Drawing.Size(325, 35);
             this.Dp_BatchCodeHistoryEnd.SymbolDropDown = 61555;
             this.Dp_BatchCodeHistoryEnd.SymbolNormal = 61555;
             this.Dp_BatchCodeHistoryEnd.SymbolSize = 24;
@@ -1512,7 +1513,7 @@
             this.BtnQueryBatchCodeByTimespan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnQueryBatchCodeByTimespan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnQueryBatchCodeByTimespan.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnQueryBatchCodeByTimespan.Location = new System.Drawing.Point(110, 3);
+            this.BtnQueryBatchCodeByTimespan.Location = new System.Drawing.Point(842, 3);
             this.BtnQueryBatchCodeByTimespan.MinimumSize = new System.Drawing.Size(1, 1);
             this.BtnQueryBatchCodeByTimespan.Name = "BtnQueryBatchCodeByTimespan";
             this.BtnQueryBatchCodeByTimespan.Size = new System.Drawing.Size(87, 29);
@@ -1526,7 +1527,7 @@
             this.BtnQueryBatchCodeBySn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnQueryBatchCodeBySn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnQueryBatchCodeBySn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnQueryBatchCodeBySn.Location = new System.Drawing.Point(110, 38);
+            this.BtnQueryBatchCodeBySn.Location = new System.Drawing.Point(842, 38);
             this.BtnQueryBatchCodeBySn.MinimumSize = new System.Drawing.Size(1, 1);
             this.BtnQueryBatchCodeBySn.Name = "BtnQueryBatchCodeBySn";
             this.BtnQueryBatchCodeBySn.Size = new System.Drawing.Size(87, 29);
@@ -1540,7 +1541,7 @@
             this.Tb_Configurantion.Controls.Add(this.uiTableLayoutPanel8);
             this.Tb_Configurantion.Location = new System.Drawing.Point(0, 40);
             this.Tb_Configurantion.Name = "Tb_Configurantion";
-            this.Tb_Configurantion.Size = new System.Drawing.Size(200, 60);
+            this.Tb_Configurantion.Size = new System.Drawing.Size(932, 431);
             this.Tb_Configurantion.TabIndex = 2;
             this.Tb_Configurantion.Text = "系统配置";
             this.Tb_Configurantion.UseVisualStyleBackColor = true;
@@ -1558,7 +1559,7 @@
             this.uiTableLayoutPanel8.RowCount = 2;
             this.uiTableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.96491F));
             this.uiTableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.03509F));
-            this.uiTableLayoutPanel8.Size = new System.Drawing.Size(200, 60);
+            this.uiTableLayoutPanel8.Size = new System.Drawing.Size(932, 431);
             this.uiTableLayoutPanel8.TabIndex = 0;
             this.uiTableLayoutPanel8.TagString = null;
             // 
@@ -1567,7 +1568,7 @@
             this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGrid1.Location = new System.Drawing.Point(3, 3);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(194, 45);
+            this.propertyGrid1.Size = new System.Drawing.Size(926, 364);
             this.propertyGrid1.TabIndex = 1;
             // 
             // uiTableLayoutPanel9
@@ -1578,11 +1579,11 @@
             this.uiTableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
             this.uiTableLayoutPanel9.Controls.Add(this.Btn_SaveConfiguration, 2, 0);
             this.uiTableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel9.Location = new System.Drawing.Point(3, 54);
+            this.uiTableLayoutPanel9.Location = new System.Drawing.Point(3, 373);
             this.uiTableLayoutPanel9.Name = "uiTableLayoutPanel9";
             this.uiTableLayoutPanel9.RowCount = 1;
             this.uiTableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(194, 3);
+            this.uiTableLayoutPanel9.Size = new System.Drawing.Size(926, 55);
             this.uiTableLayoutPanel9.TabIndex = 2;
             this.uiTableLayoutPanel9.TagString = null;
             // 
@@ -1591,10 +1592,10 @@
             this.Btn_SaveConfiguration.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_SaveConfiguration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_SaveConfiguration.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Btn_SaveConfiguration.Location = new System.Drawing.Point(39, 3);
+            this.Btn_SaveConfiguration.Location = new System.Drawing.Point(771, 3);
             this.Btn_SaveConfiguration.MinimumSize = new System.Drawing.Size(1, 1);
             this.Btn_SaveConfiguration.Name = "Btn_SaveConfiguration";
-            this.Btn_SaveConfiguration.Size = new System.Drawing.Size(152, 1);
+            this.Btn_SaveConfiguration.Size = new System.Drawing.Size(152, 49);
             this.Btn_SaveConfiguration.TabIndex = 0;
             this.Btn_SaveConfiguration.Text = "保存设置";
             this.Btn_SaveConfiguration.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1605,7 +1606,7 @@
             this.Tb_Jog.Controls.Add(this.uiTableLayoutPanel10);
             this.Tb_Jog.Location = new System.Drawing.Point(0, 40);
             this.Tb_Jog.Name = "Tb_Jog";
-            this.Tb_Jog.Size = new System.Drawing.Size(200, 60);
+            this.Tb_Jog.Size = new System.Drawing.Size(932, 431);
             this.Tb_Jog.TabIndex = 3;
             this.Tb_Jog.Text = "JOG";
             this.Tb_Jog.UseVisualStyleBackColor = true;
@@ -1628,7 +1629,7 @@
             this.uiTableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.uiTableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.uiTableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.uiTableLayoutPanel10.Size = new System.Drawing.Size(200, 60);
+            this.uiTableLayoutPanel10.Size = new System.Drawing.Size(932, 431);
             this.uiTableLayoutPanel10.TabIndex = 0;
             this.uiTableLayoutPanel10.TagString = null;
             // 
