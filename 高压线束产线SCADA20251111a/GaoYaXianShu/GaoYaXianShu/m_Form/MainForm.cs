@@ -34,9 +34,9 @@ namespace GaoYaXianShu
     {
         private readonly IComponentContext m_componentContext;
         private RunConfigHelper m_RunConfigHelper;
-        private UIManeger m_UIManeger;
         private PLCService m_PLCService;
         private MesApiService m_MESApi;
+        private RuntimeContextService m_RuntimeContextService;
         private RunConfigService m_RunConfigService;
         private BackgroundWorker m_PLCReadWorker;
         private BackgroundWorker m_PLCHeathBeatWorker;
@@ -48,8 +48,8 @@ namespace GaoYaXianShu
 
         public MainForm(
             IComponentContext           componentContext,
-            RunConfigHelper             runConfigHelper, 
-            UIManeger                   UIManeger,
+            RunConfigHelper             runConfigHelper,
+            RuntimeContextService       runtimeContextService,
             PLCService                  pLCService,
             RunLogicManeger             runLogicManeger,
             LocalDbDAL                  localDbDAL,
@@ -61,17 +61,10 @@ namespace GaoYaXianShu
 
             //注入依赖
             m_componentContext = componentContext;
-            m_UIManeger = UIManeger;
-            //在这里引入控件
-            m_UIManeger.init(this, this.Light_PLCStatus,this.Light_SerialPortStatus,this.Light_MesStatus,
-                this.LightInStation,this.LightTestStart,this.LightTestEnd,this.LightOutStation,
-                this.Tb_AutoFlow,this.Tb_XianShuSN,this.Tb_TrayCode,this.Tb_StartTestTime,
-                this.Tb_FinishTestTime,this.Lb_WorkStation,this.Lb_InStation,this.Lb_TestStart,this.Lb_TestFinish,
-                this.Lb_OutStation,this.ScrollingText_Alarm,this.Rtb_Log,this.Dgv_BatchCode,this.propertyGrid1);
 
             m_PLCService = pLCService;
             m_RunLogicManeger = runLogicManeger;
-
+            m_RuntimeContextService = runtimeContextService;
             m_RunConfigHelper = runConfigHelper;
             m_localDbDAL = localDbDAL;
             m_MESApi = mesApiService;
@@ -106,17 +99,17 @@ namespace GaoYaXianShu
             TimefleshTimer.Interval =  (int)((DateTime.Now.AddDays(1).Date - DateTime.Now).TotalMilliseconds);
             TimefleshTimer.Enabled = true;
 
-            m_UIManeger.Bind_Dgv(m_RunConfigHelper.RunConfig.批次码绑定列表);
+            //m_RuntimeContextService.Bind_Dgv(m_RunConfigHelper.RunConfig.批次码绑定列表);
 
             string err = string.Empty;
             //初始化数据库
             if (!m_localDbDAL.Init().IsSuccess)
             {
-                m_UIManeger.AppendErrorLog("连接本地数据库异常" + err);
+                m_RuntimeContextService.AppendErrorLog("连接本地数据库异常" + err);
                 return;
             }
 
-            m_UIManeger.SetPLCStatus_Connection();
+            m_RuntimeContextService.设置PLC状态已连接();
 
             m_PLCReadWorker.RunWorkerAsync();
             m_PLCHeathBeatWorker.RunWorkerAsync();
@@ -184,13 +177,13 @@ namespace GaoYaXianShu
             m_Exixt = true;
             if (UIMessageBox.ShowAsk("确定要关闭主操作界面吗？"))
             {
-                m_UIManeger.AppendinfoLog("用户确认关闭窗体，保存配置中...");
+                m_RuntimeContextService.AppendinfoLog("用户确认关闭窗体，保存配置中...");
                 m_RunConfigHelper.保存系统配置文件();
                 
             }
             else
             {
-                m_UIManeger.AppendinfoLog("用户取消关闭，窗体继续运行");
+                m_RuntimeContextService.AppendinfoLog("用户取消关闭，窗体继续运行");
                 e.Cancel = true; // 取消关闭操作
             }
         }
@@ -453,7 +446,7 @@ namespace GaoYaXianShu
                         }
                 }
 
-                m_UIManeger.AppendDataLog( "数据已导出");
+                m_RuntimeContextService.AppendDataLog( "数据已导出");
                 UIMessageTip.ShowOk("已导出!", 1000);
             });
             
@@ -491,7 +484,7 @@ namespace GaoYaXianShu
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog("更新时间获取控件异常");
+                m_RuntimeContextService.AppendErrorLog("更新时间获取控件异常");
             }
             finally
             {
@@ -525,18 +518,18 @@ namespace GaoYaXianShu
                     {
                         return;
                     }
-                    m_UIManeger.AppendDataLog("添加批次成功");
+                    m_RuntimeContextService.AppendDataLog("添加批次成功");
                     UIMessageTip.ShowOk("添加批次成功");
                     
                 }
                 else if(result == DialogResult.Abort)
                 {
-                    m_UIManeger.AppendErrorLog("输入异常，请重新输入");
+                    m_RuntimeContextService.AppendErrorLog("输入异常，请重新输入");
                     return;
                 }
                 else
                 {
-                    m_UIManeger.AppendinfoLog("用户取消了操作");
+                    m_RuntimeContextService.AppendinfoLog("用户取消了操作");
                     return;
                 }
             }

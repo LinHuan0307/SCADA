@@ -26,18 +26,18 @@ namespace GaoYaXianShu.m_Form
 
         private SerialPort m_ScanPort;
         private RunConfig m_RunConfig;
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
         private MesApiService m_MESApi;
         public MaterialCodeInputForm(
-            RunConfigService runConfigService, 
-            UIManeger uIManeger,
+            RunConfigService runConfigService,
+            RuntimeContextService runtimeContextService,
             MesApiService mesApiService
             )
         {
             InitializeComponent();
 
             m_RunConfig = runConfigService.m_RunConfig;
-            m_UIManeger = uIManeger;
+            m_RuntimeContextService = runtimeContextService;
             m_MESApi = mesApiService;
             
         }
@@ -55,16 +55,16 @@ namespace GaoYaXianShu.m_Form
             //设置下拉列表数据来源
             this.Dgv_MaterialCode.DataSource = materialCodeBindList;
             //设置串口连接状态指示灯开启
-            m_UIManeger.SetSerialPortStatus_Connection();
+            m_RuntimeContextService.设置扫码枪状态连接正常();
             ////获取物料绑定列表
             //获取界面上的SN
-            var SN = m_UIManeger.Get_Tb_XianShuSN().Value;
+            var SN = m_RuntimeContextService.获取线束SN().Value;
             //物料绑定反馈 = await m_MESApi.BindMaterial(rightSN, Sread);
             //获取物料绑定状态
             var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(SN);
             if (!申请获取绑定物料列表反馈.IsSuccess)
             {
-                m_UIManeger.AppendErrorLog("获取线束的物料绑定状态列表失败！");
+                m_RuntimeContextService.添加错误日志("获取线束的物料绑定状态列表失败！");
                 return;
             }
             var 物料绑定列表 = 申请获取绑定物料列表反馈.Value;
@@ -95,14 +95,14 @@ namespace GaoYaXianShu.m_Form
                 Thread.Sleep(50);
                 string Sread = m_ScanPort.ReadExisting().Trim().Replace("\r", string.Empty).Replace("\n", string.Empty);
                 //获取界面上的SN
-                var SN = m_UIManeger.Get_Tb_XianShuSN().Value;
+                var SN = m_RuntimeContextService.获取线束SN().Value;
                 //申请绑定物料
                 var 物料绑定反馈 = await m_MESApi.BindMaterial(SN, Sread);
                 //获取物料绑定状态
                 var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(SN);
                 if (!申请获取绑定物料列表反馈.IsSuccess)
                 {
-                    m_UIManeger.AppendErrorLog("获取线束的物料绑定状态列表失败！");
+                    m_RuntimeContextService.添加错误日志("获取线束的物料绑定状态列表失败！");
                     return;
                 }
                 var 物料绑定列表 = 申请获取绑定物料列表反馈.Value;
@@ -133,14 +133,14 @@ namespace GaoYaXianShu.m_Form
             {
                 this.DialogResult = DialogResult.Abort;
                 UIMessageBox.ShowError("输入物料码异常！" + ex.Message);
-                m_UIManeger.AppendErrorLog("输入物料码异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("输入物料码异常！" + ex.Message);
             }
         }
 
         private void materialCodeInputForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             m_ScanPort.Close();
-            m_UIManeger.SetSerialPortStatus_DisConnection();
+            m_RuntimeContextService.设置扫码枪状态连接断开();
         }
 
         private void Dgv_MaterialCode_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -178,7 +178,7 @@ namespace GaoYaXianShu.m_Form
             else
             {
                 m_ScanPort.Close();
-                m_UIManeger.SetSerialPortStatus_DisConnection();
+                m_RuntimeContextService.设置扫码枪状态连接断开();
                 this.DialogResult = DialogResult.OK;
             }
         }
@@ -192,7 +192,7 @@ namespace GaoYaXianShu.m_Form
             else
             {
                 m_ScanPort.Close();
-                m_UIManeger.SetSerialPortStatus_DisConnection();
+                m_RuntimeContextService.设置扫码枪状态连接断开();
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }

@@ -41,9 +41,9 @@ namespace GaoYaXianShu
                 var type = t.GetType(); // 获取请求服务的类型
                 return LogManager.GetLogger(type.FullName);
             }).As<ILogger>();
-            
+
             //注册UI控件操作服务
-            Build.RegisterType<UIManeger>().InstancePerLifetimeScope(); 
+            Build.RegisterType<RuntimeContext>().InstancePerLifetimeScope();
             //注册配置服务
             Build.RegisterType<RunConfigHelper>().InstancePerLifetimeScope(); 
             //注册PLC读写服务

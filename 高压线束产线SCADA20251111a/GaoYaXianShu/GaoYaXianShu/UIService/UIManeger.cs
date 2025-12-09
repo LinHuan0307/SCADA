@@ -132,39 +132,8 @@ namespace GaoYaXianShu.UIService
         }
 
         
-        public Result SetPLCStatus_DisConnection()
-        {
-            try
-            {
-                m_This.Invoke(new Action(() =>
-                {
-                    m_Light_PLCStatus.OnColor = Color.Red;
-                    m_Light_PLCStatus.State = UILightState.Blink;
-                }));
-                return Result.Ok();
-            }
-            catch (Exception ex)
-            {
-                return Result.Fail(ex.Message);
-            }
-           
-        }
-        public Result SetPLCStatus_Connection()
-        {
-            try
-            {
-                m_This.Invoke(new Action(() =>
-                {
-                    m_Light_PLCStatus.OnColor = Color.Lime;
-                    m_Light_PLCStatus.State = UILightState.On;
-                }));
-                return Result.Ok();
-            }
-            catch (Exception ex)
-            {
-                return Result.Fail(ex.Message);
-            }
-        }
+        
+        
 
         public Result SetSerialPortStatus_DisConnection()
         {

@@ -24,15 +24,12 @@ namespace GaoYaXianShu.m_Form
 
         private SerialPort m_ScanPort;
         private RunConfig m_RunConfig;
-        private UIManeger m_UIManeger;
         public BatchCodeInputForm(
-            RunConfigService    runConfigService,
-            UIManeger           uIManeger)
+            RunConfigService    runConfigService)
         {
             InitializeComponent();
 
             m_RunConfig = runConfigService.m_RunConfig;
-            m_UIManeger = uIManeger;
 
         }
 

@@ -20,6 +20,37 @@ namespace GaoYaXianShu.Entity
 
         public WelderDataEntity 焊接数据 { get; set; } = new WelderDataEntity();
 
+        public AutoFlowStatus 流程步状态 { get; set; } = new AutoFlowStatus();
 
+        public ushort 流程步 { get; set; } = 0;
+
+        public ushort 托盘号 { get; set; } = 0;
+
+        public DateTime 测试开始时间 { get; set; } = DateTime.Now;
+
+        public DateTime 测试结束时间 { get; set; } = DateTime.Now;
+
+        public string 线束SN { get; set; } = string.Empty;
+
+        public bool PLC连接状态 { get; set; } = false;
+
+        public bool 扫码枪连接状态 { get; set; } = false;
+
+        public bool MES连接状态 { get; set; } = false;
+
+        public bool 焊接机连接状态 { get; set; } = false;
+
+        public Queue<string> Log日志队列 { get; set; } = new Queue<string>();
+
+        public List<string> 报警文本列表 { get; set; } = new List<string>();
+
+    }
+
+    public enum AutoFlowStatus
+    {
+        ComeInStation,
+        MaterialBinding,
+        DataUploading,
+        PassStation,
     }
 }

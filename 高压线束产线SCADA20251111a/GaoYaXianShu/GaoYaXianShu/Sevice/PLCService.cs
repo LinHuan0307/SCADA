@@ -16,16 +16,16 @@ namespace GaoYaXianShu.Sevice
         private HslAsyncOmronUdpHelper m_PLC;
         private RunConfig m_RunConfig;
         private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
 
         public PLCService(
             HslAsyncOmronUdpHelper pLC, 
             RunConfigHelper runConfigHelper,
-            UIManeger uIManeger)
+            RuntimeContextService runtimeContextService)
         {
             m_RunConfig = runConfigHelper.RunConfig;
             m_PLC = pLC;
-            m_UIManeger = uIManeger;
-
+            m_RuntimeContextService = runtimeContextService;
             m_PLC.Address = m_RunConfig.PLC的IP地址;
             m_PLC.Port = m_RunConfig.PLC端口号;
             _ = m_PLC.Open();
@@ -42,19 +42,19 @@ namespace GaoYaXianShu.Sevice
                     var res = m_PLC.Open();
                     if (res.IsFailed)
                     {
-                        m_UIManeger.SetPLCStatus_DisConnection();
-                        m_UIManeger.AddAlarmInfo("PLC断联报警!");
-                        m_UIManeger.AppendErrorLog("重连PLC失败");
+                        m_RuntimeContextService.设置PLC状态连接断开();
+                        m_RuntimeContextService.添加PLC断开连接报警();
+                        m_RuntimeContextService.添加错误日志("重连PLC失败");
                         return Result.Fail($"{PHeader}失败!");
                     }
-                    m_UIManeger.SetPLCStatus_Connection();
-                    m_UIManeger.DeleteAlarmInfo("PLC断联报警!");
                 }
+                m_RuntimeContextService.设置MES状态连接正常();
+                m_RuntimeContextService.删除PLC断开连接报警();
                 return Result.Ok();
             }
             catch(Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
         }
@@ -73,14 +73,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.ReadInt16Async(m_RunConfig.流程字起始地址);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok(res.Value);
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -101,14 +101,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.流程字反馈点位, 10);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -127,14 +127,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.流程字反馈点位, 20);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -153,14 +153,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.流程字反馈点位, 30);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -179,14 +179,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.流程字反馈点位, 40);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -206,14 +206,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 2);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -232,14 +232,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 1);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -258,14 +258,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 4);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -284,14 +284,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 3);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -310,14 +310,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 6);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -336,14 +336,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 5);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -362,14 +362,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 8);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -388,14 +388,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteUInt16Async(m_RunConfig.MES反馈点位, 7);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
         }
@@ -411,14 +411,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.ReadStringAsync(m_RunConfig.SN的起始地址, m_RunConfig.SN字符长度, Encoding.ASCII);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok(res.Value);
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
         }
@@ -435,14 +435,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteStringAsync(m_RunConfig.SN的起始地址, sn, Encoding.ASCII);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -461,14 +461,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.ReadUInt16Async(m_RunConfig.托盘号起始地址);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok(res.Value);
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -485,14 +485,14 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.ReadBoolAsync(m_RunConfig.心跳点位地址);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok(res.Value);
             }
             catch(Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -508,21 +508,21 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_PLC.WriteBoolAsync(m_RunConfig.心跳点位地址, true);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 await Task.Delay(1000);
                 res = await m_PLC.WriteBoolAsync(m_RunConfig.心跳点位地址, false);
                 if (res.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
                 return Result.Ok();
             }
             catch(Exception ex)
             {
-                m_UIManeger.AppendErrorLog("设置心跳信号异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("设置心跳信号异常！" + ex.Message);
                 return Result.Fail("设置心跳信号方法异常!");
             }
             
