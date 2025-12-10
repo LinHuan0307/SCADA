@@ -3,7 +3,6 @@ using FluentResults;
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Entity.WelderData;
 using GaoYaXianShu.Helper;
-using GaoYaXianShu.UIService;
 using Newtonsoft.Json;
 using Sunny.UI;
 using System;
@@ -19,22 +18,22 @@ namespace GaoYaXianShu.Sevice
     {
         private TCPClientHelper m_TCPClient;
         private RunConfig m_RunConfig;
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
 
         public TCPClientService(
                 TCPClientHelper tCPClient,
                 RunConfigHelper runConfigHelper,
-                UIManeger uIManeger)
+                RuntimeContextService runtimeContextService)
         {
             m_TCPClient = tCPClient;
             m_RunConfig = runConfigHelper.RunConfig;
-            m_UIManeger = uIManeger;
+            m_RuntimeContextService = runtimeContextService;
 
 
             var 连接焊接机反馈 = m_TCPClient.Connect(m_RunConfig.焊接机IP地址, m_RunConfig.焊接机端口号);
             if (连接焊接机反馈.IsFailed)
             {
-                m_UIManeger.AppendinfoLog("连接焊接机异常！" + string.Join("|", 连接焊接机反馈.Errors));
+                m_RuntimeContextService.添加错误日志("连接焊接机异常！" + string.Join("|", 连接焊接机反馈.Errors));
                 return;
             }
         }
@@ -52,16 +51,16 @@ namespace GaoYaXianShu.Sevice
                 var 连接焊接机反馈 = m_TCPClient.Connect(m_RunConfig.焊接机IP地址, m_RunConfig.焊接机端口号);
                 if (连接焊接机反馈.IsFailed)
                 {
-                    m_UIManeger.AppendinfoLog(header + string.Join("|", 连接焊接机反馈.Errors));
+                    m_RuntimeContextService.添加错误日志(header + string.Join("|", 连接焊接机反馈.Errors));
                     return Result.Fail(header);
                 }
 
-                m_UIManeger.AppendDataLog("重连焊接机成功！");
+                m_RuntimeContextService.添加数据记录日志("重连焊接机成功！");
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog(header + ex.Message);
+                m_RuntimeContextService.添加错误日志(header + ex.Message);
                 return Result.Fail(header);
             }
         }
@@ -74,7 +73,7 @@ namespace GaoYaXianShu.Sevice
                 var 发送命令反馈成功 = await m_TCPClient.SendAsync("GetResult");
                 if (发送命令反馈成功.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog(header + string.Join("|", 发送命令反馈成功.Errors));
+                    m_RuntimeContextService.添加错误日志(header + string.Join("|", 发送命令反馈成功.Errors));
                     return Result.Fail(header);
                 }
 
@@ -82,7 +81,7 @@ namespace GaoYaXianShu.Sevice
             }
             catch(Exception ex)
             {
-                m_UIManeger.AppendErrorLog(header + ex.Message);
+                m_RuntimeContextService.添加错误日志(header + ex.Message);
                 return Result.Fail(header);
             }
         }
@@ -95,7 +94,7 @@ namespace GaoYaXianShu.Sevice
                 var 发送命令反馈成功 = await m_TCPClient.ReceiveAsync();
                 if (发送命令反馈成功.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog(header + string.Join("|", 发送命令反馈成功.Errors));
+                    m_RuntimeContextService.添加错误日志(header + string.Join("|", 发送命令反馈成功.Errors));
                     return Result.Fail(header);
                 }
 
@@ -114,7 +113,7 @@ namespace GaoYaXianShu.Sevice
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog(header + ex.Message);
+                m_RuntimeContextService.添加错误日志(header + ex.Message);
                 return Result.Fail(header);
             }
         }

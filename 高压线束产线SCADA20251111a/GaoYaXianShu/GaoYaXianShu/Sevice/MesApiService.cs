@@ -2,7 +2,7 @@
 using FluentResults;
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
-using GaoYaXianShu.UIService;
+
 using Newtonsoft.Json;
 using Sunny.UI;
 using System;
@@ -18,15 +18,15 @@ namespace GaoYaXianShu.Sevice
 {
     public class MesApiService
     {
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
         private RunConfig m_RunConfig;
         private WebApiClient m_WebApiClient;
         private IPAddress m_ipa;
         private Ping m_ping;
-        public MesApiService(RunConfigHelper runConfigHelper, UIManeger uIManeger)
+        public MesApiService(RunConfigHelper runConfigHelper, RuntimeContextService runtimeContextService)
         {
             m_RunConfig = runConfigHelper.RunConfig;
-            m_UIManeger = uIManeger;
+            m_RuntimeContextService = runtimeContextService;
             //编写对象列表导入报文头
             m_WebApiClient = new WebApiClient(m_RunConfig.MES基地址, m_RunConfig.MES报文头键值对列表);
             m_ipa = IPAddress.Parse(m_RunConfig.MES的Ip地址);
@@ -42,11 +42,11 @@ namespace GaoYaXianShu.Sevice
             PingReply pr = await m_ping.SendPingAsync(m_ipa, m_RunConfig.PING_MES的超时时间);
             if (pr.Status != IPStatus.Success)
             {
-                m_UIManeger.MESAPIStatus_DisConnection();
-                m_UIManeger.AppendErrorLog($"服务器主机[{m_RunConfig.MES的Ip地址}]超时");
+                m_RuntimeContextService.设置MES状态连接断开();
+                m_RuntimeContextService.添加错误日志($"服务器主机[{m_RunConfig.MES的Ip地址}]超时");
                 return Result.Fail($"服务器主机[{m_RunConfig.MES的Ip地址}]超时");
             }
-            m_UIManeger.MESAPIStatus_Connection();
+            m_RuntimeContextService.设置MES状态连接正常();
             return Result.Ok();
         }
 
@@ -59,16 +59,16 @@ namespace GaoYaXianShu.Sevice
                 var PingMes_Response = await Ping();
                 if (PingMes_Response.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog("Ping MES服务器超时！");
-                    m_UIManeger.AddAlarmInfo("MES服务器断联报警!");
+                    m_RuntimeContextService.添加错误日志("Ping MES服务器超时！");
+                    m_RuntimeContextService.添加MES断开连接报警();
                     return Result.Fail($"{PHeader}失败!");
                 }
-                m_UIManeger.DeleteAlarmInfo("MES服务器断联报警!");
+                m_RuntimeContextService.删除MES断开连接报警();
                 return Result.Ok();
             }
             catch(Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
         }
@@ -95,16 +95,16 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_WebApiClient.PostAsync<PassStationRequest, ProcessPassStationResponse>(m_RunConfig.请求进站URL地址, request);
                 if (res.IsFailed || !respose.Success)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
-                m_UIManeger.AppendDataLog($"{PHeader}成功!");
+                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
                 return Result.Ok() ;
 
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
             
@@ -132,16 +132,16 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_WebApiClient.PostAsync<PassStationRequest, ProcessPassStationResponse>(m_RunConfig.请求出站URL地址, passInfo);
                 if (res.IsFailed || !respose.Success)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
-                m_UIManeger.AppendDataLog($"{PHeader}成功!");
+                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
                 return Result.Ok();
 
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
 
@@ -167,16 +167,16 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_WebApiClient.PostAsync<MaterialBindRequest, ApiRespose>(m_RunConfig.请求物料绑定URL地址, request);
                 if (res.IsFailed || !res.Value.Success)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
-                m_UIManeger.AppendDataLog($"{PHeader}成功!");
+                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
                 return Result.Ok();
 
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
         }
@@ -223,15 +223,15 @@ namespace GaoYaXianShu.Sevice
                 var res = await m_WebApiClient.PostAsync<TestDataRequest, ApiRespose>(m_RunConfig.请求数据上传URL地址, testDataRequest);
                 if (res.IsFailed || !res.Value.Success)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
-                m_UIManeger.AppendDataLog($"{PHeader}成功!");
+                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
                 return Result.Ok();
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
 
@@ -251,15 +251,15 @@ namespace GaoYaXianShu.Sevice
                 //通信失败或者结果异常
                 if (res.IsFailed || !res.Value.Success)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
-                m_UIManeger.AppendDataLog($"{PHeader}成功!");
+                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
                 return Result.Ok(res.Value.Mesg);
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!" + ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
         }
@@ -280,15 +280,15 @@ namespace GaoYaXianShu.Sevice
                 //通信失败或者结果异常
                 if (res.IsFailed || !res.Value.Success)
                 {
-                    m_UIManeger.AppendErrorLog($"{PHeader}失败!" + string.Join("|", res.Errors));
+                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
                     return Result.Fail($"{PHeader}失败!");
                 }
-                m_UIManeger.AppendDataLog($"{PHeader}成功!");
+                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
                 return Result.Ok(res.Value.Data);
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog($"{PHeader}失败!"+ ex.Message);
+                m_RuntimeContextService.添加错误日志($"{PHeader}失败!"+ ex.Message);
                 return Result.Fail($"{PHeader}失败!");
             }
         }

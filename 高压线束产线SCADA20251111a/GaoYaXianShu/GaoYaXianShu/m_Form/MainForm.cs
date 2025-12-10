@@ -8,7 +8,7 @@ using GaoYaXianShu.Helper;
 using GaoYaXianShu.m_Form;
 using GaoYaXianShu.RunLogic;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
+
 using HslCommunication.Profinet.Siemens.S7PlusHelper;
 using MiniExcelLibs;
 using Sunny.UI;
@@ -33,16 +33,17 @@ namespace GaoYaXianShu
     public partial class MainForm : UIForm
     {
         private readonly IComponentContext m_componentContext;
-        private RunConfigHelper m_RunConfigHelper;
-        private PLCService m_PLCService;
-        private MesApiService m_MESApi;
-        private RuntimeContextService m_RuntimeContextService;
-        private RunConfigService m_RunConfigService;
-        private BackgroundWorker m_PLCReadWorker;
-        private BackgroundWorker m_PLCHeathBeatWorker;
-        private BackgroundWorker m_MESStatusWorker;
-        private LocalDbDAL m_localDbDAL;
-        private RunLogicManeger m_RunLogicManeger;
+        private readonly RunConfigHelper m_RunConfigHelper;
+        private readonly PLCService m_PLCService;
+        private readonly MesApiService m_MESApi;
+        private readonly RuntimeContextService m_RuntimeContextService;
+        private readonly RunConfigService m_RunConfigService;
+        private readonly BackgroundWorker m_PLCReadWorker;
+        private readonly BackgroundWorker m_PLCHeathBeatWorker;
+        private readonly BackgroundWorker m_MESStatusWorker;
+        private readonly BackgroundWorker m_UIRefreshWorker;
+        private readonly LocalDbDAL m_localDbDAL;
+        private readonly RunLogicManeger m_RunLogicManeger;
 
         private bool m_Exixt;
 
@@ -84,7 +85,13 @@ namespace GaoYaXianShu
             m_MESStatusWorker.DoWork += MESStatusDoworkHandle;
             m_MESStatusWorker.WorkerSupportsCancellation = true;
 
+            // 配置MES连接状态线程
+            m_UIRefreshWorker = new BackgroundWorker();
+            m_UIRefreshWorker.DoWork += UIRefreshDoworkHandle;
+            m_UIRefreshWorker.WorkerSupportsCancellation = true;
         }
+
+        
 
         private async void Form1_Load(object sender, EventArgs e)
         {
@@ -99,23 +106,24 @@ namespace GaoYaXianShu
             TimefleshTimer.Interval =  (int)((DateTime.Now.AddDays(1).Date - DateTime.Now).TotalMilliseconds);
             TimefleshTimer.Enabled = true;
 
-            //m_RuntimeContextService.Bind_Dgv(m_RunConfigHelper.RunConfig.批次码绑定列表);
+            Dgv_BatchCode.DataSource = m_RunConfigHelper.RunConfig.批次码绑定列表;
+            
 
             string err = string.Empty;
             //初始化数据库
             if (!m_localDbDAL.Init().IsSuccess)
             {
-                m_RuntimeContextService.AppendErrorLog("连接本地数据库异常" + err);
+                m_RuntimeContextService.添加错误日志("连接本地数据库异常" + err);
                 return;
             }
 
-            m_RuntimeContextService.设置PLC状态已连接();
+            m_RuntimeContextService.设置PLC状态连接正常();
 
             m_PLCReadWorker.RunWorkerAsync();
             m_PLCHeathBeatWorker.RunWorkerAsync();
             m_MESStatusWorker.RunWorkerAsync();
         }
-
+        #region 线程处理方法
         /// <summary>
         /// PLC读写线程处理函数
         /// </summary>
@@ -160,6 +168,7 @@ namespace GaoYaXianShu
 
             }
         }
+
         /// <summary>
         /// MES状态
         /// </summary>
@@ -172,18 +181,41 @@ namespace GaoYaXianShu
                 await m_MESApi.判断MES连接状态();
             }
         }
-        public  void Form1_FormClosing(object sender, FormClosingEventArgs e)
+
+        private async void UIRefreshDoworkHandle(object sender, DoWorkEventArgs e)
+        {
+            while (!m_Exixt)
+            {
+                await Task.Delay(1000);
+                this.Invoke(new Action(() =>
+                {
+                    switch (m_RuntimeContextService.获取进站流程执行结果().Value)
+                    {
+                        case ExecuteStatus.执行完成:
+                            break;
+                        case ExecuteStatus.执行异常:
+                            break;
+                        case ExecuteStatus.等待执行:
+                            break;
+                        case ExecuteStatus.执行中:
+                            break;
+                    } 
+                }));
+            }
+        }
+#endregion
+        public void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             m_Exixt = true;
             if (UIMessageBox.ShowAsk("确定要关闭主操作界面吗？"))
             {
-                m_RuntimeContextService.AppendinfoLog("用户确认关闭窗体，保存配置中...");
+                m_RuntimeContextService.添加信息日志("用户确认关闭窗体，保存配置中...");
                 m_RunConfigHelper.保存系统配置文件();
                 
             }
             else
             {
-                m_RuntimeContextService.AppendinfoLog("用户取消关闭，窗体继续运行");
+                m_RuntimeContextService.添加信息日志("用户取消关闭，窗体继续运行");
                 e.Cancel = true; // 取消关闭操作
             }
         }
@@ -446,7 +478,7 @@ namespace GaoYaXianShu
                         }
                 }
 
-                m_RuntimeContextService.AppendDataLog( "数据已导出");
+                m_RuntimeContextService.添加数据记录日志( "数据已导出");
                 UIMessageTip.ShowOk("已导出!", 1000);
             });
             
@@ -484,7 +516,7 @@ namespace GaoYaXianShu
             }
             catch (Exception ex)
             {
-                m_RuntimeContextService.AppendErrorLog("更新时间获取控件异常");
+                m_RuntimeContextService.添加错误日志("更新时间获取控件异常");
             }
             finally
             {
@@ -518,18 +550,18 @@ namespace GaoYaXianShu
                     {
                         return;
                     }
-                    m_RuntimeContextService.AppendDataLog("添加批次成功");
+                    m_RuntimeContextService.添加数据记录日志("添加批次成功");
                     UIMessageTip.ShowOk("添加批次成功");
                     
                 }
                 else if(result == DialogResult.Abort)
                 {
-                    m_RuntimeContextService.AppendErrorLog("输入异常，请重新输入");
+                    m_RuntimeContextService.添加错误日志("输入异常，请重新输入");
                     return;
                 }
                 else
                 {
-                    m_RuntimeContextService.AppendinfoLog("用户取消了操作");
+                    m_RuntimeContextService.添加信息日志("用户取消了操作");
                     return;
                 }
             }

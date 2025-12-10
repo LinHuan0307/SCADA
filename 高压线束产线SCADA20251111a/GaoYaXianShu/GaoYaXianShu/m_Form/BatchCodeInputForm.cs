@@ -1,7 +1,7 @@
 ﻿using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
+
 using Sunny.UI;
 using System;
 using System.Collections.Generic;
@@ -24,13 +24,16 @@ namespace GaoYaXianShu.m_Form
 
         private SerialPort m_ScanPort;
         private RunConfig m_RunConfig;
+        private RuntimeContextService m_RuntimeContextService;
+
         public BatchCodeInputForm(
+            RuntimeContextService runtimeContextService,
             RunConfigService    runConfigService)
         {
             InitializeComponent();
 
             m_RunConfig = runConfigService.m_RunConfig;
-
+            m_RuntimeContextService = runtimeContextService;
         }
 
         private void BatchCodeInputForm_Load(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace GaoYaXianShu.m_Form
             //设置下拉列表数据来源
             this.Cb_MatirialNameInput.DataSource = m_RunConfig.批次码名字列表;
             //设置串口连接状态指示灯开启
-            m_UIManeger.SetSerialPortStatus_Connection();
+            m_RuntimeContextService.设置PLC状态连接正常();
         }
 
         private void Scan_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -70,8 +73,8 @@ namespace GaoYaXianShu.m_Form
             catch(Exception ex)
             {
                 this.DialogResult = DialogResult.Abort;
-                UIMessageBox.ShowError("输入批次码异常！" + ex.Message); 
-                m_UIManeger.AppendErrorLog("输入批次码异常！" + ex.Message);
+                UIMessageBox.ShowError("输入批次码异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("输入批次码异常！" + ex.Message);
             }
         }
 
@@ -79,7 +82,7 @@ namespace GaoYaXianShu.m_Form
         {
             m_ScanPort.Close();
 
-            m_UIManeger.SetSerialPortStatus_DisConnection();
+            m_RuntimeContextService.设置扫码枪状态连接断开();
 
             //this.DialogResult = DialogResult.Cancel;
         }
@@ -94,11 +97,11 @@ namespace GaoYaXianShu.m_Form
             else
             {
                 m_ScanPort.Close();
-                m_UIManeger.SetSerialPortStatus_DisConnection();
+                m_RuntimeContextService.设置扫码枪状态连接断开();
                 this.DialogResult = DialogResult.OK;
             }
             m_ScanPort.Close();
-            m_UIManeger.SetSerialPortStatus_DisConnection();
+            m_RuntimeContextService.设置扫码枪状态连接断开();
 
             BatchCode = new 批次码列表项()
             {

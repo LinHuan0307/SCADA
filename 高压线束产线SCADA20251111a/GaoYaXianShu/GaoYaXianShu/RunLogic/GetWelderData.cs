@@ -2,7 +2,7 @@
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace GaoYaXianShu.RunLogic
     {
         private TCPClientService m_TCPClientService;
         private RunConfig m_RunConfig;
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
         private RuntimeContext m_RunTimeContext;
 
         public bool 允许执行标志位 { get ; set ; }
@@ -24,12 +24,12 @@ namespace GaoYaXianShu.RunLogic
         public GetWelderData(
                 TCPClientService tCPClientService,
                 RunConfigHelper runConfigHelper,
-                UIManeger uIManeger,
+                RuntimeContextService runtimeContextService,
                 RuntimeContext runtimeContext)
         {
             m_TCPClientService = tCPClientService;
             m_RunConfig = runConfigHelper.RunConfig;
-            m_UIManeger = uIManeger;
+            m_RuntimeContextService = runtimeContextService;
             m_RunTimeContext = runtimeContext;
 
         }
@@ -46,7 +46,7 @@ namespace GaoYaXianShu.RunLogic
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog("获取焊接机数据方法异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("获取焊接机数据方法异常！" + ex.Message);
                 
             }
             finally
@@ -67,7 +67,7 @@ namespace GaoYaXianShu.RunLogic
             var 获取焊接机状态 = m_TCPClientService.获取焊接机连接状态();
             if (获取焊接机状态.IsFailed)
             {
-                m_UIManeger.AppendErrorLog("获取焊接机数据异常");
+                m_RuntimeContextService.添加错误日志("获取焊接机数据异常");
                 return Result.Fail("false");
             }
 
@@ -77,7 +77,7 @@ namespace GaoYaXianShu.RunLogic
                 var 重连焊接机反馈 = m_TCPClientService.重连焊接机();
                 if (重连焊接机反馈.IsFailed)
                 {
-                    m_UIManeger.AppendErrorLog("重连焊接机失败");
+                    m_RuntimeContextService.添加错误日志("重连焊接机失败");
                     return Result.Fail("false");
                 }
             }
@@ -86,7 +86,7 @@ namespace GaoYaXianShu.RunLogic
 
             if (发送命令反馈.IsFailed)
             {
-                m_UIManeger.AppendErrorLog("给焊接机发送获取焊接数据命令异常");
+                m_RuntimeContextService.添加错误日志("给焊接机发送获取焊接数据命令异常");
                 return Result.Fail("false");
             }
 
@@ -94,7 +94,7 @@ namespace GaoYaXianShu.RunLogic
             var 获取焊接数据反馈 =await m_TCPClientService.获取焊接数据Async();
             if (获取焊接数据反馈.IsFailed)
             {
-                m_UIManeger.AppendErrorLog("获取焊接数据并解析异常");
+                m_RuntimeContextService.添加错误日志("获取焊接数据并解析异常");
                 return Result.Fail("false");
             }
 

@@ -2,7 +2,7 @@
 using FluentResults;
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
-using GaoYaXianShu.UIService;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,6 @@ namespace GaoYaXianShu.Sevice
     {
         private HslAsyncOmronUdpHelper m_PLC;
         private RunConfig m_RunConfig;
-        private UIManeger m_UIManeger;
         private RuntimeContextService m_RuntimeContextService;
 
         public PLCService(
@@ -65,12 +64,12 @@ namespace GaoYaXianShu.Sevice
         /// 获取流程字
         /// </summary>
         /// <returns></returns>
-        public async Task<Result<short>> Get流程字()
+        public async Task<Result<ushort>> Get流程字()
         {
             string PHeader = "[获取流程字]";
             try
             {
-                var res = await m_PLC.ReadInt16Async(m_RunConfig.流程字起始地址);
+                var res = await m_PLC.ReadUInt16Async(m_RunConfig.流程字起始地址);
                 if (res.IsFailed)
                 {
                     m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));

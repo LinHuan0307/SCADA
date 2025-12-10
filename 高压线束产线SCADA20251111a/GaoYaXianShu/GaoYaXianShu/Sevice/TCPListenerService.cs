@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
-using GaoYaXianShu.UIService;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +18,7 @@ namespace GaoYaXianShu.Sevice
     public class TCPListenerService
     {
         private RunConfig m_RunConfig;
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
 
         private TcpListener m_listener;
         private bool m_isRunning;
@@ -27,10 +27,10 @@ namespace GaoYaXianShu.Sevice
 
         public TCPListenerService(
                 RunConfigHelper runConfigHelper,
-                UIManeger uIManeger)
+                RuntimeContextService runtimeContextService)
         {
             m_RunConfig = runConfigHelper.RunConfig;
-            m_UIManeger = uIManeger;
+            m_RuntimeContextService = runtimeContextService;
 
             Start(m_RunConfig.激光雕刻机服务器IP地址, m_RunConfig.激光雕刻机服务器端口号);
         }
@@ -49,7 +49,7 @@ namespace GaoYaXianShu.Sevice
             }
             catch(Exception ex)
             {
-                m_UIManeger.AppendErrorLog("启动激光雕刻机TCP服务器失败");
+                m_RuntimeContextService.添加错误日志("启动激光雕刻机TCP服务器失败");
                 return Result.Fail("启动激光雕刻机TCP服务器失败");
             }
         }
@@ -65,7 +65,7 @@ namespace GaoYaXianShu.Sevice
                 }
                 catch (SocketException ex)
                 {
-                    m_UIManeger.AppendErrorLog($"添加客户端异常: {ex.Message}");
+                    m_RuntimeContextService.添加错误日志($"添加客户端异常: {ex.Message}");
                 }
             }
         }
@@ -92,11 +92,11 @@ namespace GaoYaXianShu.Sevice
                 }
                 catch (Exception ex)
                 {
-                    m_UIManeger.AppendErrorLog($"处理客户端消息异常: {ex.Message}");
+                    m_RuntimeContextService.添加错误日志($"处理客户端消息异常: {ex.Message}");
                 }
                 finally
                 {
-                    m_UIManeger.AppendErrorLog($"客户端已断开: {clientEndPoint}");
+                    m_RuntimeContextService.添加错误日志($"客户端已断开: {clientEndPoint}");
                 }
             }
         }

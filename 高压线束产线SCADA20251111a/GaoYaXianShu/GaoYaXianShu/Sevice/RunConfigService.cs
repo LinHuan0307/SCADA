@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
-using GaoYaXianShu.UIService;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +14,14 @@ namespace GaoYaXianShu.Sevice
     {
         public RunConfig m_RunConfig { get; set; }
 
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
 
         public RunConfigService(
             RunConfigHelper runConfigHelper,
-            UIManeger uIManeger)
+            RuntimeContextService runtimeContextService)
         {
             m_RunConfig = runConfigHelper.RunConfig;
-            m_UIManeger = uIManeger;
+            m_RuntimeContextService = runtimeContextService;
         }
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace GaoYaXianShu.Sevice
                 if (最新批次.已使用 >= 0 && 最新批次.已使用 < 最新批次.物料总数)
                 {
                     最新批次.已使用++;
-                    m_UIManeger.DeleteAlarmInfo("物料缺失报警!");
+                    m_RuntimeContextService.删除物料缺失报警();
                 }
                 else
                 {
-                    m_UIManeger.UnValidMetirialNumInputLog();
+                    m_RuntimeContextService.添加物料缺失报警();
                     return Result.Fail($"{name}出现意料外的使用数量！请检查已使用物料数量！");
                 }
 
@@ -50,7 +50,7 @@ namespace GaoYaXianShu.Sevice
                     //删除物料用完的批次码
                     m_RunConfig.批次码绑定列表.Remove(最新批次);
                 }
-                m_UIManeger.ReFresh_Dgv();
+                
 
                 return Result.Ok();
             }
@@ -78,8 +78,7 @@ namespace GaoYaXianShu.Sevice
 
                 };
                 m_RunConfig.批次码绑定列表.Add(批次码列表项);
-
-                m_UIManeger.ReFresh_Dgv();
+ 
                 return Result.Ok();
             }
             catch (Exception ex)

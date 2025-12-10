@@ -1,6 +1,6 @@
 ﻿using GaoYaXianShu.Entity;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +13,16 @@ namespace GaoYaXianShu.RunLogic
     {
         private PLCService m_pLCService;
         private RuntimeContextService m_RuntimeContextService;
-        private UIManeger m_UIManeger;
 
         public bool 允许执行标志位 { get; set; } = true;
         public ushort 目标流程字 { get; set; } = 0;
 
         public ResetAutoFlow(
             PLCService pLCService,
-            RuntimeContextService runtimeContextService,
-            UIManeger uiManeger)
+            RuntimeContextService runtimeContextService)
         {
             m_pLCService = pLCService;
             m_RuntimeContextService = runtimeContextService;
-            m_UIManeger = uiManeger;
 
         }
         public async Task RunLogicAsync()
@@ -40,7 +37,7 @@ namespace GaoYaXianShu.RunLogic
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog("数据上传方法异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("数据上传方法异常！" + ex.Message);
             }
         }
     }

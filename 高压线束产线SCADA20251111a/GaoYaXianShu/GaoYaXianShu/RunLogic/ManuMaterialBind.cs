@@ -4,7 +4,7 @@ using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
 using GaoYaXianShu.m_Form;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
+
 using Sunny.UI;
 using System;
 using System.Collections.Generic;
@@ -22,20 +22,20 @@ namespace GaoYaXianShu.RunLogic
 
         private readonly IComponentContext m_componentContext;
         private PLCService m_pLCService;
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
         private MesApiService m_MESApi;
         private RunConfig m_RunConfig;
 
         public ManuMaterialBind(
             IComponentContext componentContext,
             PLCService pLCService,
-            UIManeger UIManeger,
+            RuntimeContextService runtimeContextService,
             MesApiService mesApiService,
             RunConfigHelper runConfigHelper)
         {
             m_componentContext = componentContext;
             m_pLCService = pLCService;
-            m_UIManeger = UIManeger;
+            m_RuntimeContextService = runtimeContextService;
             m_MESApi = mesApiService;
             m_RunConfig = runConfigHelper.RunConfig;
 
@@ -51,14 +51,14 @@ namespace GaoYaXianShu.RunLogic
                 }
                 else
                 {
-                    m_UIManeger.AppendDataLog("手动绑定物料成功");
+                    m_RuntimeContextService.添加数据记录日志("手动绑定物料成功");
                     //成功执行一次不在多次执行
                     允许执行标志位 = false;
                 }
             }
             catch (Exception ex)
             {
-                m_UIManeger.AppendErrorLog("手动绑定物料异常" + ex.Message);
+                m_RuntimeContextService.添加错误日志("手动绑定物料异常" + ex.Message);
             }
         }
 
@@ -73,24 +73,24 @@ namespace GaoYaXianShu.RunLogic
                 if (result == DialogResult.OK)
                 {
 
-                    m_UIManeger.AppendDataLog("线束添加批次成功");
+                    m_RuntimeContextService.添加数据记录日志("线束添加批次成功");
                     UIMessageTip.ShowOk("添加批次成功");
 
                 }
                 else if (result == DialogResult.Abort)
                 {
-                    m_UIManeger.AppendErrorLog("输入异常，请重新输入");
+                    m_RuntimeContextService.添加错误日志("输入异常，请重新输入");
                     return Result.Fail("false");
                 }
                 else
                 {
-                    m_UIManeger.AppendinfoLog("用户取消了操作");
+                    m_RuntimeContextService.添加信息日志("用户取消了操作");
                     return Result.Fail("false");
                 }
             }
                 
 
-                m_UIManeger.Set_TestStart_OK();
+                m_RuntimeContextService.设置物料绑定流程执行OK();
 
                 return Result.Ok();
             

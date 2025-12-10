@@ -22,9 +22,15 @@ namespace GaoYaXianShu.Entity
 
         public AutoFlowStatus 流程步状态 { get; set; } = new AutoFlowStatus();
 
+        public ExecuteStatus 进站流程执行状态 { get; set; }
+        public ExecuteStatus 物料绑定流程执行状态 { get; set; }
+        public ExecuteStatus 数据上传流程执行状态 { get; set; }
+        public ExecuteStatus 出站流程执行状态 { get; set; }
+
+
         public ushort 流程步 { get; set; } = 0;
 
-        public ushort 托盘号 { get; set; } = 0;
+        public string 托盘号 { get; set; } = string.Empty;
 
         public DateTime 测试开始时间 { get; set; } = DateTime.Now;
 
@@ -48,9 +54,17 @@ namespace GaoYaXianShu.Entity
 
     public enum AutoFlowStatus
     {
-        ComeInStation,
-        MaterialBinding,
-        DataUploading,
-        PassStation,
+        进站,
+        物料绑定,
+        数据上传,
+        出站,
+    }
+
+    public enum ExecuteStatus
+    {
+        等待执行,
+        执行中,
+        执行完成,
+        执行异常,
     }
 }

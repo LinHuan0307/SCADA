@@ -235,7 +235,6 @@
     <Compile Include="Sevice\RuntimeContextService.cs" />
     <Compile Include="Sevice\TCPClientService.cs" />
     <Compile Include="Sevice\TCPListenerService.cs" />
-    <Compile Include="UIService\UIManeger.cs" />
     <EmbeddedResource Include="m_Form\BatchCodeInputForm.resx">
       <DependentUpon>BatchCodeInputForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,7 +295,9 @@
     <Content Include="Resource\BYD十四事业部装备中心横板.png" />
     <Content Include="Resource\monitor.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UIService\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

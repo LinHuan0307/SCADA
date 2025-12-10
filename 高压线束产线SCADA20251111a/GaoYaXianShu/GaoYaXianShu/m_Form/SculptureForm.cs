@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using FluentResults;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
+
 using HslCommunication.Enthernet;
 using Sunny.UI;
 using System;
@@ -22,18 +22,18 @@ namespace GaoYaXianShu.m_Form
         private readonly IComponentContext m_componentContext;
         private readonly object m_ClientsLock = new object();
         private TCPListenerService m_TcpListenerService;
-        private UIManeger m_UIManeger;
+        private RuntimeContextService m_RuntimeContextService;
         private MesApiService m_MESApi;
 
         public SculptureForm(
             TCPListenerService tCPListenerService,
-            UIManeger uIManeger,
+            RuntimeContextService runtimeContextService,
 
             IComponentContext componentContext,
             MesApiService mesApiService)
         {
             m_TcpListenerService = tCPListenerService;
-            m_UIManeger = uIManeger;
+            m_RuntimeContextService = runtimeContextService;
             m_MESApi = mesApiService;
             m_componentContext = componentContext;
 
@@ -58,7 +58,7 @@ namespace GaoYaXianShu.m_Form
                 //    }
                 //    else if (result == DialogResult.Abort)
                 //    {
-                //        m_UIManeger.AppendErrorLog("输入异常，请重新输入");
+                //        m_RuntimeContextService.添加错误日志("输入异常，请重新输入");
                 //        return;
                 //    }
                 //    else
@@ -72,18 +72,18 @@ namespace GaoYaXianShu.m_Form
                 var 申请SN反馈 = await m_MESApi.GetSN();
                 if (!申请SN反馈.IsSuccess)
                 {
-                    m_UIManeger.AppendErrorLog("获取线束Sn异常");
+                    m_RuntimeContextService.添加错误日志("获取线束Sn异常");
                     return;
                 }
                 //保存到线束
-                m_UIManeger.Set_Tb_XianShuSN(申请SN反馈.Value);
+                m_RuntimeContextService.设置线束SN(申请SN反馈.Value);
                 //发送给雕刻机
                 输入字符串 = 申请SN反馈.Value;
                 byte[] buffer = Encoding.UTF8.GetBytes(输入字符串);
 
                 if (message.Contains("TCP:Give me QrSN"))
                 {
-                    m_UIManeger.AppendinfoLog("接收到请求二维码SN数据包：" + message);
+                    m_RuntimeContextService.添加信息日志("接收到请求二维码SN数据包：" + message);
                     lock (m_ClientsLock)
                     {
                         stream.Write(buffer, 0, buffer.Length);
@@ -92,18 +92,18 @@ namespace GaoYaXianShu.m_Form
                 }
                 if (message.Contains("TCP:Give me TextSN"))
                 {
-                    m_UIManeger.AppendinfoLog("接收到请求文本SN数据包：" + message);
+                    m_RuntimeContextService.添加信息日志("接收到请求文本SN数据包：" + message);
                     lock (m_ClientsLock)
                     {
                         stream.Write(buffer, 0, buffer.Length);
                     }
                 }
 
-                m_UIManeger.AppendDataLog("反馈成功");
+                m_RuntimeContextService.添加数据记录日志("反馈成功");
             }
             catch(Exception ex)
             {
-                m_UIManeger.AppendErrorLog("处理客户端消息异常"+ ex.Message);
+                m_RuntimeContextService.添加错误日志("处理客户端消息异常"+ ex.Message);
             }
         }
     }

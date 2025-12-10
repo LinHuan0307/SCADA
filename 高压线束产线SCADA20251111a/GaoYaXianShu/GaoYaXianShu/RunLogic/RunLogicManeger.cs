@@ -3,7 +3,6 @@ using FluentResults;
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,6 @@ namespace GaoYaXianShu.RunLogic
     {
         private PLCService m_PLCService;
         private RunConfig m_RunConfig;
-        private UIManeger m_UIManeger;
         private RuntimeContextService m_RuntimeContextService;
         private IComponentContext m_componentContext;
 
@@ -24,14 +22,12 @@ namespace GaoYaXianShu.RunLogic
             IComponentContext componentContext,
             RunConfigHelper runConfigHelper,
             RuntimeContextService runtimeContextService,
-            UIManeger uIManeger,
             PLCService pLCService)
         {
             //注入依赖
             m_componentContext = componentContext;
             m_PLCService = pLCService;
             m_RunConfig = runConfigHelper.RunConfig;
-            m_UIManeger = uIManeger;
             m_RuntimeContextService = runtimeContextService;
             根据配置文件添加运行流程();
         }
@@ -48,7 +44,7 @@ namespace GaoYaXianShu.RunLogic
             {
                 return;
             }
-            m_UIManeger.Set_Tb_AutoFlow(获取流程字反馈.Value.ToString());
+            m_RuntimeContextService.设置流程号(获取流程字反馈.Value);
             //流程字满足允许执行。允许执行标志位根据具体的流程自行决定是否禁止执行。
             //需要在同一个流程号多次执行的流程，例如采集曲线数据，可以在流程内继续允许执行
             //在一个流程号周期内只需要执行一次的流程，例如进出站，可以在流程内禁止允许执行。

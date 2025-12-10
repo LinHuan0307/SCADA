@@ -5,7 +5,7 @@ using GaoYaXianShu.Helper;
 using GaoYaXianShu.m_Form;
 using GaoYaXianShu.RunLogic;
 using GaoYaXianShu.Sevice;
-using GaoYaXianShu.UIService;
+
 using NLog;
 using System;
 using System.IO.Ports;
