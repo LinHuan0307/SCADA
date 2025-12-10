@@ -8,7 +8,7 @@ using GaoYaXianShu.Helper;
 using GaoYaXianShu.m_Form;
 using GaoYaXianShu.RunLogic;
 using GaoYaXianShu.Sevice;
-
+using GaoYaXianShu.UserControls;
 using HslCommunication.Profinet.Siemens.S7PlusHelper;
 using MiniExcelLibs;
 using Sunny.UI;
@@ -117,12 +117,16 @@ namespace GaoYaXianShu
                 m_RuntimeContextService.添加错误日志("连接本地数据库异常" + err);
                 return;
             }
+            var sw = (SwitchButton)m_componentContext.Resolve<SwitchButton>();
+            sw.名字 = "ssss";
+            sw.起始地址 = "DW1.1";
+            FlowPanel_JOG.Add(sw);
 
             m_RuntimeContextService.设置PLC状态连接正常();
 
-            m_PLCReadWorker.RunWorkerAsync();
-            m_PLCHeathBeatWorker.RunWorkerAsync();
-            m_MESStatusWorker.RunWorkerAsync();
+            //m_PLCReadWorker.RunWorkerAsync();
+            //m_PLCHeathBeatWorker.RunWorkerAsync();
+            //m_MESStatusWorker.RunWorkerAsync();
         }
 
         public void Form1_FormClosing(object sender, FormClosingEventArgs e)

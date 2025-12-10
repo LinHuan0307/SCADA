@@ -229,6 +229,18 @@
     <Compile Include="Sevice\RuntimeContextService.cs" />
     <Compile Include="Sevice\TCPClientService.cs" />
     <Compile Include="Sevice\TCPListenerService.cs" />
+    <Compile Include="UserControls\JogButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\JogButton.Designer.cs">
+      <DependentUpon>JogButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SwitchButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SwitchButton.Designer.cs">
+      <DependentUpon>SwitchButton.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="m_Form\BatchCodeInputForm.resx">
       <DependentUpon>BatchCodeInputForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +272,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\JogButton.resx">
+      <DependentUpon>JogButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SwitchButton.resx">
+      <DependentUpon>SwitchButton.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Config\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

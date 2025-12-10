@@ -5,7 +5,7 @@ using GaoYaXianShu.Helper;
 using GaoYaXianShu.m_Form;
 using GaoYaXianShu.RunLogic;
 using GaoYaXianShu.Sevice;
-
+using GaoYaXianShu.UserControls;
 using NLog;
 using System;
 using System.IO.Ports;
@@ -42,6 +42,10 @@ namespace GaoYaXianShu
                 return LogManager.GetLogger(type.FullName);
             }).As<ILogger>();
 
+            //注册切换开关用户控件
+            Build.RegisterType<SwitchButton>().InstancePerLifetimeScope();
+            //注册点动按钮用户控件
+            Build.RegisterType<JogButton>().InstancePerLifetimeScope();
             //注册UI控件操作服务
             Build.RegisterType<RuntimeContext>().InstancePerLifetimeScope();
             //注册配置服务
