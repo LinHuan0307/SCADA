@@ -71,4 +71,30 @@ namespace BydDCS.Entity
         public string TestItemValue { get; set; }
         public string TestItemResult {  get; set; }
     }
+    public class MES请求报文头键值对实体类
+    {
+        public string 报文键 { get; set; }
+        public string 报文值 { get; set; }
+
+        public override string ToString()
+        {
+            return $"报文键:{报文键}报文值:{报文值}";
+        }
+    }
+    /// <summary>
+    /// 从MES获取的每个工位应绑定的物料
+    /// </summary>
+    public class materialCodeBindEntity
+    {
+        public string 物料名 { get; set; }
+        public string 物料码 { get; set; }
+
+        public int 绑定总数 { get; set; }
+
+        public int 已绑定数量 { get; set; }
+        public bool 绑定完成 { get; set; }
+        public string 机型 { get; set; }
+
+
+    }
 }

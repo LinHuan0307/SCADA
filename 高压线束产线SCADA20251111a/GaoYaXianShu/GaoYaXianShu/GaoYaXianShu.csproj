@@ -159,11 +159,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Emun\AutoflowLightStatusEnum.cs" />
-    <Compile Include="Emun\DeviceStatusEnum.cs" />
-    <Compile Include="Entity\materialCodeBindEntity.cs" />
-    <Compile Include="Entity\MESRequesePHeaderEntity.cs" />
-    <Compile Include="Entity\RunLogicConfig.cs" />
     <Compile Include="Entity\RuntimeContext.cs" />
     <Compile Include="Entity\WelderData\WelderDataEntity.cs" />
     <Compile Include="Helper\HslAsyncOmronUdpHelper.cs" />
@@ -198,7 +193,6 @@
     <Compile Include="DB\ORMContext.cs" />
     <Compile Include="Entity\DBEntity\AlarmInfo.cs" />
     <Compile Include="Entity\MESEntity\BasicRespose.cs" />
-    <Compile Include="Entity\BatchCodeEntity.cs" />
     <Compile Include="Entity\DBEntity\MaterialInfo.cs" />
     <Compile Include="Entity\MESEntity\MesRequest.cs" />
     <Compile Include="Entity\DBEntity\ProductInfo.cs" />
@@ -295,9 +289,7 @@
     <Content Include="Resource\BYD十四事业部装备中心横板.png" />
     <Content Include="Resource\monitor.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UIService\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

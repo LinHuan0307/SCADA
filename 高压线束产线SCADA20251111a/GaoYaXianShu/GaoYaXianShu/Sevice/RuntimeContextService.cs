@@ -72,6 +72,11 @@ namespace GaoYaXianShu.Sevice
             return Result.Ok();
         }
 
+        public Result<Queue<string>> 获取日志队列()
+        {
+            return Result.Ok(m_RuntimeContext.Log日志队列);
+        }
+
         public Result 设置PLC状态连接正常()
         {
             m_RuntimeContext.PLC连接状态 = true;
@@ -85,6 +90,11 @@ namespace GaoYaXianShu.Sevice
             return Result.Ok();
         }
 
+        public Result<bool> 获取PLC状态连接状态()
+        {
+            return Result.Ok(m_RuntimeContext.PLC连接状态);
+        }
+
         public Result 设置MES状态连接正常()
         {
             m_RuntimeContext.MES连接状态 = true;
@@ -95,6 +105,11 @@ namespace GaoYaXianShu.Sevice
         {
             m_RuntimeContext.MES连接状态 = false;
             return Result.Ok();
+        }
+
+        public Result<bool> 获取MES状态连接状态()
+        {
+            return Result.Ok(m_RuntimeContext.MES连接状态);
         }
         public Result 设置扫码枪状态连接正常()
         {
@@ -107,6 +122,11 @@ namespace GaoYaXianShu.Sevice
             m_RuntimeContext.扫码枪连接状态 = false;
             return Result.Ok();
         }
+
+        public Result<bool> 获取扫码枪连接状态()
+        {
+            return Result.Ok(m_RuntimeContext.扫码枪连接状态);
+        }
         public Result 设置焊接机状态连接正常()
         {
             m_RuntimeContext.焊接机连接状态 = true;
@@ -117,6 +137,11 @@ namespace GaoYaXianShu.Sevice
         {
             m_RuntimeContext.焊接机连接状态 = false;
             return Result.Ok();
+        }
+
+        public Result<bool> 获取焊接机连接状态()
+        {
+            return Result.Ok(m_RuntimeContext.焊接机连接状态);
         }
 
         public Result 添加PLC断开连接报警()
@@ -209,46 +234,63 @@ namespace GaoYaXianShu.Sevice
             m_RuntimeContext.进站流程执行状态 = ExecuteStatus.执行完成;
             return Result.Ok();
         }
+        public Result<ExecuteStatus> 获取进站流程执行结果()
+        {
+
+            return Result.Ok(m_RuntimeContext.进站流程执行状态);
+        }
+
         public Result 设置物料绑定流程执行NG()
         {
             m_RuntimeContext.物料绑定流程执行状态 = ExecuteStatus.执行异常;
             return Result.Ok();
         }
 
-        public Result<ExecuteStatus> 获取进站流程执行结果()
-        {
-            
-            return Result.Ok(m_RuntimeContext.进站流程执行状态);
-        }
+        
 
         public Result 设置物料绑定流程执行OK()
         {
             m_RuntimeContext.物料绑定流程执行状态 = ExecuteStatus.执行完成;
             return Result.Ok();
         }
+
+        public Result<ExecuteStatus> 获取物料绑定流程执行结果()
+        {
+
+            return Result.Ok(m_RuntimeContext.物料绑定流程执行状态);
+        }
         public Result 设置数据上传流程执行NG()
         {
             m_RuntimeContext.数据上传流程执行状态 = ExecuteStatus.执行异常;
             return Result.Ok();
         }
-
+        
         public Result 设置数据上传流程执行OK()
         {
             m_RuntimeContext.数据上传流程执行状态 = ExecuteStatus.执行完成;
             return Result.Ok();
+        }
+        public Result<ExecuteStatus> 获取数据上传流程执行结果()
+        {
+
+            return Result.Ok(m_RuntimeContext.数据上传流程执行状态);
         }
         public Result 设置出站流程执行NG()
         {
             m_RuntimeContext.出站流程执行状态 = ExecuteStatus.执行异常;
             return Result.Ok();
         }
-
+        
         public Result 设置出站流程执行OK()
         {
             m_RuntimeContext.出站流程执行状态 = ExecuteStatus.执行完成;
             return Result.Ok();
         }
+        public Result<ExecuteStatus> 获取出站流程执行结果()
+        {
 
+            return Result.Ok(m_RuntimeContext.出站流程执行状态);
+        }
         public Result 设置测试开始时间()
         {
             m_RuntimeContext.测试开始时间 = DateTime.Now;
@@ -260,7 +302,15 @@ namespace GaoYaXianShu.Sevice
             m_RuntimeContext.测试结束时间 = DateTime.Now;
             return Result.Ok();
         }
+        public Result<DateTime> 获取测试开始时间()
+        {
+            return Result.Ok(m_RuntimeContext.测试开始时间);
+        }
 
-        
+        public Result<DateTime> 获取测试结束时间()
+        {
+            return Result.Ok(m_RuntimeContext.测试结束时间);
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using BydDCS.Entity;
 using FluentResults;
 using GaoYaXianShu.Entity;
 using Newtonsoft.Json;

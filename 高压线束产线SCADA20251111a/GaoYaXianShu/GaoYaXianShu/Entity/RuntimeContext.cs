@@ -1,5 +1,4 @@
-﻿using GaoYaXianShu.Emun;
-using GaoYaXianShu.Entity.WelderData;
+﻿using GaoYaXianShu.Entity.WelderData;
 using GaoYaXianShu.RunLogic;
 using System;
 using System.Collections.Generic;
@@ -62,7 +61,7 @@ namespace GaoYaXianShu.Entity
 
     public enum ExecuteStatus
     {
-        等待执行,
+        
         执行中,
         执行完成,
         执行异常,

@@ -91,9 +91,9 @@ namespace GaoYaXianShu
             m_UIRefreshWorker.WorkerSupportsCancellation = true;
         }
 
-        
+        #region 窗体事件
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             //设置事件选择器时间
             DpPassStationStart.Value = DateTime.Now.AddDays(-1);
@@ -107,7 +107,8 @@ namespace GaoYaXianShu
             TimefleshTimer.Enabled = true;
 
             Dgv_BatchCode.DataSource = m_RunConfigHelper.RunConfig.批次码绑定列表;
-            
+            Dgv_BatchCode.AutoGenerateColumns = true;
+            Dgv_BatchCode.Refresh();
 
             string err = string.Empty;
             //初始化数据库
@@ -123,6 +124,23 @@ namespace GaoYaXianShu
             m_PLCHeathBeatWorker.RunWorkerAsync();
             m_MESStatusWorker.RunWorkerAsync();
         }
+
+        public void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_Exixt = true;
+            if (UIMessageBox.ShowAsk("确定要关闭主操作界面吗？"))
+            {
+                m_RuntimeContextService.添加信息日志("用户确认关闭窗体，保存配置中...");
+                m_RunConfigHelper.保存系统配置文件();
+
+            }
+            else
+            {
+                m_RuntimeContextService.添加信息日志("用户取消关闭，窗体继续运行");
+                e.Cancel = true; // 取消关闭操作
+            }
+        }
+        #endregion
         #region 线程处理方法
         /// <summary>
         /// PLC读写线程处理函数
@@ -186,45 +204,102 @@ namespace GaoYaXianShu
         {
             while (!m_Exixt)
             {
-                await Task.Delay(1000);
+                await Task.Delay(100);
                 this.Invoke(new Action(() =>
                 {
                     switch (m_RuntimeContextService.获取进站流程执行结果().Value)
                     {
                         case ExecuteStatus.执行完成:
+                            LightInStation.State = UILightState.On;
+                            LightInStation.OnColor = Color.Lime;
                             break;
                         case ExecuteStatus.执行异常:
-                            break;
-                        case ExecuteStatus.等待执行:
+                            LightInStation.State = UILightState.On;
+                            LightInStation.OnColor = Color.Red;
                             break;
                         case ExecuteStatus.执行中:
+                            LightInStation.State = UILightState.Blink;
+                            LightInStation.OnColor = Color.Yellow;
                             break;
-                    } 
+                    }
+
+                    switch (m_RuntimeContextService.获取物料绑定流程执行结果().Value)
+                    {
+                        case ExecuteStatus.执行完成:
+                            LightMaterialBind.State = UILightState.On;
+                            LightMaterialBind.OnColor = Color.Lime;
+                            break;
+                        case ExecuteStatus.执行异常:
+                            LightMaterialBind.State = UILightState.On;
+                            LightMaterialBind.OnColor = Color.Red;
+                            break;
+                        case ExecuteStatus.执行中:
+                            LightMaterialBind.State = UILightState.Blink;
+                            LightMaterialBind.OnColor = Color.Yellow;
+                            break;
+                    }
+                    switch (m_RuntimeContextService.获取数据上传流程执行结果().Value)
+                    {
+                        case ExecuteStatus.执行完成:
+                            LightDataUpload.State = UILightState.On;
+                            LightDataUpload.OnColor = Color.Lime;
+                            break;
+                        case ExecuteStatus.执行异常:
+                            LightDataUpload.State = UILightState.On;
+                            LightDataUpload.OnColor = Color.Red;
+                            break;
+                        case ExecuteStatus.执行中:
+                            LightDataUpload.State = UILightState.Blink;
+                            LightDataUpload.OnColor = Color.Yellow;
+                            break;
+                    }
+                    switch (m_RuntimeContextService.获取出站流程执行结果().Value)
+                    {
+                        case ExecuteStatus.执行完成:
+                            LightOutStation.State = UILightState.On;
+                            LightOutStation.OnColor = Color.Lime;
+                            break;
+                        case ExecuteStatus.执行异常:
+                            LightOutStation.State = UILightState.On;
+                            LightOutStation.OnColor = Color.Red;
+                            break;
+                        case ExecuteStatus.执行中:
+                            LightOutStation.State = UILightState.Blink;
+                            LightOutStation.OnColor = Color.Yellow;
+                            break;
+                    }
+
+                    Tb_AutoFlow.Text = m_RuntimeContextService.获取流程号().Value.ToString();
+                    Tb_TrayCode.Text = m_RuntimeContextService.获取托盘号().Value.ToString();
+                    
+                    Tb_StartTestTime.Text = m_RuntimeContextService.获取测试开始时间().Value.ToString("yyyy-MM-dd HH:mm:ss");
+                    Tb_FinishTestTime.Text = m_RuntimeContextService.获取测试结束时间().Value.ToString("yyyy-MM-dd HH:mm:ss");
+                    Tb_XianShuSN.Text = m_RuntimeContextService.获取线束SN().Value;
+
+                    Dgv_BatchCode.Refresh();
+
+                    Light_PLCStatus.State           = m_RuntimeContextService.获取PLC状态连接状态().Value ? UILightState.On : UILightState.Off;
+                    Light_SerialPortStatus.State    = m_RuntimeContextService.获取扫码枪连接状态().Value ? UILightState.On : UILightState.Off;
+                    Light_MesStatus.State           = m_RuntimeContextService.获取MES状态连接状态().Value ? UILightState.On : UILightState.Off;
+                    Light_HanJieJi.State            = m_RuntimeContextService.获取焊接机连接状态().Value ? UILightState.On : UILightState.Off;
+
+                    var 日志队列 = m_RuntimeContextService.获取日志队列().Value;
+                    while (日志队列.Count() > 0)
+                    {
+                        Rtb_Log.AppendText(日志队列.Dequeue());
+                    }
                 }));
             }
         }
-#endregion
-        public void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            m_Exixt = true;
-            if (UIMessageBox.ShowAsk("确定要关闭主操作界面吗？"))
-            {
-                m_RuntimeContextService.添加信息日志("用户确认关闭窗体，保存配置中...");
-                m_RunConfigHelper.保存系统配置文件();
-                
-            }
-            else
-            {
-                m_RuntimeContextService.添加信息日志("用户取消关闭，窗体继续运行");
-                e.Cancel = true; // 取消关闭操作
-            }
-        }
+        #endregion
+        
+        #region 查询数据
         /// <summary>
         /// 根据时间跨度查询产品数据
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public  async void BtnQueryProductDataByTimespan_ClickAsync(object sender, EventArgs e)
+        public async void BtnQueryProductDataByTimespan_ClickAsync(object sender, EventArgs e)
         {
             string err = "";
             BtnQueryProductDataByTimespan.Enabled = false;
@@ -428,12 +503,14 @@ namespace GaoYaXianShu
             BtnQueryBatchCodeBySn.Enabled = true;
             
         }
+        #endregion
+
         /// <summary>
         /// 导出按钮
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public  async void BtnExportData_Click(object sender, EventArgs e)
+        public async void BtnExportData_Click(object sender, EventArgs e)
         {
             
             DataGridView dgv = this.dataGridView1;

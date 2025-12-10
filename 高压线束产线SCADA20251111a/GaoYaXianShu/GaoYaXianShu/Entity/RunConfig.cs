@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BydDCS.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -130,7 +131,44 @@ namespace GaoYaXianShu.Entity
 
         public BindingList<批次码列表项> 批次码绑定列表 { get; set; } = new BindingList<批次码列表项>();
 
+        public List<点动开关配置实体类> 切换开关配置列表 { get; set; } = new List<点动开关配置实体类>();
+
+        public List<点动开关配置实体类> 点动按钮配置列表 { get; set; } = new List<点动开关配置实体类>();
     }
 
+    /// <summary>
+    /// 显示在dgv上的批次码列表项
+    /// </summary>
+    public class 批次码列表项
+    {
+        public string 批次物料名 { get; set; }
+        public string 批次码 { get; set; }
+        public int 物料总数 { get; set; }
+        public int 已使用 { get; set; } = 0;
 
+        public override string ToString()
+        {
+            return $"{批次码}";
+        }
+    }
+
+    /// <summary>
+    /// 运行逻辑配方字段。流程字满足{目标流程字}时执行{流程字对应操作}
+    /// </summary>
+    public class 运行逻辑配方实体类
+    {
+        public ushort 目标流程字 { get; set; }
+        public string 流程字对应操作 { get; set; }
+
+        public override string ToString()
+        {
+            return $"流程字满足{目标流程字}时执行{流程字对应操作}";
+        }
+    }
+
+    public class 点动开关配置实体类
+    {
+        public string 名字 { get; set; }
+        public string 点位起始地址 { get; set; }
+    }
 }
