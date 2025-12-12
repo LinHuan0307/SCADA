@@ -35,7 +35,10 @@ namespace GaoYaXianShu.UserControls
         private HslAsyncOmronUdpHelper m_PLC;
         private RuntimeContextService m_RuntimeContextService;
 
-
+        private void SwitchButton_Load(object sender, EventArgs e)
+        {
+            Lb_UserControlName.Text = 名字;
+        }
 
         private async void Sw_kaiguan_ValueChanged(object sender, bool value)
         {
@@ -47,6 +50,7 @@ namespace GaoYaXianShu.UserControls
                 if (开启切换开关反馈.IsFailed)
                 {
                     m_RuntimeContextService.添加错误日志($"{名字}开启异常:" + string.Join("|", 开启切换开关反馈.Errors));
+                    return;
                 }
                 m_RuntimeContextService.添加信息日志($"{名字}开启成功");
             }
@@ -56,9 +60,12 @@ namespace GaoYaXianShu.UserControls
                 if (开启切换开关反馈.IsFailed)
                 {
                     m_RuntimeContextService.添加错误日志($"{名字}关闭异常:" + string.Join("|", 开启切换开关反馈.Errors));
+                    return;
                 }
                 m_RuntimeContextService.添加信息日志($"{名字}关闭成功");
             }
         }
+
+        
     }
 }

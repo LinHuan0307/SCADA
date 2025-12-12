@@ -235,6 +235,12 @@
     <Compile Include="UserControls\JogButton.Designer.cs">
       <DependentUpon>JogButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\IOStatusLight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\IOStatusLight.Designer.cs">
+      <DependentUpon>IOStatusLight.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SwitchButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\JogButton.resx">
       <DependentUpon>JogButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\IOStatusLight.resx">
+      <DependentUpon>IOStatusLight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SwitchButton.resx">
       <DependentUpon>SwitchButton.cs</DependentUpon>

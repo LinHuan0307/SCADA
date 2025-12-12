@@ -42,25 +42,34 @@
             this.Btn_JogButton.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(138)))));
             this.Btn_JogButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_JogButton.LightColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(250)))));
-            this.Btn_JogButton.Location = new System.Drawing.Point(0, 0);
+            this.Btn_JogButton.Location = new System.Drawing.Point(5, 5);
             this.Btn_JogButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.Btn_JogButton.Name = "Btn_JogButton";
             this.Btn_JogButton.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(172)))));
             this.Btn_JogButton.RectHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(203)))), ((int)(((byte)(189)))));
             this.Btn_JogButton.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(138)))));
             this.Btn_JogButton.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(138)))));
-            this.Btn_JogButton.Size = new System.Drawing.Size(600, 80);
+            this.Btn_JogButton.Size = new System.Drawing.Size(190, 40);
             this.Btn_JogButton.Style = Sunny.UI.UIStyle.Custom;
             this.Btn_JogButton.TabIndex = 1;
             this.Btn_JogButton.Text = "名字";
             this.Btn_JogButton.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn_JogButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_JogButton_MouseDown);
+            this.Btn_JogButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_JogButton_MouseUp);
             // 
             // JogButton
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.Btn_JogButton);
+            this.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(250)))));
+            this.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(251)))), ((int)(((byte)(250)))));
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.Name = "JogButton";
-            this.Size = new System.Drawing.Size(600, 80);
+            this.Padding = new System.Windows.Forms.Padding(5);
+            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(172)))));
+            this.Size = new System.Drawing.Size(200, 50);
+            this.Style = Sunny.UI.UIStyle.Custom;
+            this.Load += new System.EventHandler(this.JogButton_Load);
             this.ResumeLayout(false);
 
         }

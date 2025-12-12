@@ -1170,3 +1170,4 @@ D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.MaterialCodeInputForm.zu-ZA.resources
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.UserControls.JogButton.resources
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.UserControls.SwitchButton.resources
+D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.UserControls.IOStatusLight.resources

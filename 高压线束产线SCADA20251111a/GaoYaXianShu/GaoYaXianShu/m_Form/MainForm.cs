@@ -106,9 +106,14 @@ namespace GaoYaXianShu
             TimefleshTimer.Interval =  (int)((DateTime.Now.AddDays(1).Date - DateTime.Now).TotalMilliseconds);
             TimefleshTimer.Enabled = true;
 
+            //绑定datagridview
             Dgv_BatchCode.DataSource = m_RunConfigHelper.RunConfig.批次码绑定列表;
             Dgv_BatchCode.AutoGenerateColumns = true;
             Dgv_BatchCode.Refresh();
+
+            //绑定propertygrid
+            Pg_configuration.SelectedObject = m_RunConfigHelper.RunConfig;
+            Pg_configuration.Refresh();
 
             string err = string.Empty;
             //初始化数据库
@@ -117,10 +122,32 @@ namespace GaoYaXianShu
                 m_RuntimeContextService.添加错误日志("连接本地数据库异常" + err);
                 return;
             }
-            var sw = (SwitchButton)m_componentContext.Resolve<SwitchButton>();
-            sw.名字 = "ssss";
-            sw.起始地址 = "DW1.1";
-            FlowPanel_JOG.Add(sw);
+
+            foreach (var item in m_RunConfigHelper.RunConfig.IO状态指示灯配置列表)
+            {
+                var IO = (IOStatusLight)m_componentContext.Resolve<IOStatusLight>();
+                IO.名字 = item.名字;
+                IO.起始地址 = item.点位起始地址;
+                FlowPanel_JOG.Controls.Add(IO);
+            }
+
+            foreach (var item in m_RunConfigHelper.RunConfig.切换开关配置列表)
+            {
+                var sw = (SwitchButton)m_componentContext.Resolve<SwitchButton>();
+                sw.名字 = item.名字;
+                sw.起始地址 = item.点位起始地址;
+                FlowPanel_JOG.Controls.Add(sw);
+            }
+            
+
+            foreach (var item in m_RunConfigHelper.RunConfig.点动按钮配置列表)
+            {
+                var btn = (JogButton)m_componentContext.Resolve<JogButton>();
+                btn.名字 = item.名字;
+                btn.起始地址 = item.点位起始地址;
+                FlowPanel_JOG.Controls.Add(btn);
+            }
+
 
             m_RuntimeContextService.设置PLC状态连接正常();
 

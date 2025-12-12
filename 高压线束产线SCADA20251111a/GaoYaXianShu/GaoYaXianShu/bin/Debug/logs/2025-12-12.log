@@ -1,0 +1,126 @@
+2025-12-12 08:57:26.6817|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 08:57:59.1860|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss2222开启异常:Error with Message='输入字符串的格式不正确。'
+2025-12-12 08:57:59.2019|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss2222开启成功
+2025-12-12 08:57:59.8322|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss2222关闭异常:Error with Message='输入字符串的格式不正确。'
+2025-12-12 08:57:59.8322|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss2222关闭成功
+2025-12-12 08:58:02.8903|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 09:05:44.2385|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 09:06:14.6131|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 09:06:38.7392|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 09:06:58.4150|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:31:45.2114|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:33:31.2676|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:34:03.4755|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:34:39.7059|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:37:49.1736|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:38:19.9204|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:38:38.7349|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:39:25.5909|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:40:57.5333|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:41:12.7544|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:42:21.0813|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:44:00.7425|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:46:40.4446|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:51:42.2140|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:52:31.4792|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 13:53:33.9381|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:02:41.1702|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:08:02.4651|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:09:00.7392|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:14:31.2799|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss按下异常:Error with Message='输入字符串的格式不正确。'
+2025-12-12 14:14:31.2979|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss按下成功
+2025-12-12 14:14:41.7984|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss按下异常:Error with Message='输入字符串的格式不正确。'
+2025-12-12 14:14:41.7984|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss按下成功
+2025-12-12 14:14:49.6481|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss松开异常:Error with Message='输入字符串的格式不正确。'
+2025-12-12 14:14:49.6481|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss松开成功
+2025-12-12 14:14:54.3121|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss按下异常:Error with Message='输入字符串的格式不正确。'
+2025-12-12 14:14:54.3121|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|ssss按下成功
+2025-12-12 14:29:51.6500|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:37:00.3493|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:39:57.7883|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:39:57.8049|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:39:58.1964|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:39:58.1964|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:39:59.1407|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:39:59.1407|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:40:00.6479|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:40:00.6479|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:40:13.5967|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:40:41.3693|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:41:30.9002|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:43:37.3815|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:43:54.8020|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 14:48:48.1750|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:48.1948|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:48:48.3323|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:48.3323|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:48:48.7034|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:48.7034|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:48:48.8910|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:48.8910|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:48:49.0802|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:49.0802|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:48:49.2719|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:49.2719|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:48:49.4565|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:49.4565|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:48:49.6436|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:48:49.6436|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:49:01.1412|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.1412|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:01.2136|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.2136|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:01.3315|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.3315|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:01.4025|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.4025|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:01.5109|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.5109|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:01.5929|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.5929|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:01.7533|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.7533|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:01.8574|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.8574|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:01.9852|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:01.9852|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:02.0812|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:02.0812|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:02.1668|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:02.1668|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:02.2569|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:02.2569|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:03.1330|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:03.1330|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:49:03.3234|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:03.3234|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:49:03.5141|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:03.5141|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:49:03.7049|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:03.7049|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:49:03.8411|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:03.8411|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:49:05.0181|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:05.0181|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:49:05.2015|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:05.2015|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4关闭成功
+2025-12-12 14:49:05.4085|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:05.4085|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|4开启成功
+2025-12-12 14:49:06.4871|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|5开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:06.4871|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|5开启成功
+2025-12-12 14:49:06.6505|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|5关闭异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:06.6505|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|5关闭成功
+2025-12-12 14:49:06.8221|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|5开启异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:06.8221|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|5开启成功
+2025-12-12 14:49:08.0556|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:08.0556|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:08.1374|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:08.1374|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:08.2196|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:08.2196|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3按下成功
+2025-12-12 14:49:08.3065|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 14:49:08.3065|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|3松开成功
+2025-12-12 14:49:21.8488|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 15:40:20.6026|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...
+2025-12-12 15:42:11.0043|ERROR|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|1读取IO异常:Error with Message='输入的地址解析失败，可能是该地址格式不支持或是没有输入正确的地址，请重新输入'
+2025-12-12 15:42:22.4121|INFO|Autofac.Core.Resolving.Pipeline.DefaultResolveRequestContext|用户确认关闭窗体，保存配置中...

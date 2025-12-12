@@ -134,6 +134,8 @@ namespace GaoYaXianShu.Entity
         public List<点动开关配置实体类> 切换开关配置列表 { get; set; } = new List<点动开关配置实体类>();
 
         public List<点动开关配置实体类> 点动按钮配置列表 { get; set; } = new List<点动开关配置实体类>();
+
+        public List<点动开关配置实体类> IO状态指示灯配置列表 { get; set; } = new List<点动开关配置实体类>();
     }
 
     /// <summary>

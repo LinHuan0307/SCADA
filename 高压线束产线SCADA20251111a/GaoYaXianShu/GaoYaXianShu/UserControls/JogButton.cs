@@ -35,24 +35,33 @@ namespace GaoYaXianShu.UserControls
             InitializeComponent();
         }
 
+        private void JogButton_Load(object sender, EventArgs e)
+        {
+            Btn_JogButton.Text = 名字;
+        }
+
         private async void Btn_JogButton_MouseDown(object sender, MouseEventArgs e)
         {
             var 点动按钮按下反馈 = await m_PLC.WriteBoolAsync(起始地址, true);
             if (点动按钮按下反馈.IsFailed)
             {
                 m_RuntimeContextService.添加错误日志($"{名字}按下异常:" + string.Join("|", 点动按钮按下反馈.Errors));
+                return;
             }
             m_RuntimeContextService.添加信息日志($"{名字}按下成功");
         }
 
         private async void Btn_JogButton_MouseUp(object sender, MouseEventArgs e)
         {
-            var 点动按钮松开反馈 = await m_PLC.WriteBoolAsync(起始地址, true);
+            var 点动按钮松开反馈 = await m_PLC.WriteBoolAsync(起始地址, false);
             if (点动按钮松开反馈.IsFailed)
             {
                 m_RuntimeContextService.添加错误日志($"{名字}松开异常:" + string.Join("|", 点动按钮松开反馈.Errors));
+                return;
             }
             m_RuntimeContextService.添加信息日志($"{名字}松开成功");
         }
+
+        
     }
 }

@@ -42,10 +42,12 @@ namespace GaoYaXianShu
                 return LogManager.GetLogger(type.FullName);
             }).As<ILogger>();
 
+            //注册IO状态指示灯用户控件
+            Build.RegisterType<IOStatusLight>().InstancePerDependency();
             //注册切换开关用户控件
-            Build.RegisterType<SwitchButton>().InstancePerLifetimeScope();
+            Build.RegisterType<SwitchButton>().InstancePerDependency();
             //注册点动按钮用户控件
-            Build.RegisterType<JogButton>().InstancePerLifetimeScope();
+            Build.RegisterType<JogButton>().InstancePerDependency();
             //注册UI控件操作服务
             Build.RegisterType<RuntimeContext>().InstancePerLifetimeScope();
             //注册配置服务
