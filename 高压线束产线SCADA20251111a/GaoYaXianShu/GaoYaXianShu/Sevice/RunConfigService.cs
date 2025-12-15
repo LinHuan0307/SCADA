@@ -30,34 +30,29 @@ namespace GaoYaXianShu.Sevice
         /// <returns></returns>
         public Result UseMaterial(string name)
         {
-            try
+            
+            var 最新批次 = m_RunConfig.批次码绑定列表.Where(批次码绑定列表项 => 批次码绑定列表项.批次物料名 == name).FirstOrDefault();
+
+            if (最新批次.已使用 >= 0 && 最新批次.已使用 < 最新批次.物料总数)
             {
-                var 最新批次 = m_RunConfig.批次码绑定列表.Where(批次码绑定列表项 => 批次码绑定列表项.批次物料名 == name).FirstOrDefault();
+                最新批次.已使用++;
+                m_RuntimeContextService.删除物料缺失报警();
+            }
+            else
+            {
+                m_RuntimeContextService.添加物料缺失报警();
+                return Result.Fail($"{name}出现意料外的使用数量！请检查已使用物料数量！");
+            }
 
-                if (最新批次.已使用 >= 0 && 最新批次.已使用 < 最新批次.物料总数)
-                {
-                    最新批次.已使用++;
-                    m_RuntimeContextService.删除物料缺失报警();
-                }
-                else
-                {
-                    m_RuntimeContextService.添加物料缺失报警();
-                    return Result.Fail($"{name}出现意料外的使用数量！请检查已使用物料数量！");
-                }
-
-                if (最新批次.已使用 == 最新批次.物料总数)
-                {
-                    //删除物料用完的批次码
-                    m_RunConfig.批次码绑定列表.Remove(最新批次);
-                }
+            if (最新批次.已使用 == 最新批次.物料总数)
+            {
+                //删除物料用完的批次码
+                m_RunConfig.批次码绑定列表.Remove(最新批次);
+            }
                 
 
-                return Result.Ok();
-            }
-            catch (Exception ex)
-            {
-                return Result.Fail(ex.Message);
-            }
+            return Result.Ok();
+            
         }
         /// <summary>
         /// 增加一个批次
@@ -89,7 +84,16 @@ namespace GaoYaXianShu.Sevice
 
         public Result<批次码列表项> GetLastBatch(string name)
         {
-            return m_RunConfig.批次码绑定列表.Where(批次码绑定列表项 => 批次码绑定列表项.批次物料名 == name).FirstOrDefault();
+            var res = m_RunConfig.批次码绑定列表.Where(批次码绑定列表项 => 批次码绑定列表项.批次物料名 == name).FirstOrDefault();
+
+            if(res == null)
+            {
+                return Result.Fail("可用于扣料的批次码为空");
+            }
+            else
+            {
+                return Result.Ok();
+            }
         }
 
         /// <summary>
@@ -97,7 +101,7 @@ namespace GaoYaXianShu.Sevice
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Result<bool> IsMatirialAvailableForBinding(string name)
+        public Result IsMatirialAvailableForBinding(string name)
         {
             var 已使用总数量 = m_RunConfig.批次码绑定列表.Where(批次码绑定列表项 => 批次码绑定列表项.批次物料名 == name)
                                                         .Select(批次码绑定列表项 => 批次码绑定列表项.已使用).Count();
@@ -106,7 +110,7 @@ namespace GaoYaXianShu.Sevice
                                                         .Select(批次码绑定列表项 => 批次码绑定列表项.物料总数).Count();
 
 
-            return 物料总数 > 已使用总数量;
+            return 物料总数 > 已使用总数量 ? Result.Ok() : Result.Fail("物料不足");
         }
     }
 }

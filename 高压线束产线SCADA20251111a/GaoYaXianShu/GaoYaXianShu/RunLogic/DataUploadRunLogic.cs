@@ -34,113 +34,98 @@ namespace GaoYaXianShu.RunLogic
         }
         public async Task RunLogicAsync()
         {
+            //成功执行一次不在多次执行
+            允许执行标志位 = false;
 
-            var 数据上传申请反馈 = new Result<bool>();
-            try
-            {
-                //成功执行一次不在多次执行
-                允许执行标志位 = false;
+            var 数据上传申请反馈 = await Result.Try(() => 申请数据上传Async(), 
+                ex => new Error("数据上传运行逻辑异常").CausedBy(ex)) ;
 
-                数据上传申请反馈 = await 申请数据上传Async();
-            }
-            catch (Exception ex)
+            if (数据上传申请反馈.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("数据上传方法异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志(数据上传申请反馈.Errors.First().Message);
+
+                var MES结果反馈 = await m_pLCService.MES结果反馈_数据上传异常();
+                if (MES结果反馈.IsFailed)
+                {
+                    m_RuntimeContextService.添加错误日志("向PLC写入MES反馈信号数据上传失败信号异常");
+                }
+                //物料校验失败设置流程
+                m_RuntimeContextService.设置数据上传流程执行NG();
             }
-            finally
+            else
             {
-                if (数据上传申请反馈.IsFailed)
+                var MES结果反馈 = await m_pLCService.MES结果反馈_数据上传成功();
+                if (MES结果反馈.IsFailed)
                 {
-                    var MES结果反馈 = await m_pLCService.MES结果反馈_数据上传异常();
-                    if (MES结果反馈.IsFailed)
-                    {
-                        m_RuntimeContextService.添加错误日志("向PLC写入MES反馈信号数据上传失败信号异常");
-                    }
-                    //物料校验失败设置流程
-                    m_RuntimeContextService.设置数据上传流程执行NG();
+                    m_RuntimeContextService.添加错误日志("向PLC写入MES反馈信号数据上传成功信号异常");
                 }
-                else
-                {
-                    var MES结果反馈 = await m_pLCService.MES结果反馈_数据上传成功();
-                    if (MES结果反馈.IsFailed)
-                    {
-                        m_RuntimeContextService.添加错误日志("向PLC写入MES反馈信号数据上传成功信号异常");
-                    }
-                    //物料校验成功设置流程
-                    m_RuntimeContextService.设置数据上传流程执行OK();
-                    
-                }
+                //物料校验成功设置流程
+                m_RuntimeContextService.设置数据上传流程执行OK();
+
             }
+
+            
         }
 
-        private async Task<Result<bool>> 申请数据上传Async()
+        private async Task<Result> 申请数据上传Async()
         {
             string SN = string.Empty;//托盘线束的SN
-            try
+            
+            var MES反馈 = await m_pLCService.流程字反馈_收到数据上传申请();
+            if (MES反馈.IsFailed)
             {
-                var MES反馈 = await m_pLCService.流程字反馈_收到数据上传申请();
-                if (MES反馈.IsFailed)
-                {
-                    m_RuntimeContextService.添加错误日志("写入流程字反馈:收到数据上传信号异常");
-                    return Result.Fail("false");
-                }
-
-                //从界面获取参数
-                SN = m_RuntimeContextService.获取线束SN().Value;
-
-                //向MES申请数据上传。
-                TestData m_XianShutestData = new TestData
-                {
-                    LineCode = m_RunConfig.产线编码,
-                    RealValue = "",
-                    Result = "true",
-                    WarningMsg = "",
-                    SnNumber = SN,
-                    EndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                    StationCode = m_RunConfig.工位编码,
-                    StationName = m_RunConfig.工位名字,
-                    TestName = m_RunConfig.工位名字,
-                    //这里要和MES沟通下
-                    TestType = "",
-                    StartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                    CreateTime = DateTime.Now,
-                    TestDataList = new List<TestDataList>()
-                    {
-                            new TestDataList()
-                            {
-                                TestItemName = "压力值",
-                                TestItemStand = "",
-                                TestItemValue = "",
-                                TestItemResult = "true",
-                                CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                                Remark =  "",
-                            },
-                            new TestDataList()
-                            {
-                                TestItemName = "压力值",
-                                TestItemStand = "",
-                                TestItemValue = "",
-                                TestItemResult = "true",
-                                CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                                Remark = "",
-                            }
-                    }
-                };
-                var SN_DataUpload_response = await m_MESApi.TestDataPost(m_XianShutestData);
-                if (SN_DataUpload_response.IsFailed)
-                {
-                    m_RuntimeContextService.添加错误日志("托盘SN申请数据上传异常");
-                    return Result.Fail("false");
-                }
-
-                
-
-                return Result.Ok();
+                return Result.Fail(MES反馈.Errors.First().Message);
             }
-            catch (Exception ex)
+
+            //从界面获取参数
+            SN = m_RuntimeContextService.获取线束SN().Value;
+
+            //向MES申请数据上传。
+            TestData m_XianShutestData = new TestData
             {
-                throw;
+                LineCode = m_RunConfig.产线编码,
+                RealValue = "",
+                Result = "true",
+                WarningMsg = "",
+                SnNumber = SN,
+                EndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                StationCode = m_RunConfig.工位编码,
+                StationName = m_RunConfig.工位名字,
+                TestName = m_RunConfig.工位名字,
+                //这里要和MES沟通下
+                TestType = "",
+                StartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                CreateTime = DateTime.Now,
+                TestDataList = new List<TestDataList>()
+                {
+                        new TestDataList()
+                        {
+                            TestItemName = "压力值",
+                            TestItemStand = "",
+                            TestItemValue = "",
+                            TestItemResult = "true",
+                            CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Remark =  "",
+                        },
+                        new TestDataList()
+                        {
+                            TestItemName = "压力值",
+                            TestItemStand = "",
+                            TestItemValue = "",
+                            TestItemResult = "true",
+                            CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Remark = "",
+                        }
+                }
+            };
+            var SN_DataUpload_response = await m_MESApi.TestDataPost(m_XianShutestData);
+            if (SN_DataUpload_response.IsFailed)
+            {
+                return Result.Fail(SN_DataUpload_response.Errors.First().Message);
             }
+
+            return Result.Ok();
+            
         }
     }
 }

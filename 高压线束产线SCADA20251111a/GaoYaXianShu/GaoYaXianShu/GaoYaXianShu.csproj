@@ -169,11 +169,11 @@
     <Compile Include="m_Form\BatchCodeInputForm.Designer.cs">
       <DependentUpon>BatchCodeInputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="m_Form\MaterialCodeInputForm.cs">
+    <Compile Include="m_Form\MaterialCodeManuBindForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="m_Form\MaterialCodeInputForm.Designer.cs">
-      <DependentUpon>MaterialCodeInputForm.cs</DependentUpon>
+    <Compile Include="m_Form\MaterialCodeManuBindForm.Designer.cs">
+      <DependentUpon>MaterialCodeManuBindForm.cs</DependentUpon>
     </Compile>
     <Compile Include="m_Form\SerialPortDataInputForm.cs">
       <SubType>Form</SubType>
@@ -222,7 +222,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunLogic\ResetAutoFlow.cs" />
     <Compile Include="RunLogic\IRunLogic.cs" />
-    <Compile Include="RunLogic\RunLogicManeger.cs" />
+    <Compile Include="Sevice\RunLogicService.cs" />
     <Compile Include="Sevice\MesApiService.cs" />
     <Compile Include="Sevice\PLCService.cs" />
     <Compile Include="Sevice\RunConfigService.cs" />
@@ -250,17 +250,17 @@
     <EmbeddedResource Include="m_Form\BatchCodeInputForm.resx">
       <DependentUpon>BatchCodeInputForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="m_Form\MaterialCodeInputForm.kkj-CM.resx">
-      <DependentUpon>MaterialCodeInputForm.cs</DependentUpon>
+    <EmbeddedResource Include="m_Form\MaterialCodeManuBindForm.kkj-CM.resx">
+      <DependentUpon>MaterialCodeManuBindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="m_Form\MaterialCodeInputForm.zu-ZA.resx">
-      <DependentUpon>MaterialCodeInputForm.cs</DependentUpon>
+    <EmbeddedResource Include="m_Form\MaterialCodeManuBindForm.zu-ZA.resx">
+      <DependentUpon>MaterialCodeManuBindForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="m_Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="m_Form\MaterialCodeInputForm.resx">
-      <DependentUpon>MaterialCodeInputForm.cs</DependentUpon>
+    <EmbeddedResource Include="m_Form\MaterialCodeManuBindForm.resx">
+      <DependentUpon>MaterialCodeManuBindForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="m_Form\SerialPortDataInputForm.resx">
       <DependentUpon>SerialPortDataInputForm.cs</DependentUpon>

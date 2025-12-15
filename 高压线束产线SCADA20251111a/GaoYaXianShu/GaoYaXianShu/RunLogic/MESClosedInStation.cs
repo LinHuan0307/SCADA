@@ -34,14 +34,12 @@ namespace GaoYaXianShu.RunLogic
                 var MES反馈 = await m_pLCService.流程字反馈_收到进站申请();
                 if (MES反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("写入流程字反馈收到申请进站信号异常");
                     m_RuntimeContextService.设置进站流程执行NG();
                     return;
                 }
                 var MES结果反馈 = await m_pLCService.MES结果反馈_进站成功();
                 if (MES结果反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("向PLC写入MES反馈信号进站成功信号异常");
                     m_RuntimeContextService.设置进站流程执行NG();
                     return;
                 }
@@ -52,7 +50,7 @@ namespace GaoYaXianShu.RunLogic
             }
             catch (Exception ex)
             {
-                m_RuntimeContextService.添加错误日志("进站方法异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("MES屏蔽进站方法异常！" + ex.Message);
             }
         }
     }

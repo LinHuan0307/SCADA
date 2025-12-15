@@ -81,7 +81,7 @@ namespace GaoYaXianShu
             //注册MES屏蔽数据上传服务
             Build.RegisterType<MESClosedDataUpload>().Keyed<IRunLogic>("MES屏蔽数据上传").InstancePerLifetimeScope();
             //注册运行逻辑管理者
-            Build.RegisterType<RunLogicManeger>().InstancePerLifetimeScope();
+            Build.RegisterType<RunLogicService>().InstancePerLifetimeScope();
             //对全局变量操作的服务
             Build.RegisterType<RuntimeContextService>().SingleInstance();
             //对对运行配置实体操作的服务
@@ -91,7 +91,7 @@ namespace GaoYaXianShu
             //注册批次码输入窗体.瞬时生命周期
             Build.RegisterType<BatchCodeInputForm>().InstancePerDependency();
             //注册手动物料码输入窗体.瞬时生命周期
-            Build.RegisterType<MaterialCodeInputForm>().InstancePerDependency();
+            Build.RegisterType<MaterialCodeManuBindForm>().InstancePerDependency();
             //注册本地数据库驱动
             Build.RegisterType<LocalDbDAL>().InstancePerLifetimeScope();
             //实例化主窗体

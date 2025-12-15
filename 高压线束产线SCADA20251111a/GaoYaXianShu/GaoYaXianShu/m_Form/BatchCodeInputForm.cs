@@ -94,12 +94,7 @@ namespace GaoYaXianShu.m_Form
             {
                 return;
             }
-            else
-            {
-                m_ScanPort.Close();
-                m_RuntimeContextService.设置扫码枪状态连接断开();
-                this.DialogResult = DialogResult.OK;
-            }
+            
             m_ScanPort.Close();
             m_RuntimeContextService.设置扫码枪状态连接断开();
 

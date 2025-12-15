@@ -20,7 +20,7 @@ using System.Windows.Forms;
 
 namespace GaoYaXianShu.m_Form
 {
-    public partial class MaterialCodeInputForm : UIForm
+    public partial class MaterialCodeManuBindForm : UIForm
     {
         //输入的批次码
         public List<materialCodeBindEntity> materialCodeBindList;
@@ -29,7 +29,7 @@ namespace GaoYaXianShu.m_Form
         private RunConfig m_RunConfig;
         private RuntimeContextService m_RuntimeContextService;
         private MesApiService m_MESApi;
-        public MaterialCodeInputForm(
+        public MaterialCodeManuBindForm(
             RunConfigService runConfigService,
             RuntimeContextService runtimeContextService,
             MesApiService mesApiService
@@ -63,9 +63,9 @@ namespace GaoYaXianShu.m_Form
             //物料绑定反馈 = await m_MESApi.BindMaterial(rightSN, Sread);
             //获取物料绑定状态
             var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(SN);
-            if (!申请获取绑定物料列表反馈.IsSuccess)
+            if (申请获取绑定物料列表反馈.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("获取线束的物料绑定状态列表失败！");
+                m_RuntimeContextService.添加错误日志(申请获取绑定物料列表反馈.Errors.First().Message);
                 return;
             }
             var 物料绑定列表 = 申请获取绑定物料列表反馈.Value;
@@ -103,7 +103,7 @@ namespace GaoYaXianShu.m_Form
                 var 申请获取绑定物料列表反馈 = await m_MESApi.MaterialStatusBindQuery(SN);
                 if (!申请获取绑定物料列表反馈.IsSuccess)
                 {
-                    m_RuntimeContextService.添加错误日志("获取线束的物料绑定状态列表失败！");
+                    m_RuntimeContextService.添加错误日志(申请获取绑定物料列表反馈.Errors.First().Message);
                     return;
                 }
                 var 物料绑定列表 = 申请获取绑定物料列表反馈.Value;

@@ -52,25 +52,19 @@ namespace GaoYaXianShu.Sevice
 
         public async Task<Result> 判断MES连接状态()
         {
-            string PHeader = "[判断MES连接状态]";
-            try
+            string PHeader = "[判断MES连接状态失败]";
+            
+            await Task.Delay(4000);
+            var res = await Ping();
+            if (res.IsFailed)
             {
-                await Task.Delay(4000);
-                var PingMes_Response = await Ping();
-                if (PingMes_Response.IsFailed)
-                {
-                    m_RuntimeContextService.添加错误日志("Ping MES服务器超时！");
-                    m_RuntimeContextService.添加MES断开连接报警();
-                    return Result.Fail($"{PHeader}失败!");
-                }
-                m_RuntimeContextService.删除MES断开连接报警();
-                return Result.Ok();
+                m_RuntimeContextService.添加错误日志("Ping MES服务器超时！");
+                m_RuntimeContextService.添加MES断开连接报警();
+                return Result.Fail(PHeader + res.Errors.First().Message);
             }
-            catch(Exception ex)
-            {
-                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
-                return Result.Fail($"{PHeader}失败!");
-            }
+            m_RuntimeContextService.删除MES断开连接报警();
+            return Result.Ok();
+            
         }
         /// <summary>
         /// 进站
@@ -80,34 +74,26 @@ namespace GaoYaXianShu.Sevice
         /// <returns></returns>
         public async Task<Result> InStation(string SN,string TCode)
         {
-            string PHeader = "申请进站";
-            try
-            {
-                PassStationRequest request = new PassStationRequest()
-                {
-                    SnNumber = SN,
-                    LineCode = m_RunConfig.产线编码,
-                    TrayCode = TCode,
-                    StationCode = m_RunConfig.工位编码,
-                    PassType = "进站",
-                };
-                ProcessPassStationResponse respose = new ProcessPassStationResponse();
-                var res = await m_WebApiClient.PostAsync<PassStationRequest, ProcessPassStationResponse>(m_RunConfig.请求进站URL地址, request);
-                if (res.IsFailed || !respose.Success)
-                {
-                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
-                    return Result.Fail($"{PHeader}失败!");
-                }
-                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
-                return Result.Ok() ;
-
-            }
-            catch (Exception ex)
-            {
-                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
-                return Result.Fail($"{PHeader}失败!");
-            }
+            string PHeader = "申请进站POST失败";
             
+            PassStationRequest request = new PassStationRequest()
+            {
+                SnNumber = SN,
+                LineCode = m_RunConfig.产线编码,
+                TrayCode = TCode,
+                StationCode = m_RunConfig.工位编码,
+                PassType = "进站",
+            };
+            ProcessPassStationResponse respose = new ProcessPassStationResponse();
+            var res = await m_WebApiClient.PostAsync<PassStationRequest, ProcessPassStationResponse>(m_RunConfig.请求进站URL地址, request);
+            if (res.IsFailed || !res.Value.Success)
+            {
+                m_RuntimeContextService.添加错误日志(PHeader + res.Errors.First().Message);
+                return Result.Fail(PHeader);
+            }
+            return Result.Ok() ;
+
+
         }
         /// <summary>
         /// 出站
@@ -117,33 +103,23 @@ namespace GaoYaXianShu.Sevice
         /// <returns></returns>
         public async Task<Result> PassStation(string SN, string TCode)
         {
-            string PHeader = "申请出站";
-            try
+            string PHeader = "申请出站失败";
+            
+            PassStationRequest passInfo = new PassStationRequest()
             {
-                PassStationRequest passInfo = new PassStationRequest()
-                {
-                    SnNumber = SN,
-                    LineCode = m_RunConfig.产线编码,
-                    TrayCode = TCode,
-                    StationCode = m_RunConfig.工位编码,
-                    PassType = "出站",
-                };
-                ProcessPassStationResponse respose = new ProcessPassStationResponse();
-                var res = await m_WebApiClient.PostAsync<PassStationRequest, ProcessPassStationResponse>(m_RunConfig.请求出站URL地址, passInfo);
-                if (res.IsFailed || !respose.Success)
-                {
-                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
-                    return Result.Fail($"{PHeader}失败!");
-                }
-                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
-                return Result.Ok();
-
-            }
-            catch (Exception ex)
+                SnNumber = SN,
+                LineCode = m_RunConfig.产线编码,
+                TrayCode = TCode,
+                StationCode = m_RunConfig.工位编码,
+                PassType = "出站",
+            };
+            var res = await m_WebApiClient.PostAsync<PassStationRequest, ProcessPassStationResponse>(m_RunConfig.请求出站URL地址, passInfo);
+            if (res.IsFailed || !res.Value.Success)
             {
-                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
-                return Result.Fail($"{PHeader}失败!");
+                m_RuntimeContextService.添加错误日志(PHeader + res.Errors.First().Message);
+                return Result.Fail(PHeader);
             }
+            return Result.Ok();
 
         }
         /// <summary>
@@ -153,32 +129,24 @@ namespace GaoYaXianShu.Sevice
         /// <returns></returns>
         public async Task<Result> BindMaterial(string SN, string MatirialSN)
         {
-            string PHeader = "申请物料绑定";
-            try
+            string PHeader = "申请物料绑定失败";
+            
+            MaterialBindRequest request = new MaterialBindRequest()
             {
-                MaterialBindRequest request = new MaterialBindRequest()
-                {
-                    SnNumber = SN,
-                    AssemblySnNumber = MatirialSN,
-                    StationCode = m_RunConfig.工位编码,
-                    LineCode = m_RunConfig.产线编码,
-                };
-                ApiRespose respose = new ApiRespose();
-                var res = await m_WebApiClient.PostAsync<MaterialBindRequest, ApiRespose>(m_RunConfig.请求物料绑定URL地址, request);
-                if (res.IsFailed || !res.Value.Success)
-                {
-                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
-                    return Result.Fail($"{PHeader}失败!");
-                }
-                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
-                return Result.Ok();
+                SnNumber = SN,
+                AssemblySnNumber = MatirialSN,
+                StationCode = m_RunConfig.工位编码,
+                LineCode = m_RunConfig.产线编码,
+            };
+            var res = await m_WebApiClient.PostAsync<MaterialBindRequest, ApiRespose>(m_RunConfig.请求物料绑定URL地址, request);
+            if (res.IsFailed || !res.Value.Success)
+            {
+                m_RuntimeContextService.添加错误日志(PHeader + res.Errors.First().Message);
+                return Result.Fail(PHeader);
+            }
+            return Result.Ok();
 
-            }
-            catch (Exception ex)
-            {
-                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
-                return Result.Fail($"{PHeader}失败!");
-            }
+            
         }
         /// <summary>
         /// 数据上传
@@ -191,106 +159,84 @@ namespace GaoYaXianShu.Sevice
         /// <returns></returns>
         public async Task<Result> TestDataPost(TestData pData)
         {
-            string PHeader = "申请数据上传";
-            try
+            string PHeader = "申请数据上传失败";
+            
+            List<TestDataRequestItem> Items = new List<TestDataRequestItem>();
+            foreach (TestDataList item in pData.TestDataList)
             {
-                List<TestDataRequestItem> Items = new List<TestDataRequestItem>();
-                foreach (TestDataList item in pData.TestDataList)
+                TestDataRequestItem testItem = new TestDataRequestItem()
                 {
-                    TestDataRequestItem testItem = new TestDataRequestItem()
-                    {
-                        TestItemName = item.TestItemName,
-                        TestItemStand = item.TestItemStand,
-                        TestItemValue = item.TestItemValue,
-                        TestItemResult = item.TestItemResult,
-                    };
-                    Items.Add(testItem);
-                }
-                TestDataRequest testDataRequest = new TestDataRequest()
-                {
-                    SnNumber = pData.SnNumber,
-                    LineCode = pData.LineCode,
-                    StationCode = pData.StationCode,
-                    TestType = pData.TestType,
-                    TestName = pData.TestName,
-                    Result = pData.Result,
-                    TestStartTime = pData.StartTime.ToDateTime(),
-                    TestEndTime = pData.EndTime.ToDateTime(),
-                    
-                    TestDataList = Items,
+                    TestItemName = item.TestItemName,
+                    TestItemStand = item.TestItemStand,
+                    TestItemValue = item.TestItemValue,
+                    TestItemResult = item.TestItemResult,
                 };
-                ApiRespose respose = new ApiRespose();
-                var res = await m_WebApiClient.PostAsync<TestDataRequest, ApiRespose>(m_RunConfig.请求数据上传URL地址, testDataRequest);
-                if (res.IsFailed || !res.Value.Success)
-                {
-                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
-                    return Result.Fail($"{PHeader}失败!");
-                }
-                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
-                return Result.Ok();
+                Items.Add(testItem);
             }
-            catch (Exception ex)
+            TestDataRequest testDataRequest = new TestDataRequest()
             {
-                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
-                return Result.Fail($"{PHeader}失败!");
+                SnNumber = pData.SnNumber,
+                LineCode = pData.LineCode,
+                StationCode = pData.StationCode,
+                TestType = pData.TestType,
+                TestName = pData.TestName,
+                Result = pData.Result,
+                TestStartTime = pData.StartTime.ToDateTime(),
+                TestEndTime = pData.EndTime.ToDateTime(),
+                TestDataList = Items,
+            };
+
+            var res = await m_WebApiClient.PostAsync<TestDataRequest, ApiRespose>(m_RunConfig.请求数据上传URL地址, testDataRequest);
+            if (res.IsFailed || !res.Value.Success)
+            {
+                m_RuntimeContextService.添加错误日志(PHeader + res.Errors.First().Message);
+                return Result.Fail(PHeader);
             }
+            return Result.Ok();
+            
 
         }
 
         public async Task<Result<string>> GetSN()
         {
-            string PHeader = "获取SN";
-            try
+            string PHeader = "获取SN失败";
+            
+            RequestSnNumber request = new RequestSnNumber()
             {
-                RequestSnNumber request = new RequestSnNumber()
-                {
-                    LineCode = m_RunConfig.产线编码
-                };
-                ApiRespose respose = new ApiRespose();
-                var res = await m_WebApiClient.PostAsync<RequestSnNumber, ApiRespose>(m_RunConfig.申请SN的URL地址, request);
-                //通信失败或者结果异常
-                if (res.IsFailed || !res.Value.Success)
-                {
-                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
-                    return Result.Fail($"{PHeader}失败!");
-                }
-                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
-                return Result.Ok(res.Value.Mesg);
-            }
-            catch (Exception ex)
+                LineCode = m_RunConfig.产线编码
+            };
+
+            var res = await m_WebApiClient.PostAsync<RequestSnNumber, ApiRespose>(m_RunConfig.申请SN的URL地址, request);
+            //通信失败或者结果异常
+            if (res.IsFailed || !res.Value.Success)
             {
-                m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + ex.Message);
-                return Result.Fail($"{PHeader}失败!");
+                m_RuntimeContextService.添加错误日志(PHeader + res.Errors.First().Message);
+                return Result.Fail(PHeader);
             }
+            return Result.Ok(res.Value.Mesg);
+            
         }
 
         public async Task<Result<MaterialBindingStatus>> MaterialStatusBindQuery(string Sn)
         {
-            string PHeader = "获取物料绑定状态";
-            try
+            string PHeader = "获取物料绑定状态Post失败";
+            
+            MaterialStationStatusRequest request = new MaterialStationStatusRequest()
             {
-                MaterialStationStatusRequest request = new MaterialStationStatusRequest()
-                {
-                    SnNumber = Sn,
-                    StationCode = m_RunConfig.工位编码,
-                    LineCode = m_RunConfig.产线编码,
-                };
-                ApiRespose<MaterialBindingStatus> respose = new ApiRespose<MaterialBindingStatus>();
-                var res = await m_WebApiClient.PostAsync<MaterialStationStatusRequest, ApiRespose<MaterialBindingStatus>>(m_RunConfig.获取物料绑定状态URL地址, request);
-                //通信失败或者结果异常
-                if (res.IsFailed || !res.Value.Success)
-                {
-                    m_RuntimeContextService.添加错误日志($"{PHeader}失败!" + string.Join("|", res.Errors));
-                    return Result.Fail($"{PHeader}失败!");
-                }
-                m_RuntimeContextService.添加数据记录日志($"{PHeader}成功!");
-                return Result.Ok(res.Value.Data);
-            }
-            catch (Exception ex)
+                SnNumber = Sn,
+                StationCode = m_RunConfig.工位编码,
+                LineCode = m_RunConfig.产线编码,
+            };
+            
+            var res = await m_WebApiClient.PostAsync<MaterialStationStatusRequest, ApiRespose<MaterialBindingStatus>>(m_RunConfig.获取物料绑定状态URL地址, request);
+            //通信失败或者结果异常
+            if (res.IsFailed || !res.Value.Success)
             {
-                m_RuntimeContextService.添加错误日志($"{PHeader}失败!"+ ex.Message);
-                return Result.Fail($"{PHeader}失败!");
+                m_RuntimeContextService.添加错误日志(PHeader + res.Errors.First().Message);
+                return Result.Fail(PHeader);
             }
+            return Result.Ok(res.Value.Data);
+            
         }
     }
 }

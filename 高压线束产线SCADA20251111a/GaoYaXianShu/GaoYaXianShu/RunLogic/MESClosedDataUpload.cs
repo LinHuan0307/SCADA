@@ -29,17 +29,17 @@ namespace GaoYaXianShu.RunLogic
         {
             try
             {
+                
+
                 var MES反馈 = await m_pLCService.流程字反馈_收到数据上传申请();
                 if (MES反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("写入流程字反馈:收到数据上传信号异常");
                     m_RuntimeContextService.设置数据上传流程执行NG();
                     return;
                 }
                 var MES结果反馈 = await m_pLCService.MES结果反馈_数据上传成功();
                 if (MES结果反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("向PLC写入MES反馈信号数据上传成功信号异常");
                     m_RuntimeContextService.设置数据上传流程执行NG();
                     return;
                 }
@@ -50,7 +50,7 @@ namespace GaoYaXianShu.RunLogic
             }
             catch (Exception ex)
             {
-                m_RuntimeContextService.添加错误日志("数据上传方法异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("MES屏蔽数据上传方法异常！" + ex.Message);
             }
         }
     }

@@ -46,33 +46,11 @@ namespace GaoYaXianShu.m_Form
             try
             {
                 string 输入字符串 = string.Empty;
-                ////发送回复
-                //using (SerialPortDataInputForm m_WelderDataInputForm = m_componentContext.Resolve<SerialPortDataInputForm>())
-                //{
-                //    DialogResult result = m_WelderDataInputForm.ShowDialog();
-
-                //    if (result == DialogResult.OK)
-                //    {
-                //        输入字符串 = m_WelderDataInputForm.InputString;
-
-                //    }
-                //    else if (result == DialogResult.Abort)
-                //    {
-                //        m_RuntimeContextService.添加错误日志("输入异常，请重新输入");
-                //        return;
-                //    }
-                //    else
-                //    {
-                //        m_UIManeger.AppendinfoLog("用户取消了操作");
-                //        return;
-                //    }
-                //}
 
                 //向MES申请SN，保存到界面
                 var 申请SN反馈 = await m_MESApi.GetSN();
-                if (!申请SN反馈.IsSuccess)
+                if (申请SN反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("获取线束Sn异常");
                     return;
                 }
                 //保存到线束
@@ -80,7 +58,6 @@ namespace GaoYaXianShu.m_Form
                 //发送给雕刻机
                 输入字符串 = 申请SN反馈.Value;
                 byte[] buffer = Encoding.UTF8.GetBytes(输入字符串);
-
                 if (message.Contains("TCP:Give me QrSN"))
                 {
                     m_RuntimeContextService.添加信息日志("接收到请求二维码SN数据包：" + message);

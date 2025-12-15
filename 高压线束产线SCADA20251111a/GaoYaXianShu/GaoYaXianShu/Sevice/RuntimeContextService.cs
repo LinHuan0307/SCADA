@@ -35,7 +35,7 @@ namespace GaoYaXianShu.Sevice
             }
         }
 
-        public List<IRunLogic> 获取满足流程号的允许可执行的流程(ushort autoflow)
+        public List<IRunLogic> 获取流程号对应的且允许可执行的流程(ushort autoflow)
         {
             return m_RuntimeContext.运行逻辑对象列表.Where(obj => obj.目标流程字 == autoflow && obj.允许执行标志位).ToList();
         }
@@ -49,8 +49,12 @@ namespace GaoYaXianShu.Sevice
         {
             return m_RuntimeContext.运行逻辑对象列表;
         }
+        public Result 添加运行逻辑(IRunLogic runLogic)
+        {
+            m_RuntimeContext.运行逻辑对象列表.Add(runLogic);
+            return Result.Ok();
+        }
 
-        
 
         public Result 添加错误日志(string msg)
         {

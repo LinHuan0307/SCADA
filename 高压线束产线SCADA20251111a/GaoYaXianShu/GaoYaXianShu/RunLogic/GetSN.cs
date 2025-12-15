@@ -37,42 +37,38 @@ namespace GaoYaXianShu.RunLogic
         //向MES申请SN
         public async Task RunLogicAsync()
         {
-            try
-            {
-                //成功执行一次不在多次执行
-                允许执行标志位 = false;
+            
+            //成功执行一次不在多次执行
+            允许执行标志位 = false;
 
-                var 申请SN反馈 = await 申请获取SN();
-                if (申请SN反馈.IsFailed)
-                {
-                    m_RuntimeContextService.添加数据记录日志("获取SN异常");
-                    return;
-                }
-                else
-                {
-                    m_RuntimeContextService.添加数据记录日志("获取SN成功，已保存到控件中");
-                    
-                }
-            }
-            catch (Exception ex)
+            var res = await Result.Try(() => 申请获取SN(),
+                ex => new Error("获取SN运行逻辑异常").CausedBy(ex)
+            );
+            
+            if (res.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("获取SN方法异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志(res.Errors.First().Message);
+                return;
             }
+            else
+            {
+                m_RuntimeContextService.添加数据记录日志("获取SN成功，已保存到控件中");
+                    
+            }
+            
         }
 
-        private async Task<Result<bool>> 申请获取SN()
+        private async Task<Result> 申请获取SN()
         {
             
             //向MES申请SN，保存到界面
             var 申请SN反馈 = await m_MESApi.GetSN();
-            if (!申请SN反馈.IsSuccess)
+            if (申请SN反馈.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("获取线束Sn异常");
-                return Result.Fail("false");
+                return Result.Fail(申请SN反馈.Errors.First().Message);
             }
             //保存到线束
             m_RuntimeContextService.设置线束SN(申请SN反馈.Value);
-
                 
             return Result.Ok();
             

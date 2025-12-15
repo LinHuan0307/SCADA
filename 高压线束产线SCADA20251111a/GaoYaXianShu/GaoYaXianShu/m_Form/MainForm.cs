@@ -43,7 +43,7 @@ namespace GaoYaXianShu
         private readonly BackgroundWorker m_MESStatusWorker;
         private readonly BackgroundWorker m_UIRefreshWorker;
         private readonly LocalDbDAL m_localDbDAL;
-        private readonly RunLogicManeger m_RunLogicManeger;
+        private readonly RunLogicService m_RunLogicManeger;
 
         private bool m_Exixt;
 
@@ -52,7 +52,7 @@ namespace GaoYaXianShu
             RunConfigHelper             runConfigHelper,
             RuntimeContextService       runtimeContextService,
             PLCService                  pLCService,
-            RunLogicManeger             runLogicManeger,
+            RunLogicService             runLogicManeger,
             LocalDbDAL                  localDbDAL,
             RunConfigService            runConfigService,
             MesApiService               mesApiService)

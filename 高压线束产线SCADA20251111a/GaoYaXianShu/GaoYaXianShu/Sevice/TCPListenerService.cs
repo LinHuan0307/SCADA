@@ -74,12 +74,12 @@ namespace GaoYaXianShu.Sevice
         {
             using (var client = (TcpClient)state)
             {
-                var stream = client.GetStream();
-                var buffer = new byte[4096];
-                var clientEndPoint = client.Client.RemoteEndPoint;
-
                 try
                 {
+                    var stream = client.GetStream();
+                    var buffer = new byte[4096];
+                    var clientEndPoint = client.Client.RemoteEndPoint;
+
                     while (client.Connected)
                     {
                         int bytesRead = stream.Read(buffer, 0, buffer.Length);
@@ -96,7 +96,7 @@ namespace GaoYaXianShu.Sevice
                 }
                 finally
                 {
-                    m_RuntimeContextService.添加错误日志($"客户端已断开: {clientEndPoint}");
+                    m_RuntimeContextService.添加错误日志($"客户端已断开: {client.Client.RemoteEndPoint}");
                 }
             }
         }

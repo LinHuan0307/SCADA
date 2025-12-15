@@ -36,39 +36,31 @@ namespace GaoYaXianShu.RunLogic
 
         public async Task RunLogicAsync()
         {
-            var 获取焊接数据流程反馈 = new Result<bool>();
-            try
-            {
-                //成功执行一次不在多次执行
-                允许执行标志位 = false;
+            //成功执行一次不在多次执行
+            允许执行标志位 = false;
 
-                获取焊接数据流程反馈 = await 获取焊接机数据Async();
-            }
-            catch (Exception ex)
+            var 获取焊接数据流程反馈 = await Result.Try(() => 获取焊接机数据Async(),
+                ex => new Error("获取焊接数据运行逻辑异常").CausedBy(ex)
+            );
+
+            if (获取焊接数据流程反馈.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("获取焊接机数据方法异常！" + ex.Message);
-                
+                m_RuntimeContextService.添加错误日志(获取焊接数据流程反馈.Errors.First().Message);
+                return;
             }
-            finally
+            else
             {
-                if (获取焊接数据流程反馈.IsFailed)
-                {
-                    
-                }
-                else
-                {
-                    
-                }
+                m_RuntimeContextService.添加数据记录日志("获取焊接数据成功，已保存到控件中");
+
             }
         }
 
-        private async Task<Result<bool>> 获取焊接机数据Async()
+        private async Task<Result> 获取焊接机数据Async()
         {
             var 获取焊接机状态 = m_TCPClientService.获取焊接机连接状态();
             if (获取焊接机状态.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("获取焊接机数据异常");
-                return Result.Fail("false");
+                return Result.Fail(获取焊接机状态.Errors.First().Message);
             }
 
             var 焊接机连接正常 = 获取焊接机状态.Value;
@@ -77,25 +69,21 @@ namespace GaoYaXianShu.RunLogic
                 var 重连焊接机反馈 = m_TCPClientService.重连焊接机();
                 if (重连焊接机反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("重连焊接机失败");
-                    return Result.Fail("false");
+                    return Result.Fail(重连焊接机反馈.Errors.First().Message);
                 }
             }
 
             var 发送命令反馈 =await m_TCPClientService.给焊接机发送获取焊接数据命令Async();
-
             if (发送命令反馈.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("给焊接机发送获取焊接数据命令异常");
-                return Result.Fail("false");
+                return Result.Fail(发送命令反馈.Errors.First().Message);
             }
 
 
             var 获取焊接数据反馈 =await m_TCPClientService.获取焊接数据Async();
             if (获取焊接数据反馈.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("获取焊接数据并解析异常");
-                return Result.Fail("false");
+                return Result.Fail(获取焊接数据反馈.Errors.First().Message);
             }
 
             m_RunTimeContext.焊接数据 = 获取焊接数据反馈.Value;

@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace GaoYaXianShu.RunLogic
 {
-    public class RunLogicManeger
+    public class RunLogicService
     {
         private PLCService m_PLCService;
         private RunConfig m_RunConfig;
         private RuntimeContextService m_RuntimeContextService;
         private IComponentContext m_componentContext;
 
-        public RunLogicManeger(
+        public RunLogicService(
             IComponentContext componentContext,
             RunConfigHelper runConfigHelper,
             RuntimeContextService runtimeContextService,
@@ -37,7 +37,6 @@ namespace GaoYaXianShu.RunLogic
         /// <param></param>
         public async Task HandleAutoFlowNum()
         {
-
             //获取最新流程字
             var 获取流程字反馈 = await m_PLCService.Get流程字();
             if (获取流程字反馈.IsFailed)
@@ -45,11 +44,10 @@ namespace GaoYaXianShu.RunLogic
                 return;
             }
             m_RuntimeContextService.设置流程号(获取流程字反馈.Value);
-            //流程字满足允许执行。允许执行标志位根据具体的流程自行决定是否禁止执行。
-            //需要在同一个流程号多次执行的流程，例如采集曲线数据，可以在流程内继续允许执行
-            //在一个流程号周期内只需要执行一次的流程，例如进出站，可以在流程内禁止允许执行。
+            
+            //运行时根据流程号执行对应的流程
             foreach (var runlogic in 
-                m_RuntimeContextService.获取满足流程号的允许可执行的流程(获取流程字反馈.Value))
+                m_RuntimeContextService.获取流程号对应的且允许可执行的流程(获取流程字反馈.Value))
             {
                 await runlogic.RunLogicAsync();
             }
@@ -61,6 +59,7 @@ namespace GaoYaXianShu.RunLogic
         /// <param></param>
         public async Task ReHandleAutoFlowNum()
         {
+
             var 获取流程字反馈 = await m_PLCService.Get流程字();
             if (获取流程字反馈.IsFailed)
             {
@@ -77,13 +76,14 @@ namespace GaoYaXianShu.RunLogic
 
         private void 根据配置文件添加运行流程()
         {
-            foreach (var 运行逻辑配方实体类 in m_RunConfig.流程配置列表)
+            foreach (var 运行逻辑配方 in m_RunConfig.流程配置列表)
             {
-                //根据配置信息设置流程并添加到观察者列表中
+                //初始化时，根据配方添加流程到观察者列表中
                 
-                var runlogic = (IRunLogic)m_componentContext.ResolveKeyed<IRunLogic>(运行逻辑配方实体类.流程字对应操作);
-                runlogic.目标流程字 = 运行逻辑配方实体类.目标流程字;
-                m_RuntimeContextService.获取全部流程().Add(runlogic);
+                var runlogic = (IRunLogic)m_componentContext.ResolveKeyed<IRunLogic>(运行逻辑配方.流程字对应操作);
+                runlogic.目标流程字 = 运行逻辑配方.目标流程字;
+                runlogic.允许执行标志位 = true;
+                m_RuntimeContextService.添加运行逻辑(runlogic);
             }
         }
 

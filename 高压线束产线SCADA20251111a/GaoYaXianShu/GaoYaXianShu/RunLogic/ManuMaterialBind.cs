@@ -42,31 +42,28 @@ namespace GaoYaXianShu.RunLogic
         }
         public async Task RunLogicAsync()
         {
-            try
+            //成功执行一次不在多次执行
+            允许执行标志位 = false;
+
+            var 手动绑定物料反馈 = await Result.Try(() => 手动绑定物料Async(),
+                ex => new Error("手动绑定物料运行逻辑异常").CausedBy(ex));
+
+            if (手动绑定物料反馈.IsFailed)
             {
-                var 手动绑定物料反馈 = await 手动绑定物料Async();
-                if (手动绑定物料反馈.IsFailed)
-                {
-                    return;
-                }
-                else
-                {
-                    m_RuntimeContextService.添加数据记录日志("手动绑定物料成功");
-                    //成功执行一次不在多次执行
-                    允许执行标志位 = false;
-                }
+                return;
             }
-            catch (Exception ex)
+            else
             {
-                m_RuntimeContextService.添加错误日志("手动绑定物料异常" + ex.Message);
+                m_RuntimeContextService.添加数据记录日志("手动绑定物料成功");
+
             }
         }
 
-        private async Task<Result<bool>> 手动绑定物料Async()
+        private async Task<Result> 手动绑定物料Async()
         {
             
             //弹出绑定对话框，等待绑定
-            using (MaterialCodeInputForm m_MaterialCodeInputForm = m_componentContext.Resolve<MaterialCodeInputForm>())
+            using (MaterialCodeManuBindForm m_MaterialCodeInputForm = m_componentContext.Resolve<MaterialCodeManuBindForm>())
             {
                 DialogResult result = m_MaterialCodeInputForm.ShowDialog();
 
@@ -80,19 +77,19 @@ namespace GaoYaXianShu.RunLogic
                 else if (result == DialogResult.Abort)
                 {
                     m_RuntimeContextService.添加错误日志("输入异常，请重新输入");
-                    return Result.Fail("false");
+                    return Result.Fail("输入异常，请重新输入");
                 }
                 else
                 {
                     m_RuntimeContextService.添加信息日志("用户取消了操作");
-                    return Result.Fail("false");
+                    return Result.Fail("用户取消了操作");
                 }
             }
                 
 
-                m_RuntimeContextService.设置物料绑定流程执行OK();
+            m_RuntimeContextService.设置物料绑定流程执行OK();
 
-                return Result.Ok();
+            return Result.Ok();
             
         }
     }

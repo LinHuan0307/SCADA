@@ -33,7 +33,7 @@ namespace GaoYaXianShu.Sevice
             var 连接焊接机反馈 = m_TCPClient.Connect(m_RunConfig.焊接机IP地址, m_RunConfig.焊接机端口号);
             if (连接焊接机反馈.IsFailed)
             {
-                m_RuntimeContextService.添加错误日志("连接焊接机异常！" + string.Join("|", 连接焊接机反馈.Errors));
+                m_RuntimeContextService.添加错误日志("连接焊接机异常！" + 连接焊接机反馈.Errors.First().Message);
                 return;
             }
         }
@@ -46,76 +46,56 @@ namespace GaoYaXianShu.Sevice
         public Result 重连焊接机()
         {
             string header = "连接焊接机异常！";
-            try
+            
+            var 连接焊接机反馈 = m_TCPClient.Connect(m_RunConfig.焊接机IP地址, m_RunConfig.焊接机端口号);
+            if (连接焊接机反馈.IsFailed)
             {
-                var 连接焊接机反馈 = m_TCPClient.Connect(m_RunConfig.焊接机IP地址, m_RunConfig.焊接机端口号);
-                if (连接焊接机反馈.IsFailed)
-                {
-                    m_RuntimeContextService.添加错误日志(header + string.Join("|", 连接焊接机反馈.Errors));
-                    return Result.Fail(header);
-                }
-
-                m_RuntimeContextService.添加数据记录日志("重连焊接机成功！");
-                return Result.Ok();
-            }
-            catch (Exception ex)
-            {
-                m_RuntimeContextService.添加错误日志(header + ex.Message);
+                m_RuntimeContextService.添加错误日志(header + 连接焊接机反馈.Errors.First().Message);
                 return Result.Fail(header);
             }
+            return Result.Ok();
+            
         }
 
         public async Task<Result> 给焊接机发送获取焊接数据命令Async()
         {
             string header = "给焊接机发送获取焊接数据命令异常";
-            try
+            
+            var 发送命令反馈成功 = await m_TCPClient.SendAsync("GetResult");
+            if (发送命令反馈成功.IsFailed)
             {
-                var 发送命令反馈成功 = await m_TCPClient.SendAsync("GetResult");
-                if (发送命令反馈成功.IsFailed)
-                {
-                    m_RuntimeContextService.添加错误日志(header + string.Join("|", 发送命令反馈成功.Errors));
-                    return Result.Fail(header);
-                }
-
-                return Result.Ok();
-            }
-            catch(Exception ex)
-            {
-                m_RuntimeContextService.添加错误日志(header + ex.Message);
+                m_RuntimeContextService.添加错误日志(header + 发送命令反馈成功.Errors.First().Message);
                 return Result.Fail(header);
             }
+
+            return Result.Ok();
+            
         }
 
         public async Task<Result<WelderDataEntity>> 获取焊接数据Async()
         {
             string header = "获取焊接数据异常";
-            try
+            
+            var 发送命令反馈成功 = await m_TCPClient.ReceiveAsync();
+            if (发送命令反馈成功.IsFailed)
             {
-                var 发送命令反馈成功 = await m_TCPClient.ReceiveAsync();
-                if (发送命令反馈成功.IsFailed)
-                {
-                    m_RuntimeContextService.添加错误日志(header + string.Join("|", 发送命令反馈成功.Errors));
-                    return Result.Fail(header);
-                }
-
-                var 焊接数据文本 = 发送命令反馈成功.Value;
-                var 焊接数据 = JsonConvert.DeserializeObject<WelderDataEntity>(焊接数据文本);
-
-                if(焊接数据 == null)
-                {
-                    return Result.Fail("反序列化失败");
-                }
-                else
-                {
-                    return Result.Ok(焊接数据);
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                m_RuntimeContextService.添加错误日志(header + ex.Message);
+                m_RuntimeContextService.添加错误日志(header + 发送命令反馈成功.Errors.First().Message);
                 return Result.Fail(header);
             }
+
+            var 焊接数据文本 = 发送命令反馈成功.Value;
+            var 焊接数据 = JsonConvert.DeserializeObject<WelderDataEntity>(焊接数据文本);
+
+            if(焊接数据 == null)
+            {
+                return Result.Fail("焊接数据反序列化失败");
+            }
+            else
+            {
+                return Result.Ok(焊接数据);
+            }
+                
+            
         }
     }
 }

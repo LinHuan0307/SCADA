@@ -964,7 +964,7 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>左线束物料绑定界面</value>
+    <value>线束物料自动绑定界面</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MaterialCodeInputForm</value>

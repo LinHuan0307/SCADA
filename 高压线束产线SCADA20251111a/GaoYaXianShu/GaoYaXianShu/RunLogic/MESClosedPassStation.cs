@@ -32,14 +32,12 @@ namespace GaoYaXianShu.RunLogic
                 var MES反馈 = await m_pLCService.流程字反馈_收到出站申请();
                 if (MES反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("写入流程字反馈:收到申请出站信号异常");
                     m_RuntimeContextService.设置出站流程执行NG();
                     return;
                 }
                 var MES结果反馈 = await m_pLCService.MES结果反馈_出站成功();
                 if (MES结果反馈.IsFailed)
                 {
-                    m_RuntimeContextService.添加错误日志("向PLC写入MES反馈信号出站成功信号异常");
                     m_RuntimeContextService.设置出站流程执行NG();
                     return;
                 }
@@ -50,7 +48,7 @@ namespace GaoYaXianShu.RunLogic
             }
             catch (Exception ex)
             {
-                m_RuntimeContextService.添加错误日志("出站方法异常！" + ex.Message);
+                m_RuntimeContextService.添加错误日志("MES屏蔽出站方法异常！" + ex.Message);
             }
         }
     }
