@@ -317,7 +317,7 @@ namespace GaoYaXianShu
                     var 日志队列 = m_RuntimeContextService.获取日志队列().Value;
                     while (日志队列.Count() > 0)
                     {
-                        Rtb_Log.AppendText(日志队列.Dequeue());
+                        AppendLog(日志队列.Dequeue() + Environment.NewLine);
                     }
                 }));
             }
@@ -701,6 +701,28 @@ namespace GaoYaXianShu
         private void Light_PLCStatus_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AppendLog(string message)
+        {
+            // 追加日志
+            Rtb_Log.AppendText(message + Environment.NewLine);
+
+            // 如果行数超过最大行数，删除前面的行
+            int maxLines = 10000;
+            if (Rtb_Log.Lines.Length > maxLines)
+            {
+                // 删除前1000行（或适当数量）
+                int removeCount = 1000;
+                int startIndex = 0;
+                int endIndex = Rtb_Log.GetFirstCharIndexFromLine(removeCount);
+                Rtb_Log.Select(startIndex, endIndex);
+                Rtb_Log.SelectedText = "";
+            }
+
+            // 滚动到末尾
+            Rtb_Log.SelectionStart = Rtb_Log.Text.Length;
+            Rtb_Log.ScrollToCaret();
         }
     }
 }
