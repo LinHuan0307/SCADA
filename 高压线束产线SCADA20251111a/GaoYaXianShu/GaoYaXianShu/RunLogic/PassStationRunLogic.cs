@@ -27,12 +27,12 @@ namespace GaoYaXianShu.RunLogic
         public PassStationRunLogic(PLCService pLCService,
             RuntimeContextService runtimeContextService,
             MesApiService mesApiService,
-            RunConfigHelper runConfigHelper)
+            RunConfig runConfig)
         {
             m_pLCService = pLCService;
             m_RuntimeContextService = runtimeContextService;
             m_MESApi = mesApiService;
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = m_RunConfig = runConfig;
             SN_regex = new Regex(m_RunConfig.SN的正则表达式, RegexOptions.Compiled);
         }
 

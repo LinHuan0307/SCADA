@@ -1,5 +1,21 @@
-﻿<?xml version="1.0"?>
-<RuntimeContextConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="utf-16"?>
+<RuntimeContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <焊接数据 />
+  <流程步状态>进站</流程步状态>
+  <进站流程执行状态>执行中</进站流程执行状态>
+  <物料绑定流程执行状态>执行中</物料绑定流程执行状态>
+  <数据上传流程执行状态>执行中</数据上传流程执行状态>
+  <出站流程执行状态>执行中</出站流程执行状态>
+  <流程步>0</流程步>
+  <托盘号 />
+  <测试开始时间>2025-12-22T16:02:57.2398839+08:00</测试开始时间>
+  <测试结束时间>2025-12-22T16:02:57.2398839+08:00</测试结束时间>
+  <线束SN />
+  <PLC连接状态>true</PLC连接状态>
+  <扫码枪连接状态>false</扫码枪连接状态>
+  <MES连接状态>false</MES连接状态>
+  <焊接机连接状态>false</焊接机连接状态>
+  <报警文本列表 />
   <批次码绑定列表>
     <批次码列表项>
       <批次物料名>asd</批次物料名>
@@ -8,6 +24,4 @@
       <已使用>345</已使用>
     </批次码列表项>
   </批次码绑定列表>
-  <运行逻辑对象列表>
-  </运行逻辑对象列表>
-</RuntimeContextConfig>
+</RuntimeContext>

@@ -19,10 +19,10 @@ namespace GaoYaXianShu.Sevice
 
         public PLCService(
             HslAsyncOmronUdpHelper pLC, 
-            RunConfigHelper runConfigHelper,
+            RunConfig runConfig,
             RuntimeContextService runtimeContextService)
         {
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = m_RunConfig = runConfig;
             m_PLC = pLC;
             m_RuntimeContextService = runtimeContextService;
             m_PLC.Address = m_RunConfig.PLC的IP地址;

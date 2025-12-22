@@ -32,28 +32,28 @@ namespace GaoYaXianShu
 {
     public partial class MainForm : UIForm
     {
-        private readonly IComponentContext m_componentContext;
-        private readonly RunConfigHelper m_RunConfigHelper;
-        private readonly PLCService m_PLCService;
-        private readonly MesApiService m_MESApi;
+        private readonly IComponentContext  m_componentContext;
+        private readonly RunConfig          m_RunConfig;
+        private readonly PLCService         m_PLCService;
+        private readonly MesApiService      m_MESApi;
+        private readonly RuntimeContext     m_RuntimeContext;
         private readonly RuntimeContextService m_RuntimeContextService;
-        private readonly RunConfigService m_RunConfigService;
-        private readonly BackgroundWorker m_PLCReadWorker;
-        private readonly BackgroundWorker m_PLCHeathBeatWorker;
-        private readonly BackgroundWorker m_MESStatusWorker;
-        private readonly BackgroundWorker m_UIRefreshWorker;
-        private readonly LocalDbDAL m_localDbDAL;
-        private readonly RunLogicService m_RunLogicManeger;
+        private readonly RunConfigService   m_RunConfigService;
+        private readonly BackgroundWorker   m_PLCReadWorker;
+        private readonly BackgroundWorker   m_PLCHeathBeatWorker;
+        private readonly BackgroundWorker   m_MESStatusWorker;
+        private readonly BackgroundWorker   m_UIRefreshWorker;
+        private readonly LocalDbDAL         m_localDbDAL;
 
         private bool m_Exixt;
 
         public MainForm(
             IComponentContext           componentContext,
-            RunConfigHelper             runConfigHelper,
+            RunConfig                   runConfig,
             RuntimeContextService       runtimeContextService,
             PLCService                  pLCService,
-            RunLogicService             runLogicManeger,
             LocalDbDAL                  localDbDAL,
+            RuntimeContext              runtimeContext,
             RunConfigService            runConfigService,
             MesApiService               mesApiService)
         {
@@ -64,9 +64,9 @@ namespace GaoYaXianShu
             m_componentContext = componentContext;
 
             m_PLCService = pLCService;
-            m_RunLogicManeger = runLogicManeger;
+            m_RuntimeContext = runtimeContext;
             m_RuntimeContextService = runtimeContextService;
-            m_RunConfigHelper = runConfigHelper;
+            m_RunConfig = runConfig;
             m_localDbDAL = localDbDAL;
             m_MESApi = mesApiService;
             m_RunConfigService = runConfigService;
@@ -107,12 +107,12 @@ namespace GaoYaXianShu
             TimefleshTimer.Enabled = true;
 
             //绑定datagridview
-            Dgv_BatchCode.DataSource = m_RunConfigHelper.RunConfig.批次码绑定列表;
+            Dgv_BatchCode.DataSource = m_RuntimeContext.批次码绑定列表;
             Dgv_BatchCode.AutoGenerateColumns = true;
             Dgv_BatchCode.Refresh();
 
             //绑定propertygrid
-            Pg_configuration.SelectedObject = m_RunConfigHelper.RunConfig;
+            Pg_configuration.SelectedObject = m_RunConfig;
             Pg_configuration.Refresh();
 
             string err = string.Empty;
@@ -123,7 +123,7 @@ namespace GaoYaXianShu
                 return;
             }
 
-            foreach (var item in m_RunConfigHelper.RunConfig.IO状态指示灯配置列表)
+            foreach (var item in m_RunConfig.IO状态指示灯配置列表)
             {
                 var IO = (IOStatusLight)m_componentContext.Resolve<IOStatusLight>();
                 IO.名字 = item.名字;
@@ -131,7 +131,7 @@ namespace GaoYaXianShu
                 FlowPanel_JOG.Controls.Add(IO);
             }
 
-            foreach (var item in m_RunConfigHelper.RunConfig.切换开关配置列表)
+            foreach (var item in m_RunConfig.切换开关配置列表)
             {
                 var sw = (SwitchButton)m_componentContext.Resolve<SwitchButton>();
                 sw.名字 = item.名字;
@@ -140,7 +140,7 @@ namespace GaoYaXianShu
             }
             
 
-            foreach (var item in m_RunConfigHelper.RunConfig.点动按钮配置列表)
+            foreach (var item in m_RunConfig.点动按钮配置列表)
             {
                 var btn = (JogButton)m_componentContext.Resolve<JogButton>();
                 btn.名字 = item.名字;
@@ -148,6 +148,15 @@ namespace GaoYaXianShu
                 FlowPanel_JOG.Controls.Add(btn);
             }
 
+            foreach (var 运行逻辑配方 in m_RunConfig.流程配置列表)
+            {
+                //初始化时，根据配方添加流程到观察者列表中
+
+                var runlogic = m_componentContext.ResolveKeyed<IRunLogic>(运行逻辑配方.流程字对应操作);
+                runlogic.目标流程字 = 运行逻辑配方.目标流程字;
+                runlogic.允许执行标志位 = true;
+                m_RuntimeContextService.添加运行逻辑(runlogic);
+            }
 
             m_RuntimeContextService.设置PLC状态连接正常();
 
@@ -162,7 +171,8 @@ namespace GaoYaXianShu
             if (UIMessageBox.ShowAsk("确定要关闭主操作界面吗？"))
             {
                 m_RuntimeContextService.添加信息日志("用户确认关闭窗体，保存配置中...");
-                m_RunConfigHelper.保存系统配置文件();
+                m_RunConfigService.保存系统配置文件();
+                m_RuntimeContextService.保存系统配置文件();
 
             }
             else
@@ -190,9 +200,18 @@ namespace GaoYaXianShu
                 {
                     continue;
                 }
+                var 获取流程字反馈 = await m_PLCService.Get流程字();
+                if (获取流程字反馈.IsFailed)
+                {
+                    continue;
+                }
+
+                var 当前流程字 = 获取流程字反馈.Value;
+
+                m_RuntimeContextService.设置流程号(当前流程字);
                 //流程字处理
-                await m_RunLogicManeger.HandleAutoFlowNum();
-                
+                await m_RuntimeContextService.处理自动步流程Async();
+
             }
         }
 
@@ -205,7 +224,7 @@ namespace GaoYaXianShu
         public async void Btn_ReHanldeAutoFlow_Click(object sender, EventArgs e)
         {
 
-            await m_RunLogicManeger.ReHandleAutoFlowNum();
+            m_RuntimeContextService.重置流程执行标志位_仅重置当前流程号的流程();
 
         }
         public async void PLC_HeathBeatHandle(object sender, DoWorkEventArgs e)
@@ -238,7 +257,7 @@ namespace GaoYaXianShu
                 await Task.Delay(100);
                 this.Invoke(new Action(() =>
                 {
-                    switch (m_RuntimeContextService.获取进站流程执行结果().Value)
+                    switch (m_RuntimeContext.进站流程执行状态)
                     {
                         case ExecuteStatus.执行完成:
                             LightInStation.State = UILightState.On;
@@ -254,7 +273,7 @@ namespace GaoYaXianShu
                             break;
                     }
 
-                    switch (m_RuntimeContextService.获取物料绑定流程执行结果().Value)
+                    switch (m_RuntimeContext.物料绑定流程执行状态)
                     {
                         case ExecuteStatus.执行完成:
                             LightMaterialBind.State = UILightState.On;
@@ -269,7 +288,7 @@ namespace GaoYaXianShu
                             LightMaterialBind.OnColor = Color.Yellow;
                             break;
                     }
-                    switch (m_RuntimeContextService.获取数据上传流程执行结果().Value)
+                    switch (m_RuntimeContext.数据上传流程执行状态)
                     {
                         case ExecuteStatus.执行完成:
                             LightDataUpload.State = UILightState.On;
@@ -284,7 +303,7 @@ namespace GaoYaXianShu
                             LightDataUpload.OnColor = Color.Yellow;
                             break;
                     }
-                    switch (m_RuntimeContextService.获取出站流程执行结果().Value)
+                    switch (m_RuntimeContext.出站流程执行状态)
                     {
                         case ExecuteStatus.执行完成:
                             LightOutStation.State = UILightState.On;
@@ -300,21 +319,21 @@ namespace GaoYaXianShu
                             break;
                     }
 
-                    Tb_AutoFlow.Text = m_RuntimeContextService.获取流程号().Value.ToString();
-                    Tb_TrayCode.Text = m_RuntimeContextService.获取托盘号().Value.ToString();
+                    Tb_AutoFlow.Text = m_RuntimeContext.流程步.ToString();
+                    Tb_TrayCode.Text = m_RuntimeContext.托盘号.ToString();
                     
-                    Tb_StartTestTime.Text = m_RuntimeContextService.获取测试开始时间().Value.ToString("yyyy-MM-dd HH:mm:ss");
-                    Tb_FinishTestTime.Text = m_RuntimeContextService.获取测试结束时间().Value.ToString("yyyy-MM-dd HH:mm:ss");
-                    Tb_XianShuSN.Text = m_RuntimeContextService.获取线束SN().Value;
+                    Tb_StartTestTime.Text = m_RuntimeContext.测试开始时间.ToString("yyyy-MM-dd HH:mm:ss");
+                    Tb_FinishTestTime.Text = m_RuntimeContext.测试结束时间.ToString("yyyy-MM-dd HH:mm:ss");
+                    Tb_XianShuSN.Text = m_RuntimeContext.线束SN;
 
                     Dgv_BatchCode.Refresh();
 
-                    Light_PLCStatus.State           = m_RuntimeContextService.获取PLC状态连接状态().Value ? UILightState.On : UILightState.Off;
-                    Light_SerialPortStatus.State    = m_RuntimeContextService.获取扫码枪连接状态().Value ? UILightState.On : UILightState.Off;
-                    Light_MesStatus.State           = m_RuntimeContextService.获取MES状态连接状态().Value ? UILightState.On : UILightState.Off;
-                    Light_HanJieJi.State            = m_RuntimeContextService.获取焊接机连接状态().Value ? UILightState.On : UILightState.Off;
+                    Light_PLCStatus.State           = m_RuntimeContext.PLC连接状态 ? UILightState.On : UILightState.Off;
+                    Light_SerialPortStatus.State    = m_RuntimeContext.扫码枪连接状态 ? UILightState.On : UILightState.Off;
+                    Light_MesStatus.State           = m_RuntimeContext.MES连接状态 ? UILightState.On : UILightState.Off;
+                    Light_HanJieJi.State            = m_RuntimeContext.焊接机连接状态 ? UILightState.On : UILightState.Off;
 
-                    var 日志队列 = m_RuntimeContextService.获取日志队列().Value;
+                    var 日志队列 = m_RuntimeContext.Log日志队列;
                     while (日志队列.Count() > 0)
                     {
                         AppendLog(日志队列.Dequeue() + Environment.NewLine);
@@ -598,8 +617,8 @@ namespace GaoYaXianShu
         /// <param name="e"></param>
         public  void Btn_SaveConfiguration_Click(object sender, EventArgs e)
         {
-            m_RunConfigHelper.保存系统配置文件();
-            
+            m_RunConfigService.保存系统配置文件();
+
         }
         /// <summary>
         /// 定时更新时间选择器
@@ -652,7 +671,7 @@ namespace GaoYaXianShu
                 {
                     batchCode = m_BatchCodeInputForm.BatchCode;
                     //解析之后添加
-                    var res = m_RunConfigService.AddBatch(batchCode.批次物料名, batchCode.批次码, batchCode.物料总数);
+                    var res = m_RuntimeContextService.AddBatch(batchCode.批次物料名, batchCode.批次码, batchCode.物料总数);
                     //var res = m_RunConfigService.AddBatch("卡扣", "123456789012345678901234567890", 100);
                     if (res.IsFailed)
                     {

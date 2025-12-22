@@ -15,6 +15,7 @@ namespace GaoYaXianShu.Entity
     /// </summary>
     public class RuntimeContext
     {
+        [XmlIgnore]
         public List<IRunLogic> 运行逻辑对象列表 { get; set; } = new List<IRunLogic>();
 
         public WelderDataEntity 焊接数据 { get; set; } = new WelderDataEntity();
@@ -45,10 +46,12 @@ namespace GaoYaXianShu.Entity
 
         public bool 焊接机连接状态 { get; set; } = false;
 
+        [XmlIgnore]
         public Queue<string> Log日志队列 { get; set; } = new Queue<string>();
 
         public List<string> 报警文本列表 { get; set; } = new List<string>();
 
+        public BindingList<批次码列表项> 批次码绑定列表 { get; set; } = new BindingList<批次码列表项>();
     }
 
     public enum AutoFlowStatus

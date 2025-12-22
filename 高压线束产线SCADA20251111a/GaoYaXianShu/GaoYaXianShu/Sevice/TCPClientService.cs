@@ -22,11 +22,11 @@ namespace GaoYaXianShu.Sevice
 
         public TCPClientService(
                 TCPClientHelper tCPClient,
-                RunConfigHelper runConfigHelper,
+                RunConfig runConfig,
                 RuntimeContextService runtimeContextService)
         {
             m_TCPClient = tCPClient;
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = m_RunConfig = runConfig;
             m_RuntimeContextService = runtimeContextService;
 
 

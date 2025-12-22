@@ -26,11 +26,11 @@ namespace GaoYaXianShu.m_Form
         private RunConfig m_RunConfig;
 
         public SerialPortDataInputForm(
-            RunConfigService runConfigService)
+            RunConfig runConfig)
         {
             InitializeComponent();
 
-            m_RunConfig = runConfigService.m_RunConfig;
+            m_RunConfig = runConfig;
         }
 
 

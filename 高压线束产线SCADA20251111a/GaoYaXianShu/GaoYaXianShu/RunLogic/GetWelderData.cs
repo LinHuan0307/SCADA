@@ -23,12 +23,12 @@ namespace GaoYaXianShu.RunLogic
 
         public GetWelderData(
                 TCPClientService tCPClientService,
-                RunConfigHelper runConfigHelper,
+                RunConfig runConfig,
                 RuntimeContextService runtimeContextService,
                 RuntimeContext runtimeContext)
         {
             m_TCPClientService = tCPClientService;
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = runConfig;
             m_RuntimeContextService = runtimeContextService;
             m_RunTimeContext = runtimeContext;
 

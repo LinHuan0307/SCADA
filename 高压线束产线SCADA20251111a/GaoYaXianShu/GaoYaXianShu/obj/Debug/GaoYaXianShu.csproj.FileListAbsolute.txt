@@ -1163,11 +1163,11 @@ D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXia.7432BC64.Up2Date
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.exe
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.pdb
-D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.MaterialCodeInputForm.resources
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.SerialPortDataInputForm.resources
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.SculptureForm.resources
-D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.MaterialCodeInputForm.kkj-CM.resources
-D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.MaterialCodeInputForm.zu-ZA.resources
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.UserControls.JogButton.resources
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.UserControls.SwitchButton.resources
 D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.UserControls.IOStatusLight.resources
+D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.MaterialCodeManuBindForm.resources
+D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.MaterialCodeManuBindForm.kkj-CM.resources
+D:\CodeHub\SCADA\高压线束产线SCADA20251111a\GaoYaXianShu\GaoYaXianShu\obj\Debug\GaoYaXianShu.m_Form.MaterialCodeManuBindForm.zu-ZA.resources

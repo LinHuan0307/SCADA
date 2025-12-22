@@ -31,13 +31,13 @@ namespace GaoYaXianShu.RunLogic
             PLCService pLCService,
             RuntimeContextService runtimeContextService,
             MesApiService mesApiService,
-            RunConfigHelper runConfigHelper)
+            RunConfig runConfig)
         {
             m_componentContext = componentContext;
             m_pLCService = pLCService;
             m_RuntimeContextService = runtimeContextService;
             m_MESApi = mesApiService;
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = m_RunConfig = runConfig;
 
         }
         public async Task RunLogicAsync()

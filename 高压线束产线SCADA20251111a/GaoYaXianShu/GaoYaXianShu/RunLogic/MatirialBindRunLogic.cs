@@ -32,12 +32,12 @@ namespace GaoYaXianShu.RunLogic
             RuntimeContextService runtimeContextService,
             MesApiService mesApiService,
             RunConfigService runConfigService,
-            RunConfigHelper runConfigHelper)
+            RunConfig runConfig)
         {
             m_pLCService = pLCService;
             m_RuntimeContextService = runtimeContextService;
             m_MESApi = mesApiService;
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = m_RunConfig = runConfig;
             m_RunConfigService = runConfigService;
         }
         public async Task RunLogicAsync()
@@ -89,7 +89,7 @@ namespace GaoYaXianShu.RunLogic
             //先判断是否有足够的物料进行删除
             foreach (var 批次码名字 in m_RunConfig.批次码名字列表)
             {
-                var 是否有足够的物料可以绑定 = m_RunConfigService.IsMatirialAvailableForBinding(批次码名字);
+                var 是否有足够的物料可以绑定 = m_RuntimeContextService.IsMatirialAvailableForBinding(批次码名字);
                 if (是否有足够的物料可以绑定.IsFailed)
                 {
                     return Result.Fail(是否有足够的物料可以绑定.Errors.First().Message);
@@ -100,7 +100,7 @@ namespace GaoYaXianShu.RunLogic
             foreach (var 批次码名字 in m_RunConfig.批次码名字列表)
             {
                 //获取最新批次码。判断是否物料可以绑定
-                var 最新批次 = m_RunConfigService.GetLastBatch(批次码名字);
+                var 最新批次 = m_RuntimeContextService.GetLastBatch(批次码名字);
                 if (最新批次.IsFailed)
                 {
                     return Result.Fail(最新批次.Errors.First().Message);
@@ -108,7 +108,7 @@ namespace GaoYaXianShu.RunLogic
                 var LastBatchCode = 最新批次.Value;
 
                 //修改当前物料数量
-                var 扣料反馈 = m_RunConfigService.UseMaterial(批次码名字);
+                var 扣料反馈 = m_RuntimeContextService.UseMaterial(批次码名字);
                 if (扣料反馈.IsFailed)
                 {
                     return Result.Fail(扣料反馈.Errors.First().Message);

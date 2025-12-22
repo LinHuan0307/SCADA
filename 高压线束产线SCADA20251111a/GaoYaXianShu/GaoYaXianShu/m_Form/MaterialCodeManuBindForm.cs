@@ -30,14 +30,14 @@ namespace GaoYaXianShu.m_Form
         private RuntimeContextService m_RuntimeContextService;
         private MesApiService m_MESApi;
         public MaterialCodeManuBindForm(
-            RunConfigService runConfigService,
+            RunConfig runConfig,
             RuntimeContextService runtimeContextService,
             MesApiService mesApiService
             )
         {
             InitializeComponent();
 
-            m_RunConfig = runConfigService.m_RunConfig;
+            m_RunConfig = runConfig;
             m_RuntimeContextService = runtimeContextService;
             m_MESApi = mesApiService;
             

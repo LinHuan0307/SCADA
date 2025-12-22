@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-16"?>
 <RunConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <测试类型>0</测试类型>
   <测试名字>0</测试名字>
@@ -52,12 +52,7 @@
       <报文值>000000</报文值>
     </MESRequesePHeaderEntity>
   </MES报文头键值对列表>
-  <批次码名字列表>
-    <string>123</string>
-    <string>123</string>
-    <string>123</string>
-  </批次码名字列表>
-  <批次码绑定列表 />
+  <批次码名字列表 />
   <切换开关配置列表>
     <点动开关配置实体类>
       <名字>4</名字>

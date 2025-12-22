@@ -26,10 +26,10 @@ namespace GaoYaXianShu.Sevice
         public Action<NetworkStream, string> MessageReceived { get; set; }
 
         public TCPListenerService(
-                RunConfigHelper runConfigHelper,
+                RunConfig runConfig,
                 RuntimeContextService runtimeContextService)
         {
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = m_RunConfig = runConfig;
             m_RuntimeContextService = runtimeContextService;
 
             Start(m_RunConfig.激光雕刻机服务器IP地址, m_RunConfig.激光雕刻机服务器端口号);

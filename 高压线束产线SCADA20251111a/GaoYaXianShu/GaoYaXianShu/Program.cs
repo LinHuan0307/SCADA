@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using BydDCS.Helper;
+using DianJiaoJi.Helper;
 using GaoYaXianShu.Entity;
 using GaoYaXianShu.Helper;
 using GaoYaXianShu.m_Form;
@@ -48,10 +49,30 @@ namespace GaoYaXianShu
             Build.RegisterType<SwitchButton>().InstancePerDependency();
             //注册点动按钮用户控件
             Build.RegisterType<JogButton>().InstancePerDependency();
-            //注册UI控件操作服务
-            Build.RegisterType<RuntimeContext>().InstancePerLifetimeScope();
-            //注册配置服务
-            Build.RegisterType<RunConfigHelper>().InstancePerLifetimeScope(); 
+            //注册运行配置RunConfig类
+            Build.Register<RunConfig>(c =>
+            {
+                var configManager = new XmlConfigManager<RunConfig>(@"Config/RunConfig.xml");
+                return configManager.Load();
+            }).SingleInstance();
+
+            //注册运行配置XmlConfigManager<RunConfig>类,提供RunConfig的序列化、反序列化、读取、保存文件功能
+            Build.RegisterType<XmlConfigManager<RunConfig>>()
+                .WithParameter("filePath", @"Config/RunConfig.xml")
+                .SingleInstance();
+
+            //注册运行配置RuntimeContext类
+            Build.Register<RuntimeContext>(c =>
+            {
+                var configManager = new XmlConfigManager<RuntimeContext>(@"Config/RuntimeContextConfig.xml");
+                return configManager.Load();
+            }).SingleInstance();
+
+            //注册运行配置XmlConfigManager<RuntimeContext>类,提供RuntimeContext的序列化、反序列化、读取、保存文件功能
+            Build.RegisterType<XmlConfigManager<RuntimeContext>>()
+                .WithParameter("filePath", @"Config/RuntimeContextConfig.xml")
+                .SingleInstance();
+
             //注册PLC读写服务
             Build.RegisterType<PLCService>().InstancePerLifetimeScope();
             //注册TCP客户端驱动
@@ -80,8 +101,7 @@ namespace GaoYaXianShu
             Build.RegisterType<MESClosedMatirialBind>().Keyed<IRunLogic>("MES屏蔽物料绑定").InstancePerLifetimeScope();
             //注册MES屏蔽数据上传服务
             Build.RegisterType<MESClosedDataUpload>().Keyed<IRunLogic>("MES屏蔽数据上传").InstancePerLifetimeScope();
-            //注册运行逻辑管理者
-            Build.RegisterType<RunLogicService>().InstancePerLifetimeScope();
+            
             //对全局变量操作的服务
             Build.RegisterType<RuntimeContextService>().SingleInstance();
             //对对运行配置实体操作的服务

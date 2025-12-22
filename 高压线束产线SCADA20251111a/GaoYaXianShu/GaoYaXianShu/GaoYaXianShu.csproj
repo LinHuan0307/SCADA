@@ -163,6 +163,7 @@
     <Compile Include="Entity\WelderData\WelderDataEntity.cs" />
     <Compile Include="Helper\HslAsyncOmronUdpHelper.cs" />
     <Compile Include="Helper\TCPClientHelper.cs" />
+    <Compile Include="Helper\XmlConfigManager.cs" />
     <Compile Include="m_Form\BatchCodeInputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,7 +207,6 @@
     <Compile Include="m_Form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\RunConfigHelper.cs" />
     <Compile Include="Helper\WebApiClient.cs" />
     <Compile Include="RunLogic\GetSN.cs" />
     <Compile Include="RunLogic\GetWelderData.cs" />
@@ -222,7 +222,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunLogic\ResetAutoFlow.cs" />
     <Compile Include="RunLogic\IRunLogic.cs" />
-    <Compile Include="Sevice\RunLogicService.cs" />
     <Compile Include="Sevice\MesApiService.cs" />
     <Compile Include="Sevice\PLCService.cs" />
     <Compile Include="Sevice\RunConfigService.cs" />

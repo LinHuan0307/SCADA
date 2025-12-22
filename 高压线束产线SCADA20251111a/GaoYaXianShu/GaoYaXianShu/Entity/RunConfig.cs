@@ -129,7 +129,7 @@ namespace GaoYaXianShu.Entity
         [Description("添加批次窗口中批次码名字下拉列表数据来源。")]
         public BindingList<string> 批次码名字列表 { get; set; }
 
-        public BindingList<批次码列表项> 批次码绑定列表 { get; set; } = new BindingList<批次码列表项>();
+        
 
         public List<点动开关配置实体类> 切换开关配置列表 { get; set; } = new List<点动开关配置实体类>();
 

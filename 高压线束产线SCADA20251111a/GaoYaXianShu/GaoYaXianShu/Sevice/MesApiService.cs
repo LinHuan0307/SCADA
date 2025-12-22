@@ -23,9 +23,9 @@ namespace GaoYaXianShu.Sevice
         private WebApiClient m_WebApiClient;
         private IPAddress m_ipa;
         private Ping m_ping;
-        public MesApiService(RunConfigHelper runConfigHelper, RuntimeContextService runtimeContextService)
+        public MesApiService(RunConfig runConfig, RuntimeContextService runtimeContextService)
         {
-            m_RunConfig = runConfigHelper.RunConfig;
+            m_RunConfig = m_RunConfig = runConfig;
             m_RuntimeContextService = runtimeContextService;
             //编写对象列表导入报文头
             m_WebApiClient = new WebApiClient(m_RunConfig.MES基地址, m_RunConfig.MES报文头键值对列表);

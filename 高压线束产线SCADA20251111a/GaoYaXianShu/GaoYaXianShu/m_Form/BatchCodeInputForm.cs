@@ -28,11 +28,11 @@ namespace GaoYaXianShu.m_Form
 
         public BatchCodeInputForm(
             RuntimeContextService runtimeContextService,
-            RunConfigService    runConfigService)
+            RunConfig    runConfig)
         {
             InitializeComponent();
 
-            m_RunConfig = runConfigService.m_RunConfig;
+            m_RunConfig = runConfig;
             m_RuntimeContextService = runtimeContextService;
         }
 
