@@ -60,8 +60,12 @@
             Tb_MainForm = new TabPage();
             uiTableLayoutPanel4 = new Sunny.UI.UITableLayoutPanel();
             uiTableLayoutPanel6 = new Sunny.UI.UITableLayoutPanel();
-            Dgv_BatchCode = new Sunny.UI.UIDataGridView();
             uiTableLayoutPanel7 = new Sunny.UI.UITableLayoutPanel();
+            uiTableLayoutPanel10 = new Sunny.UI.UITableLayoutPanel();
+            uiLabel1 = new Sunny.UI.UILabel();
+            Tb_FinishTestTime = new Sunny.UI.UITextBox();
+            Tb_SCADAFlowShow = new Sunny.UI.UITextBox();
+            uiLabel4 = new Sunny.UI.UILabel();
             uiTableLayoutPanel11 = new Sunny.UI.UITableLayoutPanel();
             Lb_OutStation = new Sunny.UI.UILabel();
             Lb_TestFinish = new Sunny.UI.UILabel();
@@ -72,9 +76,7 @@
             LightOutStation = new Sunny.UI.UILight();
             Lb_InStation = new Sunny.UI.UILabel();
             uiTableLayoutPanel12 = new Sunny.UI.UITableLayoutPanel();
-            uiLabel12 = new Sunny.UI.UILabel();
             uiLabel11 = new Sunny.UI.UILabel();
-            Tb_FinishTestTime = new Sunny.UI.UITextBox();
             Tb_StartTestTime = new Sunny.UI.UITextBox();
             Tb_AutoFlow = new Sunny.UI.UITextBox();
             uiLabel6 = new Sunny.UI.UILabel();
@@ -83,6 +85,9 @@
             uiTableLayoutPanel13 = new Sunny.UI.UITableLayoutPanel();
             uiLabel2 = new Sunny.UI.UILabel();
             Tb_XianShuSN = new Sunny.UI.UITextBox();
+            uiTableLayoutPanel14 = new Sunny.UI.UITableLayoutPanel();
+            Lb_TestResult = new Sunny.UI.UILabel();
+            Dgv_TestDataShow = new Sunny.UI.UIDataGridView();
             Tb_DataMenege = new TabPage();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel4 = new TableLayoutPanel();
@@ -130,11 +135,13 @@
             Tb_MainForm.SuspendLayout();
             uiTableLayoutPanel4.SuspendLayout();
             uiTableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Dgv_BatchCode).BeginInit();
             uiTableLayoutPanel7.SuspendLayout();
+            uiTableLayoutPanel10.SuspendLayout();
             uiTableLayoutPanel11.SuspendLayout();
             uiTableLayoutPanel12.SuspendLayout();
             uiTableLayoutPanel13.SuspendLayout();
+            uiTableLayoutPanel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Dgv_TestDataShow).BeginInit();
             Tb_DataMenege.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
@@ -166,7 +173,7 @@
             uiTableLayoutPanel1.RowCount = 2;
             uiTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
             uiTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel1.Size = new Size(1145, 665);
+            uiTableLayoutPanel1.Size = new Size(1308, 821);
             uiTableLayoutPanel1.TabIndex = 0;
             uiTableLayoutPanel1.TagString = null;
             // 
@@ -184,7 +191,7 @@
             uiTableLayoutPanel3.RowCount = 2;
             uiTableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             uiTableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 71F));
-            uiTableLayoutPanel3.Size = new Size(1139, 559);
+            uiTableLayoutPanel3.Size = new Size(1302, 715);
             uiTableLayoutPanel3.TabIndex = 1;
             uiTableLayoutPanel3.TagString = null;
             // 
@@ -200,11 +207,11 @@
             uiTableLayoutPanel5.Controls.Add(Btn_SelectPage, 0, 0);
             uiTableLayoutPanel5.Controls.Add(Btn_Exist, 4, 0);
             uiTableLayoutPanel5.Dock = DockStyle.Fill;
-            uiTableLayoutPanel5.Location = new Point(3, 491);
+            uiTableLayoutPanel5.Location = new Point(3, 647);
             uiTableLayoutPanel5.Name = "uiTableLayoutPanel5";
             uiTableLayoutPanel5.RowCount = 1;
             uiTableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel5.Size = new Size(833, 65);
+            uiTableLayoutPanel5.Size = new Size(953, 65);
             uiTableLayoutPanel5.TabIndex = 1;
             uiTableLayoutPanel5.TagString = null;
             // 
@@ -240,7 +247,7 @@
             Btn_Exist.Cursor = Cursors.Hand;
             Btn_Exist.Dock = DockStyle.Fill;
             Btn_Exist.Font = new Font("宋体", 20F);
-            Btn_Exist.Location = new Point(703, 3);
+            Btn_Exist.Location = new Point(823, 3);
             Btn_Exist.MinimumSize = new Size(1, 1);
             Btn_Exist.Name = "Btn_Exist";
             Btn_Exist.Size = new Size(127, 59);
@@ -255,13 +262,13 @@
             uiTableLayoutPanel16.Controls.Add(Rtb_Log, 0, 1);
             uiTableLayoutPanel16.Controls.Add(uiTableLayoutPanel15, 0, 0);
             uiTableLayoutPanel16.Dock = DockStyle.Fill;
-            uiTableLayoutPanel16.Location = new Point(842, 3);
+            uiTableLayoutPanel16.Location = new Point(962, 3);
             uiTableLayoutPanel16.Name = "uiTableLayoutPanel16";
             uiTableLayoutPanel16.RowCount = 2;
             uiTableLayoutPanel3.SetRowSpan(uiTableLayoutPanel16, 2);
             uiTableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             uiTableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel16.Size = new Size(294, 553);
+            uiTableLayoutPanel16.Size = new Size(337, 709);
             uiTableLayoutPanel16.TabIndex = 3;
             uiTableLayoutPanel16.TagString = null;
             // 
@@ -276,7 +283,7 @@
             Rtb_Log.Name = "Rtb_Log";
             Rtb_Log.Padding = new Padding(2);
             Rtb_Log.ShowText = false;
-            Rtb_Log.Size = new Size(286, 493);
+            Rtb_Log.Size = new Size(329, 649);
             Rtb_Log.TabIndex = 2;
             Rtb_Log.TextAlignment = ContentAlignment.MiddleCenter;
             // 
@@ -300,7 +307,7 @@
             uiTableLayoutPanel15.Name = "uiTableLayoutPanel15";
             uiTableLayoutPanel15.RowCount = 1;
             uiTableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel15.Size = new Size(288, 44);
+            uiTableLayoutPanel15.Size = new Size(331, 44);
             uiTableLayoutPanel15.TabIndex = 6;
             uiTableLayoutPanel15.TagString = null;
             // 
@@ -308,11 +315,11 @@
             // 
             Light_MesStatus.Dock = DockStyle.Fill;
             Light_MesStatus.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            Light_MesStatus.Location = new Point(243, 3);
+            Light_MesStatus.Location = new Point(278, 3);
             Light_MesStatus.MinimumSize = new Size(1, 1);
             Light_MesStatus.Name = "Light_MesStatus";
             Light_MesStatus.Radius = 38;
-            Light_MesStatus.Size = new Size(42, 38);
+            Light_MesStatus.Size = new Size(50, 38);
             Light_MesStatus.TabIndex = 6;
             Light_MesStatus.Text = "uiLight3";
             // 
@@ -320,11 +327,11 @@
             // 
             Light_SerialPortStatus.Dock = DockStyle.Fill;
             Light_SerialPortStatus.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            Light_SerialPortStatus.Location = new Point(147, 3);
+            Light_SerialPortStatus.Location = new Point(168, 3);
             Light_SerialPortStatus.MinimumSize = new Size(1, 1);
             Light_SerialPortStatus.Name = "Light_SerialPortStatus";
             Light_SerialPortStatus.Radius = 38;
-            Light_SerialPortStatus.Size = new Size(42, 38);
+            Light_SerialPortStatus.Size = new Size(49, 38);
             Light_SerialPortStatus.TabIndex = 5;
             Light_SerialPortStatus.Text = "uiLight2";
             // 
@@ -335,7 +342,7 @@
             uiLabel8.ForeColor = Color.FromArgb(48, 48, 48);
             uiLabel8.Location = new Point(3, 0);
             uiLabel8.Name = "uiLabel8";
-            uiLabel8.Size = new Size(42, 44);
+            uiLabel8.Size = new Size(49, 44);
             uiLabel8.TabIndex = 1;
             uiLabel8.Text = "PLC";
             uiLabel8.TextAlign = ContentAlignment.MiddleRight;
@@ -345,9 +352,9 @@
             uiLabel9.Dock = DockStyle.Fill;
             uiLabel9.Font = new Font("宋体", 12F);
             uiLabel9.ForeColor = Color.FromArgb(48, 48, 48);
-            uiLabel9.Location = new Point(99, 0);
+            uiLabel9.Location = new Point(113, 0);
             uiLabel9.Name = "uiLabel9";
-            uiLabel9.Size = new Size(42, 44);
+            uiLabel9.Size = new Size(49, 44);
             uiLabel9.TabIndex = 2;
             uiLabel9.Text = "串口";
             uiLabel9.TextAlign = ContentAlignment.MiddleRight;
@@ -357,9 +364,9 @@
             uiLabel10.Dock = DockStyle.Fill;
             uiLabel10.Font = new Font("宋体", 12F);
             uiLabel10.ForeColor = Color.FromArgb(48, 48, 48);
-            uiLabel10.Location = new Point(195, 0);
+            uiLabel10.Location = new Point(223, 0);
             uiLabel10.Name = "uiLabel10";
-            uiLabel10.Size = new Size(42, 44);
+            uiLabel10.Size = new Size(49, 44);
             uiLabel10.TabIndex = 3;
             uiLabel10.Text = "MES";
             uiLabel10.TextAlign = ContentAlignment.MiddleRight;
@@ -368,11 +375,11 @@
             // 
             Light_PLCStatus.Dock = DockStyle.Fill;
             Light_PLCStatus.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            Light_PLCStatus.Location = new Point(51, 3);
+            Light_PLCStatus.Location = new Point(58, 3);
             Light_PLCStatus.MinimumSize = new Size(1, 1);
             Light_PLCStatus.Name = "Light_PLCStatus";
             Light_PLCStatus.Radius = 38;
-            Light_PLCStatus.Size = new Size(42, 38);
+            Light_PLCStatus.Size = new Size(49, 38);
             Light_PLCStatus.TabIndex = 4;
             Light_PLCStatus.Text = "uiLight1";
             // 
@@ -390,7 +397,7 @@
             Tbc_Main.MainPage = "";
             Tbc_Main.Name = "Tbc_Main";
             Tbc_Main.SelectedIndex = 0;
-            Tbc_Main.Size = new Size(833, 482);
+            Tbc_Main.Size = new Size(953, 638);
             Tbc_Main.SizeMode = TabSizeMode.Fixed;
             Tbc_Main.TabIndex = 4;
             Tbc_Main.TabUnSelectedForeColor = Color.FromArgb(240, 240, 240);
@@ -401,7 +408,7 @@
             Tb_MainForm.Controls.Add(uiTableLayoutPanel4);
             Tb_MainForm.Location = new Point(0, 40);
             Tb_MainForm.Name = "Tb_MainForm";
-            Tb_MainForm.Size = new Size(833, 442);
+            Tb_MainForm.Size = new Size(953, 598);
             Tb_MainForm.TabIndex = 0;
             Tb_MainForm.Text = "主界面";
             Tb_MainForm.UseVisualStyleBackColor = true;
@@ -417,7 +424,7 @@
             uiTableLayoutPanel4.RowCount = 1;
             uiTableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             uiTableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            uiTableLayoutPanel4.Size = new Size(833, 442);
+            uiTableLayoutPanel4.Size = new Size(953, 598);
             uiTableLayoutPanel4.TabIndex = 1;
             uiTableLayoutPanel4.TagString = null;
             // 
@@ -425,95 +432,123 @@
             // 
             uiTableLayoutPanel6.ColumnCount = 1;
             uiTableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel6.Controls.Add(Dgv_BatchCode, 0, 1);
             uiTableLayoutPanel6.Controls.Add(uiTableLayoutPanel7, 0, 0);
+            uiTableLayoutPanel6.Controls.Add(uiTableLayoutPanel14, 0, 1);
             uiTableLayoutPanel6.Dock = DockStyle.Fill;
             uiTableLayoutPanel6.Location = new Point(3, 3);
             uiTableLayoutPanel6.Name = "uiTableLayoutPanel6";
-            uiTableLayoutPanel6.RowCount = 2;
-            uiTableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 207F));
+            uiTableLayoutPanel6.RowCount = 3;
+            uiTableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 275F));
+            uiTableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
             uiTableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel6.Size = new Size(827, 436);
+            uiTableLayoutPanel6.Size = new Size(947, 592);
             uiTableLayoutPanel6.TabIndex = 1;
             uiTableLayoutPanel6.TagString = null;
-            // 
-            // Dgv_BatchCode
-            // 
-            Dgv_BatchCode.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(238, 251, 250);
-            Dgv_BatchCode.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            Dgv_BatchCode.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            Dgv_BatchCode.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            Dgv_BatchCode.BackgroundColor = Color.FromArgb(238, 251, 250);
-            Dgv_BatchCode.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 190, 172);
-            dataGridViewCellStyle2.Font = new Font("宋体", 30F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 190, 172);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            Dgv_BatchCode.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            Dgv_BatchCode.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("宋体", 30F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(204, 242, 238);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            Dgv_BatchCode.DefaultCellStyle = dataGridViewCellStyle3;
-            Dgv_BatchCode.Dock = DockStyle.Fill;
-            Dgv_BatchCode.EnableHeadersVisualStyles = false;
-            Dgv_BatchCode.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            Dgv_BatchCode.GridColor = Color.FromArgb(34, 199, 183);
-            Dgv_BatchCode.Location = new Point(3, 210);
-            Dgv_BatchCode.Name = "Dgv_BatchCode";
-            Dgv_BatchCode.RectColor = Color.FromArgb(0, 190, 172);
-            Dgv_BatchCode.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(238, 251, 250);
-            dataGridViewCellStyle4.Font = new Font("宋体", 30F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 190, 172);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            Dgv_BatchCode.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            Dgv_BatchCode.RowHeadersWidth = 50;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("宋体", 30F);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(48, 48, 48);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(204, 242, 238);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(48, 48, 48);
-            Dgv_BatchCode.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            Dgv_BatchCode.RowTemplate.Height = 23;
-            Dgv_BatchCode.ScrollBarBackColor = Color.FromArgb(238, 251, 250);
-            Dgv_BatchCode.ScrollBarColor = Color.FromArgb(0, 190, 172);
-            Dgv_BatchCode.ScrollBarRectColor = Color.FromArgb(0, 190, 172);
-            Dgv_BatchCode.ScrollBarStyleInherited = false;
-            Dgv_BatchCode.SelectedIndex = -1;
-            Dgv_BatchCode.Size = new Size(821, 223);
-            Dgv_BatchCode.StripeOddColor = Color.FromArgb(238, 251, 250);
-            Dgv_BatchCode.Style = Sunny.UI.UIStyle.Custom;
-            Dgv_BatchCode.TabIndex = 0;
             // 
             // uiTableLayoutPanel7
             // 
             uiTableLayoutPanel7.ColumnCount = 1;
             uiTableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            uiTableLayoutPanel7.Controls.Add(uiTableLayoutPanel10, 0, 2);
             uiTableLayoutPanel7.Controls.Add(uiTableLayoutPanel11, 0, 0);
             uiTableLayoutPanel7.Controls.Add(uiTableLayoutPanel12, 0, 1);
-            uiTableLayoutPanel7.Controls.Add(uiTableLayoutPanel13, 0, 2);
+            uiTableLayoutPanel7.Controls.Add(uiTableLayoutPanel13, 0, 3);
             uiTableLayoutPanel7.Dock = DockStyle.Fill;
             uiTableLayoutPanel7.Location = new Point(3, 3);
             uiTableLayoutPanel7.Name = "uiTableLayoutPanel7";
-            uiTableLayoutPanel7.RowCount = 3;
-            uiTableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33333F));
-            uiTableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33333F));
-            uiTableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33333F));
-            uiTableLayoutPanel7.Size = new Size(821, 201);
+            uiTableLayoutPanel7.RowCount = 4;
+            uiTableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            uiTableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            uiTableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            uiTableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            uiTableLayoutPanel7.Size = new Size(941, 269);
             uiTableLayoutPanel7.TabIndex = 1;
             uiTableLayoutPanel7.TagString = null;
+            // 
+            // uiTableLayoutPanel10
+            // 
+            uiTableLayoutPanel10.ColumnCount = 6;
+            uiTableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            uiTableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            uiTableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            uiTableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            uiTableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            uiTableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            uiTableLayoutPanel10.Controls.Add(uiLabel1, 4, 0);
+            uiTableLayoutPanel10.Controls.Add(Tb_FinishTestTime, 5, 0);
+            uiTableLayoutPanel10.Controls.Add(Tb_SCADAFlowShow, 1, 0);
+            uiTableLayoutPanel10.Controls.Add(uiLabel4, 0, 0);
+            uiTableLayoutPanel10.Dock = DockStyle.Fill;
+            uiTableLayoutPanel10.Location = new Point(3, 137);
+            uiTableLayoutPanel10.Name = "uiTableLayoutPanel10";
+            uiTableLayoutPanel10.RowCount = 1;
+            uiTableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            uiTableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            uiTableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            uiTableLayoutPanel10.Size = new Size(935, 61);
+            uiTableLayoutPanel10.TabIndex = 3;
+            uiTableLayoutPanel10.TagString = null;
+            // 
+            // uiLabel1
+            // 
+            uiLabel1.Dock = DockStyle.Fill;
+            uiLabel1.Font = new Font("宋体", 18F);
+            uiLabel1.ForeColor = Color.FromArgb(48, 48, 48);
+            uiLabel1.Location = new Point(625, 0);
+            uiLabel1.Name = "uiLabel1";
+            uiLabel1.Size = new Size(94, 61);
+            uiLabel1.TabIndex = 9;
+            uiLabel1.Text = "测试结束时间";
+            uiLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Tb_FinishTestTime
+            // 
+            Tb_FinishTestTime.Cursor = Cursors.IBeam;
+            Tb_FinishTestTime.Dock = DockStyle.Fill;
+            Tb_FinishTestTime.FillReadOnlyColor = Color.FromArgb(128, 255, 255);
+            Tb_FinishTestTime.Font = new Font("宋体", 20F);
+            Tb_FinishTestTime.Location = new Point(726, 5);
+            Tb_FinishTestTime.Margin = new Padding(4, 5, 4, 5);
+            Tb_FinishTestTime.MinimumSize = new Size(1, 16);
+            Tb_FinishTestTime.Name = "Tb_FinishTestTime";
+            Tb_FinishTestTime.Padding = new Padding(5);
+            Tb_FinishTestTime.ReadOnly = true;
+            Tb_FinishTestTime.ShowText = false;
+            Tb_FinishTestTime.Size = new Size(205, 51);
+            Tb_FinishTestTime.TabIndex = 7;
+            Tb_FinishTestTime.TextAlignment = ContentAlignment.MiddleLeft;
+            Tb_FinishTestTime.Watermark = "";
+            // 
+            // Tb_SCADAFlowShow
+            // 
+            uiTableLayoutPanel10.SetColumnSpan(Tb_SCADAFlowShow, 3);
+            Tb_SCADAFlowShow.Cursor = Cursors.IBeam;
+            Tb_SCADAFlowShow.Dock = DockStyle.Fill;
+            Tb_SCADAFlowShow.FillReadOnlyColor = Color.FromArgb(128, 255, 255);
+            Tb_SCADAFlowShow.Font = new Font("宋体", 30F);
+            Tb_SCADAFlowShow.Location = new Point(104, 5);
+            Tb_SCADAFlowShow.Margin = new Padding(4, 5, 4, 5);
+            Tb_SCADAFlowShow.MinimumSize = new Size(1, 16);
+            Tb_SCADAFlowShow.Name = "Tb_SCADAFlowShow";
+            Tb_SCADAFlowShow.Padding = new Padding(5);
+            Tb_SCADAFlowShow.ReadOnly = true;
+            Tb_SCADAFlowShow.ShowText = false;
+            Tb_SCADAFlowShow.Size = new Size(514, 51);
+            Tb_SCADAFlowShow.TabIndex = 0;
+            Tb_SCADAFlowShow.TextAlignment = ContentAlignment.MiddleCenter;
+            Tb_SCADAFlowShow.Watermark = "";
+            // 
+            // uiLabel4
+            // 
+            uiLabel4.Dock = DockStyle.Fill;
+            uiLabel4.Font = new Font("宋体", 18F);
+            uiLabel4.ForeColor = Color.FromArgb(48, 48, 48);
+            uiLabel4.Location = new Point(3, 0);
+            uiLabel4.Name = "uiLabel4";
+            uiLabel4.Size = new Size(94, 61);
+            uiLabel4.TabIndex = 1;
+            uiLabel4.Text = "SCADA流程";
+            uiLabel4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // uiTableLayoutPanel11
             // 
@@ -539,7 +574,7 @@
             uiTableLayoutPanel11.Name = "uiTableLayoutPanel11";
             uiTableLayoutPanel11.RowCount = 1;
             uiTableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel11.Size = new Size(815, 61);
+            uiTableLayoutPanel11.Size = new Size(935, 61);
             uiTableLayoutPanel11.TabIndex = 0;
             uiTableLayoutPanel11.TagString = null;
             // 
@@ -548,9 +583,9 @@
             Lb_OutStation.Dock = DockStyle.Fill;
             Lb_OutStation.Font = new Font("宋体", 18F);
             Lb_OutStation.ForeColor = Color.FromArgb(48, 48, 48);
-            Lb_OutStation.Location = new Point(672, 0);
+            Lb_OutStation.Location = new Point(762, 0);
             Lb_OutStation.Name = "Lb_OutStation";
-            Lb_OutStation.Size = new Size(140, 61);
+            Lb_OutStation.Size = new Size(170, 61);
             Lb_OutStation.TabIndex = 7;
             Lb_OutStation.Text = "申请出站";
             Lb_OutStation.TextAlign = ContentAlignment.MiddleLeft;
@@ -560,9 +595,9 @@
             Lb_TestFinish.Dock = DockStyle.Fill;
             Lb_TestFinish.Font = new Font("宋体", 18F);
             Lb_TestFinish.ForeColor = Color.FromArgb(48, 48, 48);
-            Lb_TestFinish.Location = new Point(469, 0);
+            Lb_TestFinish.Location = new Point(529, 0);
             Lb_TestFinish.Name = "Lb_TestFinish";
-            Lb_TestFinish.Size = new Size(137, 61);
+            Lb_TestFinish.Size = new Size(167, 61);
             Lb_TestFinish.TabIndex = 6;
             Lb_TestFinish.Text = "数据保存";
             Lb_TestFinish.TextAlign = ContentAlignment.MiddleLeft;
@@ -572,9 +607,9 @@
             Lb_TestStart.Dock = DockStyle.Fill;
             Lb_TestStart.Font = new Font("宋体", 18F);
             Lb_TestStart.ForeColor = Color.FromArgb(48, 48, 48);
-            Lb_TestStart.Location = new Point(266, 0);
+            Lb_TestStart.Location = new Point(296, 0);
             Lb_TestStart.Name = "Lb_TestStart";
-            Lb_TestStart.Size = new Size(137, 61);
+            Lb_TestStart.Size = new Size(167, 61);
             Lb_TestStart.TabIndex = 5;
             Lb_TestStart.Text = "物料绑定";
             Lb_TestStart.TextAlign = ContentAlignment.MiddleLeft;
@@ -583,7 +618,7 @@
             // 
             LightMaterialBind.Dock = DockStyle.Fill;
             LightMaterialBind.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            LightMaterialBind.Location = new Point(206, 3);
+            LightMaterialBind.Location = new Point(236, 3);
             LightMaterialBind.MinimumSize = new Size(1, 1);
             LightMaterialBind.Name = "LightMaterialBind";
             LightMaterialBind.Radius = 0;
@@ -611,7 +646,7 @@
             // 
             LightDataUpload.Dock = DockStyle.Fill;
             LightDataUpload.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            LightDataUpload.Location = new Point(409, 3);
+            LightDataUpload.Location = new Point(469, 3);
             LightDataUpload.MinimumSize = new Size(1, 1);
             LightDataUpload.Name = "LightDataUpload";
             LightDataUpload.Radius = 0;
@@ -625,7 +660,7 @@
             // 
             LightOutStation.Dock = DockStyle.Fill;
             LightOutStation.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            LightOutStation.Location = new Point(612, 3);
+            LightOutStation.Location = new Point(702, 3);
             LightOutStation.MinimumSize = new Size(1, 1);
             LightOutStation.Name = "LightOutStation";
             LightOutStation.Radius = 0;
@@ -642,25 +677,21 @@
             Lb_InStation.ForeColor = Color.FromArgb(48, 48, 48);
             Lb_InStation.Location = new Point(63, 0);
             Lb_InStation.Name = "Lb_InStation";
-            Lb_InStation.Size = new Size(137, 61);
+            Lb_InStation.Size = new Size(167, 61);
             Lb_InStation.TabIndex = 4;
             Lb_InStation.Text = "申请进站";
             Lb_InStation.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // uiTableLayoutPanel12
             // 
-            uiTableLayoutPanel12.ColumnCount = 8;
+            uiTableLayoutPanel12.ColumnCount = 6;
             uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.55556F));
+            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.22222F));
+            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.22222F));
-            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26F));
-            uiTableLayoutPanel12.Controls.Add(uiLabel12, 6, 0);
+            uiTableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             uiTableLayoutPanel12.Controls.Add(uiLabel11, 4, 0);
-            uiTableLayoutPanel12.Controls.Add(Tb_FinishTestTime, 7, 0);
             uiTableLayoutPanel12.Controls.Add(Tb_StartTestTime, 5, 0);
             uiTableLayoutPanel12.Controls.Add(Tb_AutoFlow, 1, 0);
             uiTableLayoutPanel12.Controls.Add(uiLabel6, 0, 0);
@@ -671,66 +702,36 @@
             uiTableLayoutPanel12.Name = "uiTableLayoutPanel12";
             uiTableLayoutPanel12.RowCount = 1;
             uiTableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel12.Size = new Size(815, 61);
+            uiTableLayoutPanel12.Size = new Size(935, 61);
             uiTableLayoutPanel12.TabIndex = 1;
             uiTableLayoutPanel12.TagString = null;
-            // 
-            // uiLabel12
-            // 
-            uiLabel12.Dock = DockStyle.Fill;
-            uiLabel12.Font = new Font("宋体", 18F);
-            uiLabel12.ForeColor = Color.FromArgb(48, 48, 48);
-            uiLabel12.Location = new Point(609, 0);
-            uiLabel12.Name = "uiLabel12";
-            uiLabel12.Size = new Size(94, 61);
-            uiLabel12.TabIndex = 9;
-            uiLabel12.Text = "测试结束时间";
-            uiLabel12.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // uiLabel11
             // 
             uiLabel11.Dock = DockStyle.Fill;
             uiLabel11.Font = new Font("宋体", 18F);
             uiLabel11.ForeColor = Color.FromArgb(48, 48, 48);
-            uiLabel11.Location = new Point(409, 0);
+            uiLabel11.Location = new Point(625, 0);
             uiLabel11.Name = "uiLabel11";
             uiLabel11.Size = new Size(94, 61);
             uiLabel11.TabIndex = 8;
             uiLabel11.Text = "测试开始时间";
             uiLabel11.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Tb_FinishTestTime
-            // 
-            Tb_FinishTestTime.Cursor = Cursors.IBeam;
-            Tb_FinishTestTime.Dock = DockStyle.Fill;
-            Tb_FinishTestTime.FillReadOnlyColor = Color.FromArgb(128, 255, 255);
-            Tb_FinishTestTime.Font = new Font("宋体", 30F);
-            Tb_FinishTestTime.Location = new Point(710, 5);
-            Tb_FinishTestTime.Margin = new Padding(4, 5, 4, 5);
-            Tb_FinishTestTime.MinimumSize = new Size(1, 16);
-            Tb_FinishTestTime.Name = "Tb_FinishTestTime";
-            Tb_FinishTestTime.Padding = new Padding(5);
-            Tb_FinishTestTime.ReadOnly = true;
-            Tb_FinishTestTime.ShowText = false;
-            Tb_FinishTestTime.Size = new Size(101, 51);
-            Tb_FinishTestTime.TabIndex = 7;
-            Tb_FinishTestTime.TextAlignment = ContentAlignment.MiddleLeft;
-            Tb_FinishTestTime.Watermark = "";
-            // 
             // Tb_StartTestTime
             // 
             Tb_StartTestTime.Cursor = Cursors.IBeam;
             Tb_StartTestTime.Dock = DockStyle.Fill;
             Tb_StartTestTime.FillReadOnlyColor = Color.FromArgb(128, 255, 255);
-            Tb_StartTestTime.Font = new Font("宋体", 30F);
-            Tb_StartTestTime.Location = new Point(510, 5);
+            Tb_StartTestTime.Font = new Font("宋体", 20F);
+            Tb_StartTestTime.Location = new Point(726, 5);
             Tb_StartTestTime.Margin = new Padding(4, 5, 4, 5);
             Tb_StartTestTime.MinimumSize = new Size(1, 16);
             Tb_StartTestTime.Name = "Tb_StartTestTime";
             Tb_StartTestTime.Padding = new Padding(5);
             Tb_StartTestTime.ReadOnly = true;
             Tb_StartTestTime.ShowText = false;
-            Tb_StartTestTime.Size = new Size(92, 51);
+            Tb_StartTestTime.Size = new Size(205, 51);
             Tb_StartTestTime.TabIndex = 6;
             Tb_StartTestTime.TextAlignment = ContentAlignment.MiddleLeft;
             Tb_StartTestTime.Watermark = "";
@@ -748,7 +749,7 @@
             Tb_AutoFlow.Padding = new Padding(5);
             Tb_AutoFlow.ReadOnly = true;
             Tb_AutoFlow.ShowText = false;
-            Tb_AutoFlow.Size = new Size(98, 51);
+            Tb_AutoFlow.Size = new Size(203, 51);
             Tb_AutoFlow.TabIndex = 0;
             Tb_AutoFlow.TextAlignment = ContentAlignment.MiddleCenter;
             Tb_AutoFlow.Watermark = "";
@@ -762,7 +763,7 @@
             uiLabel6.Name = "uiLabel6";
             uiLabel6.Size = new Size(94, 61);
             uiLabel6.TabIndex = 1;
-            uiLabel6.Text = "流程字";
+            uiLabel6.Text = "PLC流程字";
             uiLabel6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // uiLabel7
@@ -770,7 +771,7 @@
             uiLabel7.Dock = DockStyle.Fill;
             uiLabel7.Font = new Font("宋体", 18F);
             uiLabel7.ForeColor = Color.FromArgb(48, 48, 48);
-            uiLabel7.Location = new Point(209, 0);
+            uiLabel7.Location = new Point(314, 0);
             uiLabel7.Name = "uiLabel7";
             uiLabel7.Size = new Size(94, 61);
             uiLabel7.TabIndex = 2;
@@ -783,16 +784,16 @@
             Tb_TrayCode.Dock = DockStyle.Fill;
             Tb_TrayCode.FillReadOnlyColor = Color.FromArgb(128, 255, 255);
             Tb_TrayCode.Font = new Font("宋体", 30F);
-            Tb_TrayCode.Location = new Point(310, 5);
+            Tb_TrayCode.Location = new Point(415, 5);
             Tb_TrayCode.Margin = new Padding(4, 5, 4, 5);
             Tb_TrayCode.MinimumSize = new Size(1, 16);
             Tb_TrayCode.Name = "Tb_TrayCode";
             Tb_TrayCode.Padding = new Padding(5);
             Tb_TrayCode.ReadOnly = true;
             Tb_TrayCode.ShowText = false;
-            Tb_TrayCode.Size = new Size(92, 51);
+            Tb_TrayCode.Size = new Size(203, 51);
             Tb_TrayCode.TabIndex = 3;
-            Tb_TrayCode.TextAlignment = ContentAlignment.MiddleLeft;
+            Tb_TrayCode.TextAlignment = ContentAlignment.MiddleCenter;
             Tb_TrayCode.Watermark = "";
             // 
             // uiTableLayoutPanel13
@@ -805,11 +806,11 @@
             uiTableLayoutPanel13.Controls.Add(uiLabel2, 0, 0);
             uiTableLayoutPanel13.Controls.Add(Tb_XianShuSN, 1, 0);
             uiTableLayoutPanel13.Dock = DockStyle.Fill;
-            uiTableLayoutPanel13.Location = new Point(3, 137);
+            uiTableLayoutPanel13.Location = new Point(3, 204);
             uiTableLayoutPanel13.Name = "uiTableLayoutPanel13";
             uiTableLayoutPanel13.RowCount = 1;
             uiTableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel13.Size = new Size(815, 61);
+            uiTableLayoutPanel13.Size = new Size(935, 62);
             uiTableLayoutPanel13.TabIndex = 2;
             uiTableLayoutPanel13.TagString = null;
             // 
@@ -820,7 +821,7 @@
             uiLabel2.ForeColor = Color.FromArgb(48, 48, 48);
             uiLabel2.Location = new Point(3, 0);
             uiLabel2.Name = "uiLabel2";
-            uiLabel2.Size = new Size(94, 61);
+            uiLabel2.Size = new Size(94, 62);
             uiLabel2.TabIndex = 0;
             uiLabel2.Text = "线束SN";
             uiLabel2.TextAlign = ContentAlignment.MiddleCenter;
@@ -839,17 +840,92 @@
             Tb_XianShuSN.Padding = new Padding(5);
             Tb_XianShuSN.ReadOnly = true;
             Tb_XianShuSN.ShowText = false;
-            Tb_XianShuSN.Size = new Size(707, 51);
+            Tb_XianShuSN.Size = new Size(827, 52);
             Tb_XianShuSN.TabIndex = 2;
             Tb_XianShuSN.TextAlignment = ContentAlignment.MiddleLeft;
             Tb_XianShuSN.Watermark = "";
+            // 
+            // uiTableLayoutPanel14
+            // 
+            uiTableLayoutPanel14.ColumnCount = 2;
+            uiTableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 300F));
+            uiTableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            uiTableLayoutPanel14.Controls.Add(Lb_TestResult, 0, 0);
+            uiTableLayoutPanel14.Controls.Add(Dgv_TestDataShow, 1, 0);
+            uiTableLayoutPanel14.Dock = DockStyle.Fill;
+            uiTableLayoutPanel14.Location = new Point(3, 278);
+            uiTableLayoutPanel14.Name = "uiTableLayoutPanel14";
+            uiTableLayoutPanel14.RowCount = 1;
+            uiTableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            uiTableLayoutPanel14.Size = new Size(941, 294);
+            uiTableLayoutPanel14.TabIndex = 2;
+            uiTableLayoutPanel14.TagString = null;
+            // 
+            // Lb_TestResult
+            // 
+            Lb_TestResult.BackColor = Color.Transparent;
+            Lb_TestResult.Dock = DockStyle.Fill;
+            Lb_TestResult.Font = new Font("宋体", 80F);
+            Lb_TestResult.ForeColor = Color.FromArgb(48, 48, 48);
+            Lb_TestResult.Location = new Point(3, 0);
+            Lb_TestResult.Name = "Lb_TestResult";
+            Lb_TestResult.Size = new Size(294, 294);
+            Lb_TestResult.TabIndex = 0;
+            Lb_TestResult.Text = "NULL";
+            Lb_TestResult.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Dgv_TestDataShow
+            // 
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(235, 243, 255);
+            Dgv_TestDataShow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            Dgv_TestDataShow.BackgroundColor = Color.White;
+            Dgv_TestDataShow.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle2.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            Dgv_TestDataShow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            Dgv_TestDataShow.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            Dgv_TestDataShow.DefaultCellStyle = dataGridViewCellStyle3;
+            Dgv_TestDataShow.Dock = DockStyle.Fill;
+            Dgv_TestDataShow.EnableHeadersVisualStyles = false;
+            Dgv_TestDataShow.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            Dgv_TestDataShow.GridColor = Color.FromArgb(80, 160, 255);
+            Dgv_TestDataShow.Location = new Point(303, 3);
+            Dgv_TestDataShow.Name = "Dgv_TestDataShow";
+            Dgv_TestDataShow.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(235, 243, 255);
+            dataGridViewCellStyle4.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(48, 48, 48);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(80, 160, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            Dgv_TestDataShow.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            Dgv_TestDataShow.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            Dgv_TestDataShow.SelectedIndex = -1;
+            Dgv_TestDataShow.Size = new Size(635, 288);
+            Dgv_TestDataShow.StripeOddColor = Color.FromArgb(235, 243, 255);
+            Dgv_TestDataShow.TabIndex = 1;
             // 
             // Tb_DataMenege
             // 
             Tb_DataMenege.Controls.Add(tableLayoutPanel2);
             Tb_DataMenege.Location = new Point(0, 40);
             Tb_DataMenege.Name = "Tb_DataMenege";
-            Tb_DataMenege.Size = new Size(833, 442);
+            Tb_DataMenege.Size = new Size(200, 60);
             Tb_DataMenege.TabIndex = 1;
             Tb_DataMenege.Text = "数据查询";
             Tb_DataMenege.UseVisualStyleBackColor = true;
@@ -879,7 +955,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(833, 442);
+            tableLayoutPanel2.Size = new Size(200, 60);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -906,7 +982,7 @@
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(833, 70);
+            tableLayoutPanel4.Size = new Size(200, 70);
             tableLayoutPanel4.TabIndex = 14;
             // 
             // label4
@@ -926,12 +1002,12 @@
             BtnQueryProductDataByTimespan.Cursor = Cursors.Hand;
             BtnQueryProductDataByTimespan.Dock = DockStyle.Fill;
             BtnQueryProductDataByTimespan.Font = new Font("宋体", 14F);
-            BtnQueryProductDataByTimespan.Location = new Point(741, 2);
+            BtnQueryProductDataByTimespan.Location = new Point(109, 2);
             BtnQueryProductDataByTimespan.Margin = new Padding(2);
             BtnQueryProductDataByTimespan.MinimumSize = new Size(1, 1);
             BtnQueryProductDataByTimespan.Name = "BtnQueryProductDataByTimespan";
             BtnQueryProductDataByTimespan.Radius = 2;
-            BtnQueryProductDataByTimespan.Size = new Size(90, 31);
+            BtnQueryProductDataByTimespan.Size = new Size(89, 31);
             BtnQueryProductDataByTimespan.TabIndex = 13;
             BtnQueryProductDataByTimespan.Text = "查询";
             BtnQueryProductDataByTimespan.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -941,7 +1017,7 @@
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(379, 0);
+            label3.Location = new Point(63, 0);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(71, 35);
@@ -968,7 +1044,7 @@
             Tb_ProductDataquerySNInput.Font = new Font("宋体", 14F);
             Tb_ProductDataquerySNInput.Location = new Point(78, 38);
             Tb_ProductDataquerySNInput.Name = "Tb_ProductDataquerySNInput";
-            Tb_ProductDataquerySNInput.Size = new Size(658, 29);
+            Tb_ProductDataquerySNInput.Size = new Size(26, 29);
             Tb_ProductDataquerySNInput.TabIndex = 15;
             // 
             // BtnQueryProductDataBySN
@@ -976,12 +1052,12 @@
             BtnQueryProductDataBySN.Cursor = Cursors.Hand;
             BtnQueryProductDataBySN.Dock = DockStyle.Fill;
             BtnQueryProductDataBySN.Font = new Font("宋体", 14F);
-            BtnQueryProductDataBySN.Location = new Point(741, 37);
+            BtnQueryProductDataBySN.Location = new Point(109, 37);
             BtnQueryProductDataBySN.Margin = new Padding(2);
             BtnQueryProductDataBySN.MinimumSize = new Size(1, 1);
             BtnQueryProductDataBySN.Name = "BtnQueryProductDataBySN";
             BtnQueryProductDataBySN.Radius = 3;
-            BtnQueryProductDataBySN.Size = new Size(90, 31);
+            BtnQueryProductDataBySN.Size = new Size(89, 31);
             BtnQueryProductDataBySN.TabIndex = 16;
             BtnQueryProductDataBySN.Text = "查询";
             BtnQueryProductDataBySN.TipsFont = new Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -993,13 +1069,13 @@
             DpProductDataEnd.Dock = DockStyle.Fill;
             DpProductDataEnd.FillColor = Color.White;
             DpProductDataEnd.Font = new Font("宋体", 12F);
-            DpProductDataEnd.Location = new Point(455, 0);
+            DpProductDataEnd.Location = new Point(139, 0);
             DpProductDataEnd.Margin = new Padding(3, 0, 3, 0);
             DpProductDataEnd.MaxLength = 19;
             DpProductDataEnd.MinimumSize = new Size(47, 0);
             DpProductDataEnd.Name = "DpProductDataEnd";
             DpProductDataEnd.Padding = new Padding(0, 0, 30, 2);
-            DpProductDataEnd.Size = new Size(281, 35);
+            DpProductDataEnd.Size = new Size(47, 35);
             DpProductDataEnd.SymbolDropDown = 61555;
             DpProductDataEnd.SymbolNormal = 61555;
             DpProductDataEnd.SymbolSize = 24;
@@ -1021,7 +1097,7 @@
             DpProductDataStart.MinimumSize = new Size(47, 0);
             DpProductDataStart.Name = "DpProductDataStart";
             DpProductDataStart.Padding = new Padding(0, 0, 30, 2);
-            DpProductDataStart.Size = new Size(281, 35);
+            DpProductDataStart.Size = new Size(47, 35);
             DpProductDataStart.SymbolDropDown = 61555;
             DpProductDataStart.SymbolNormal = 61555;
             DpProductDataStart.SymbolSize = 24;
@@ -1055,7 +1131,7 @@
             tableLayoutPanel5.RowCount = 2;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 37F));
-            tableLayoutPanel5.Size = new Size(833, 70);
+            tableLayoutPanel5.Size = new Size(200, 70);
             tableLayoutPanel5.TabIndex = 9;
             // 
             // Tb_passStationDataquerySNInput
@@ -1065,7 +1141,7 @@
             Tb_passStationDataquerySNInput.Font = new Font("宋体", 14F);
             Tb_passStationDataquerySNInput.Location = new Point(109, 36);
             Tb_passStationDataquerySNInput.Name = "Tb_passStationDataquerySNInput";
-            Tb_passStationDataquerySNInput.Size = new Size(628, 29);
+            Tb_passStationDataquerySNInput.Size = new Size(1, 29);
             Tb_passStationDataquerySNInput.TabIndex = 16;
             // 
             // label6
@@ -1085,7 +1161,7 @@
             BtnQueryPassStationByTimespan.Cursor = Cursors.Hand;
             BtnQueryPassStationByTimespan.Dock = DockStyle.Fill;
             BtnQueryPassStationByTimespan.Font = new Font("宋体", 14F);
-            BtnQueryPassStationByTimespan.Location = new Point(741, 1);
+            BtnQueryPassStationByTimespan.Location = new Point(109, 1);
             BtnQueryPassStationByTimespan.Margin = new Padding(1);
             BtnQueryPassStationByTimespan.MinimumSize = new Size(1, 1);
             BtnQueryPassStationByTimespan.Name = "BtnQueryPassStationByTimespan";
@@ -1100,7 +1176,7 @@
             // 
             label7.AutoSize = true;
             label7.Dock = DockStyle.Fill;
-            label7.Location = new Point(395, 0);
+            label7.Location = new Point(79, 0);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(71, 33);
@@ -1121,7 +1197,7 @@
             DpPassStationStart.Name = "DpPassStationStart";
             DpPassStationStart.Padding = new Padding(0, 0, 30, 2);
             DpPassStationStart.Radius = 1;
-            DpPassStationStart.Size = new Size(266, 33);
+            DpPassStationStart.Size = new Size(47, 33);
             DpPassStationStart.SymbolDropDown = 61555;
             DpPassStationStart.SymbolNormal = 61555;
             DpPassStationStart.SymbolSize = 24;
@@ -1137,14 +1213,14 @@
             DpPassStationEnd.Dock = DockStyle.Fill;
             DpPassStationEnd.FillColor = Color.White;
             DpPassStationEnd.Font = new Font("宋体", 12F);
-            DpPassStationEnd.Location = new Point(471, 0);
+            DpPassStationEnd.Location = new Point(155, 0);
             DpPassStationEnd.Margin = new Padding(3, 0, 3, 0);
             DpPassStationEnd.MaxLength = 19;
             DpPassStationEnd.MinimumSize = new Size(47, 0);
             DpPassStationEnd.Name = "DpPassStationEnd";
             DpPassStationEnd.Padding = new Padding(0, 0, 30, 2);
             DpPassStationEnd.Radius = 1;
-            DpPassStationEnd.Size = new Size(266, 33);
+            DpPassStationEnd.Size = new Size(47, 33);
             DpPassStationEnd.SymbolDropDown = 61555;
             DpPassStationEnd.SymbolNormal = 61555;
             DpPassStationEnd.SymbolSize = 24;
@@ -1171,7 +1247,7 @@
             BtnQueryPassStationBySN.Cursor = Cursors.Hand;
             BtnQueryPassStationBySN.Dock = DockStyle.Fill;
             BtnQueryPassStationBySN.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            BtnQueryPassStationBySN.Location = new Point(743, 36);
+            BtnQueryPassStationBySN.Location = new Point(111, 36);
             BtnQueryPassStationBySN.MinimumSize = new Size(1, 1);
             BtnQueryPassStationBySN.Name = "BtnQueryPassStationBySN";
             BtnQueryPassStationBySN.Size = new Size(87, 31);
@@ -1225,7 +1301,7 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridView1.RowTemplate.Height = 23;
             dataGridView1.SelectedIndex = -1;
-            dataGridView1.Size = new Size(827, 156);
+            dataGridView1.Size = new Size(194, 1);
             dataGridView1.StripeOddColor = Color.FromArgb(235, 243, 255);
             dataGridView1.TabIndex = 1;
             // 
@@ -1242,7 +1318,7 @@
             uiLine1.MinimumSize = new Size(1, 1);
             uiLine1.Name = "uiLine1";
             uiLine1.RectSize = 2;
-            uiLine1.Size = new Size(831, 26);
+            uiLine1.Size = new Size(198, 26);
             uiLine1.TabIndex = 8;
             uiLine1.Text = "过站数据查询";
             // 
@@ -1258,7 +1334,7 @@
             uiLine2.Margin = new Padding(1, 2, 1, 2);
             uiLine2.MinimumSize = new Size(1, 1);
             uiLine2.Name = "uiLine2";
-            uiLine2.Size = new Size(831, 26);
+            uiLine2.Size = new Size(198, 26);
             uiLine2.TabIndex = 15;
             uiLine2.Text = "产品数据查询";
             // 
@@ -1274,7 +1350,7 @@
             uiLine4.Margin = new Padding(1, 2, 1, 2);
             uiLine4.MinimumSize = new Size(1, 1);
             uiLine4.Name = "uiLine4";
-            uiLine4.Size = new Size(831, 26);
+            uiLine4.Size = new Size(198, 26);
             uiLine4.TabIndex = 18;
             uiLine4.Text = "查询结果";
             // 
@@ -1288,12 +1364,12 @@
             tableLayoutPanel8.Controls.Add(BtnKeyBoard2, 0, 0);
             tableLayoutPanel8.Controls.Add(BtnExportData, 2, 0);
             tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(0, 392);
+            tableLayoutPanel8.Location = new Point(0, 10);
             tableLayoutPanel8.Margin = new Padding(0);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 1;
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Size = new Size(833, 50);
+            tableLayoutPanel8.Size = new Size(200, 50);
             tableLayoutPanel8.TabIndex = 20;
             // 
             // BtnKeyBoard2
@@ -1314,7 +1390,7 @@
             BtnExportData.Cursor = Cursors.Hand;
             BtnExportData.Dock = DockStyle.Fill;
             BtnExportData.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            BtnExportData.Location = new Point(730, 3);
+            BtnExportData.Location = new Point(97, 3);
             BtnExportData.MinimumSize = new Size(1, 1);
             BtnExportData.Name = "BtnExportData";
             BtnExportData.Size = new Size(100, 44);
@@ -1425,7 +1501,7 @@
             uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             uiTableLayoutPanel2.RowCount = 1;
             uiTableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            uiTableLayoutPanel2.Size = new Size(1139, 94);
+            uiTableLayoutPanel2.Size = new Size(1302, 94);
             uiTableLayoutPanel2.TabIndex = 0;
             uiTableLayoutPanel2.TagString = null;
             // 
@@ -1447,7 +1523,7 @@
             Lb_AppTitle.ForeColor = Color.FromArgb(48, 48, 48);
             Lb_AppTitle.Location = new Point(403, 0);
             Lb_AppTitle.Name = "Lb_AppTitle";
-            Lb_AppTitle.Size = new Size(733, 94);
+            Lb_AppTitle.Size = new Size(896, 94);
             Lb_AppTitle.TabIndex = 1;
             Lb_AppTitle.Text = "标题";
             Lb_AppTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -1478,7 +1554,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(238, 251, 250);
-            ClientSize = new Size(1145, 700);
+            ClientSize = new Size(1308, 856);
             ControlBoxFillHoverColor = Color.FromArgb(51, 203, 189);
             Controls.Add(uiTableLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -1499,11 +1575,13 @@
             Tb_MainForm.ResumeLayout(false);
             uiTableLayoutPanel4.ResumeLayout(false);
             uiTableLayoutPanel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Dgv_BatchCode).EndInit();
             uiTableLayoutPanel7.ResumeLayout(false);
+            uiTableLayoutPanel10.ResumeLayout(false);
             uiTableLayoutPanel11.ResumeLayout(false);
             uiTableLayoutPanel12.ResumeLayout(false);
             uiTableLayoutPanel13.ResumeLayout(false);
+            uiTableLayoutPanel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Dgv_TestDataShow).EndInit();
             Tb_DataMenege.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
@@ -1546,7 +1624,6 @@
         private TabPage Tb_MainForm;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel4;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel6;
-        private Sunny.UI.UIDataGridView Dgv_BatchCode;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel7;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel11;
         private Sunny.UI.UILabel Lb_OutStation;
@@ -1558,9 +1635,7 @@
         private Sunny.UI.UILight LightOutStation;
         private Sunny.UI.UILabel Lb_InStation;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel12;
-        private Sunny.UI.UILabel uiLabel12;
         private Sunny.UI.UILabel uiLabel11;
-        private Sunny.UI.UITextBox Tb_FinishTestTime;
         private Sunny.UI.UITextBox Tb_StartTestTime;
         private Sunny.UI.UITextBox Tb_AutoFlow;
         private Sunny.UI.UILabel uiLabel6;
@@ -1604,5 +1679,13 @@
         private Sunny.UI.UIDataGridView dataGridView1;
         private Sunny.UI.UILine uiLine4;
         private Sunny.UI.UIDatetimePicker Dp_BatchCodeHistoryStart;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel10;
+        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UITextBox Tb_SCADAFlowShow;
+        private Sunny.UI.UILabel uiLabel4;
+        private Sunny.UI.UITextBox Tb_FinishTestTime;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel14;
+        private Sunny.UI.UILabel Lb_TestResult;
+        private Sunny.UI.UIDataGridView Dgv_TestDataShow;
     }
 }

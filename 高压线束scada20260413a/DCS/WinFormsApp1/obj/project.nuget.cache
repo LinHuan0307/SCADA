@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "smiD47c0dRo=",
+  "dgSpecHash": "sDByPJfrmjE=",
   "success": true,
-  "projectFilePath": "D:\\CodeHub\\Winform\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADVANTECH\\.nuget\\packages\\autofac\\9.0.0\\autofac.9.0.0.nupkg.sha512",
     "C:\\Users\\ADVANTECH\\.nuget\\packages\\autofac.extras.dynamicproxy\\7.1.0\\autofac.extras.dynamicproxy.7.1.0.nupkg.sha512",

@@ -70,6 +70,41 @@ namespace WinFormsApp1.Flows
             //通知窗体显示加工结束时间
             WeakReferenceMessenger.Default.Send(new 测试结束时间消息体(DateTime.Now), MessengerTokens.测试结束时间);
 
+            var 读取PLC测试总结果反馈 = await _PLC.ReadBoolAsync(_AppConfig.测试总结果起始地址);
+            if (!读取PLC测试总结果反馈.IsSuccess)
+            {
+                return OperateResult.CreateFailedResult<string>(读取PLC测试总结果反馈);
+            }
+
+            string 测试总结果 = string.Empty;
+            if (读取PLC测试总结果反馈.Content)
+            {
+                测试总结果 = "OK";
+                WeakReferenceMessenger.Default.Send(new 测试总结果消息体("OK", Color.Lime), MessengerTokens.测试总结果);
+            }
+            else
+            {
+                测试总结果 = "NG";
+                WeakReferenceMessenger.Default.Send(new 测试总结果消息体("NG", Color.Red), MessengerTokens.测试总结果);
+            }
+
+
+            foreach (var item in _AppConfig.测试数据列表)
+            {
+                var 读取PLC测试数据反馈 = await _PLC.ReadFloatAsync(item.测试数据项起始地址);
+                if (!读取PLC测试数据反馈.IsSuccess)
+                {
+                    return OperateResult.CreateFailedResult<string>(读取PLC测试数据反馈);
+                }
+                item.测试数据值 = 读取PLC测试数据反馈.Content;
+
+                item.测试数据结果 = ((item.测试数据值 >= item.测试数据下限) && (item.测试数据值 <= item.测试数据上限)) ? "OK": "NG";
+
+            }
+
+            //显示到界面
+            WeakReferenceMessenger.Default.Send(new 测试数据列表消息体(_AppConfig.测试数据列表), MessengerTokens.测试数据列表);
+
             //向MES申请数据上传
             TestDataRequest testDataRequest = new TestDataRequest()
             {
@@ -78,26 +113,16 @@ namespace WinFormsApp1.Flows
                 StationCode = _AppConfig.工位编码,
                 TestType = _AppConfig.测试类型,
                 TestName = _AppConfig.测试名字,
-                Result = "0",
-                TestStartTime = "",
-                TestEndTime = "",
-                TestDataList = new List<TestDataRequestItem>()
+                Result = 测试总结果,
+                TestStartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                TestEndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                TestDataList = _AppConfig.测试数据列表.Select(obj => new TestDataRequestItem()
                 {
-                    new TestDataRequestItem()
-                    {
-                        TestItemName = "焊接高度",
-                        TestItemStand = "aa",
-                        TestItemValue = "aa",
-                        TestItemResult = "0",
-                    },
-                    new TestDataRequestItem()
-                    {
-                        TestItemName = "焊接高度2",
-                        TestItemStand = "bb",
-                        TestItemValue = "bb",
-                        TestItemResult = "0",
-                    },
-                },
+                    TestItemName = obj.测试数据项名字,
+                    TestItemStand = $"上限:{obj.测试数据上限}  下限:{obj.测试数据下限}",
+                    TestItemValue = obj.测试数据值.ToString(),
+                    TestItemResult = obj.测试数据结果,
+                }).ToList(),
             };
 
             string requestjsonData = JsonConvert.SerializeObject(testDataRequest);
@@ -142,9 +167,11 @@ namespace WinFormsApp1.Flows
 
                 //记录流程结果
                 WeakReferenceMessenger.Default.Send(new 日志记录消息体(
-                    $"申请SN:{向MES申请上传测试数据结果.Success} 反馈消息:{向MES申请上传测试数据结果.Mesg}", Color.Lime), MessengerTokens.日志记录);
+                    $"申请SN:{向MES申请上传测试数据结果.Success} 反馈消息:{向MES申请上传测试数据结果.Mesg}", Color.Green), MessengerTokens.日志记录);
 
             }
+
+           
 
             var 保存对象 = new ProductInfo()
             {

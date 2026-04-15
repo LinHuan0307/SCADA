@@ -65,7 +65,7 @@ namespace WinFormsApp1.Flows
                 return OperateResult.CreateFailedResult<string>(反馈PLC正在处理);
             }
             //界面显示
-            WeakReferenceMessenger.Default.Send(new 流程字状态消息体( 流程状态枚举.获取SN), MessengerTokens.流程字状态);
+            WeakReferenceMessenger.Default.Send(new 流程字状态消息体( 流程状态枚举.获取SN中), MessengerTokens.流程字状态);
 
             //获取sn
             RequestSnNumber requestSnNumber= new RequestSnNumber()
@@ -97,31 +97,8 @@ namespace WinFormsApp1.Flows
                 return OperateResult.CreateFailedResult<string>(反馈PLC产品SN);
             }
 
-            
-            //绑定托盘
-            SnBindTrayRequest snBindTrayRequest = new SnBindTrayRequest()
-            {
-                SnNumber = 向MES申请SN反馈结果.Mesg,
-                TrayCode = _RuntimeContext.PLC数据.托盘号.ToString()
-            };
-            string snBindTrayRequestjsonData = JsonConvert.SerializeObject(snBindTrayRequest);
-            var 向MES申请绑定托盘号反馈 = await _WebApi.PostAsync(_AppConfig.SN绑定托盘号URL地址, snBindTrayRequestjsonData);
-            if (!向MES申请绑定托盘号反馈.IsSuccess)
-            {
-                WeakReferenceMessenger.Default.Send(new MES连接状态消息体(false), MessengerTokens.MES连接状态);
-                return OperateResult.CreateFailedResult<string>(new OperateResult(向MES申请绑定托盘号反馈.Message));
-            }
-            WeakReferenceMessenger.Default.Send(new MES连接状态消息体(true), MessengerTokens.MES连接状态);
 
-            var 向MES申请绑定托盘号反馈结果 = JsonConvert.DeserializeObject<ApiRespose>(向MES申请绑定托盘号反馈.Content);
-            if (向MES申请绑定托盘号反馈结果 == null)
-            {
-
-                return OperateResult.CreateFailedResult<string>(new OperateResult("sn绑定托盘号异常:反序列化异常"));
-            }
-
-
-            if (向MES申请SN反馈结果.Success && 向MES申请绑定托盘号反馈结果.Success)
+            if (向MES申请SN反馈结果.Success )
             {
                 var 反馈PLC获取SN完成 = await _PLC.WriteAsync(_AppConfig.请求结果反馈点位, (short)1);
                 if (!反馈PLC获取SN完成.IsSuccess)
@@ -131,8 +108,7 @@ namespace WinFormsApp1.Flows
                 WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.获取SN成功), MessengerTokens.流程字状态);
                 //记录流程结果
                 WeakReferenceMessenger.Default.Send(new 日志记录消息体(
-                    $"申请SN:{向MES申请SN反馈结果.Success} {向MES申请SN反馈结果.Mesg}" +
-                    $"绑定托盘号:{向MES申请绑定托盘号反馈结果.Success} {向MES申请绑定托盘号反馈结果.Mesg}", Color.Lime), MessengerTokens.日志记录);
+                    $"申请SN:{向MES申请SN反馈结果.Success} {向MES申请SN反馈结果.Mesg}", Color.Green), MessengerTokens.日志记录);
 
             }
             else
@@ -145,8 +121,7 @@ namespace WinFormsApp1.Flows
                 WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.获取SN失败), MessengerTokens.流程字状态);
                 //记录流程结果
                 WeakReferenceMessenger.Default.Send(new 日志记录消息体(
-                    $"申请SN:{向MES申请SN反馈结果.Success} {向MES申请SN反馈结果.Mesg}" +
-                    $"绑定托盘号:{向MES申请绑定托盘号反馈结果.Success} {向MES申请绑定托盘号反馈结果.Mesg}", Color.Red), MessengerTokens.日志记录);
+                    $"申请SN:{向MES申请SN反馈结果.Success} {向MES申请SN反馈结果.Mesg}", Color.Red), MessengerTokens.日志记录);
 
             }
 

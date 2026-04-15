@@ -140,6 +140,9 @@ namespace WinFormsApp1
 
             WeakReferenceMessenger.Default.Register<测试结束时间消息体, Guid>(this, MessengerTokens.测试结束时间, 测试结束时间显示处理);
 
+            WeakReferenceMessenger.Default.Register<测试总结果消息体, Guid>(this, MessengerTokens.测试总结果, 测试总结果显示处理);
+
+            WeakReferenceMessenger.Default.Register<测试数据列表消息体, Guid>(this, MessengerTokens.测试数据列表, 测试数据列表显示处理);
             #endregion
 
             Lb_AppTitle.Text = _AppConfig.APPTitle;
@@ -147,7 +150,7 @@ namespace WinFormsApp1
             _PlcReadHandleWorker.RunWorkerAsync();
         }
 
-
+        
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -221,14 +224,31 @@ namespace WinFormsApp1
 
 
 
-        
+
 
         #region 消息总线处理
+        private void 测试数据列表显示处理(object recipient, 测试数据列表消息体 message)
+        {
+            this.Invoke(new Action(() =>
+            {
+                Dgv_TestDataShow.DataSource = message.testList;
+                Dgv_TestDataShow.Refresh();
+            }));
+        }
+
+        private void 测试总结果显示处理(object recipient, 测试总结果消息体 message)
+        {
+            this.Invoke(new Action(() =>
+            {
+                Lb_TestResult.Text = message.result;
+                Lb_TestResult.BackColor = message.Color;
+            }));
+        }
         private void 测试结束时间显示处理(object recipient, 测试结束时间消息体 message)
         {
             this.Invoke(new Action(() =>
             {
-                Tb_FinishTestTime.Text = message.DateTime.ToLongTimeString();
+                Tb_FinishTestTime.Text = message.DateTime.ToString("yyyy-MM-dd HH:mm:ss");
             }));
         }
 
@@ -236,7 +256,7 @@ namespace WinFormsApp1
         {
             this.Invoke(new Action(() =>
             {
-                Tb_StartTestTime.Text = message.DateTime.ToLongTimeString();
+                Tb_StartTestTime.Text = message.DateTime.ToString("yyyy-MM-dd HH:mm:ss");
             }));
         }
 
@@ -358,6 +378,7 @@ namespace WinFormsApp1
         {
             this.Invoke(new Action(() =>
             {
+                Tb_SCADAFlowShow.Text = message.流程状态.ToString();
                 switch (message.流程状态)
                 {
                     case 流程状态枚举.回原:
@@ -457,7 +478,7 @@ namespace WinFormsApp1
             _AppConfigManager.Save(_AppConfig);
 
             WeakReferenceMessenger.Default.Send(
-                        new 日志记录消息体("保存配置成功!", Color.Blue),
+                        new 日志记录消息体("保存配置成功!", Color.Green),
                         MessengerTokens.日志记录);
 
         }

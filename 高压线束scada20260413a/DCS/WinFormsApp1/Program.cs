@@ -81,6 +81,9 @@ namespace WinFormsApp1
             Build.RegisterType<GetSN>().Keyed<IRunLogic>(自动流程类别.申请SN).EnableInterfaceInterceptors()
                 .InterceptedBy("exceptionInterceptor");
 
+            Build.RegisterType<SNBindTrayCode>().Keyed<IRunLogic>(自动流程类别.Sn绑定托盘号).EnableInterfaceInterceptors()
+                .InterceptedBy("exceptionInterceptor");
+
             Build.RegisterType<Instation>().Keyed<IRunLogic>(自动流程类别.进站).EnableInterfaceInterceptors()
                 .InterceptedBy("exceptionInterceptor");
 
@@ -88,6 +91,9 @@ namespace WinFormsApp1
                 .InterceptedBy("exceptionInterceptor");
 
             Build.RegisterType<PassStation>().Keyed<IRunLogic>(自动流程类别.出站).EnableInterfaceInterceptors()
+                .InterceptedBy("exceptionInterceptor");
+
+            Build.RegisterType<SNUnBindTrayCode>().Keyed<IRunLogic>(自动流程类别.Sn解绑托盘号).EnableInterfaceInterceptors()
                 .InterceptedBy("exceptionInterceptor");
 
             //注册数据库上下文

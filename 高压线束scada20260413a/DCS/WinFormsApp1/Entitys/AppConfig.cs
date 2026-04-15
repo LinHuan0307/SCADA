@@ -43,6 +43,8 @@ namespace WinFormsApp1.Entitys
         [Category("MES")]
         public string 测试名字 { get; set; } = "";
         [Category("MES")]
+        public string SN解绑托盘号URL地址 { get; set; } = "api/Binding/SnUnBindTray";
+        [Category("MES")]
         public string SN绑定托盘号URL地址 { get; set; } = "api/Binding/SnBindTray";
         [Category("MES")]
         public string 请求进站URL地址 { get; set; } = "api/PassStation/PassStation";
@@ -80,8 +82,28 @@ namespace WinFormsApp1.Entitys
         [Category("MES")]
         public int PING_MES的超时时间 { get; set; } = 500;
 
+        [Category("测试数据采集")]
+        public string 测试总结果起始地址 { get; set; } = string.Empty;
+        [Category("测试数据采集")]
+        public List<测试数据项> 测试数据列表 { get; set; } = new List<测试数据项>();
+
         public List<流程配置列表项> 流程配置列表 { get; set; } = new List<流程配置列表项>();
 
+    }
+
+    public class 测试数据项
+    {
+        public string 测试数据项起始地址 { get; set; } = string.Empty;
+        public string 测试数据项名字 { get; set; } = string.Empty;
+        public float 测试数据下限 { get; set; } = 0;
+        public float 测试数据上限 { get; set; } = 0;
+        public float 测试数据值 { get; set; } = 0;
+        public string 测试数据结果 { get; set; } = string.Empty;
+
+        public override string ToString()
+        {
+            return $"名字:{测试数据项名字} 起始地址:{测试数据项起始地址}";
+        }
     }
 
     public enum 自动流程类别
@@ -91,9 +113,11 @@ namespace WinFormsApp1.Entitys
         MES屏蔽数据上传,
         MES屏蔽出站,
         申请SN,
+        Sn绑定托盘号,
         进站,
         数据上传,
-        出站
+        出站,
+        Sn解绑托盘号,
 
     }
 

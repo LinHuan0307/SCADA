@@ -59,6 +59,10 @@ namespace WinFormsApp1.Flows
             //通知窗体显示加工开始时间
             WeakReferenceMessenger.Default.Send(new 流程字状态消息体( 流程状态枚举.回原), MessengerTokens.流程字状态);
 
+            WeakReferenceMessenger.Default.Send(new 测试总结果消息体("NULL", Color.Transparent), MessengerTokens.测试总结果);
+
+            WeakReferenceMessenger.Default.Send(new 测试数据列表消息体(new List<测试数据项>()), MessengerTokens.测试数据列表);
+
 
             return OperateResult.CreateSuccessResult();
         }

@@ -3490,11 +3490,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CodeHub\\Winform\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
       "projectName": "WinFormsApp1",
-      "projectPath": "D:\\CodeHub\\Winform\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectPath": "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
       "packagesPath": "C:\\Users\\ADVANTECH\\.nuget\\packages\\",
-      "outputPath": "D:\\CodeHub\\Winform\\高压线束scada20260413a\\DCS\\WinFormsApp1\\obj\\",
+      "outputPath": "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

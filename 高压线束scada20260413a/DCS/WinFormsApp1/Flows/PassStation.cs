@@ -123,7 +123,7 @@ namespace WinFormsApp1.Flows
 
                 //记录流程结果
                 WeakReferenceMessenger.Default.Send(new 日志记录消息体(
-                    $"申请SN:{向MES申请出站结果.Success}  需要操作:{向MES申请出站结果.IsNeedOperationOperation} 反馈消息:{向MES申请出站结果.Mesg}", Color.Lime), MessengerTokens.日志记录);
+                    $"申请SN:{向MES申请出站结果.Success}  需要操作:{向MES申请出站结果.IsNeedOperationOperation} 反馈消息:{向MES申请出站结果.Mesg}", Color.Green), MessengerTokens.日志记录);
 
             }
 

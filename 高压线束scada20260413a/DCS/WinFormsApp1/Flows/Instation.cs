@@ -129,7 +129,7 @@ namespace WinFormsApp1.Flows
                 }
                 WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.进站成功), MessengerTokens.流程字状态);
                 WeakReferenceMessenger.Default.Send(new 日志记录消息体(
-                    $"申请SN:{向MES申请进站结果.Success}  需要操作:{向MES申请进站结果.IsNeedOperationOperation} 反馈消息:{向MES申请进站结果.Mesg}", Color.Lime), MessengerTokens.日志记录);
+                    $"申请SN:{向MES申请进站结果.Success}  需要操作:{向MES申请进站结果.IsNeedOperationOperation} 反馈消息:{向MES申请进站结果.Mesg}", Color.Green), MessengerTokens.日志记录);
 
             }
             else if (向MES申请进站结果.Success && !向MES申请进站结果.IsNeedOperationOperation)
@@ -142,7 +142,7 @@ namespace WinFormsApp1.Flows
                 WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.进站成功), MessengerTokens.流程字状态);
 
                 WeakReferenceMessenger.Default.Send(new 日志记录消息体(
-                   $"申请SN:{向MES申请进站结果.Success}  需要操作:{向MES申请进站结果.IsNeedOperationOperation} 反馈消息:{向MES申请进站结果.Mesg}", Color.Blue), MessengerTokens.日志记录);
+                   $"申请SN:{向MES申请进站结果.Success}  需要操作:{向MES申请进站结果.IsNeedOperationOperation} 反馈消息:{向MES申请进站结果.Mesg}", Color.Green), MessengerTokens.日志记录);
 
             }
 

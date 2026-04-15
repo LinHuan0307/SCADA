@@ -28,6 +28,8 @@ namespace WinFormsApp1.Entitys
         [HslDeviceAddress("D566")]
         public short 流程号 { get; set; } = 0;
 
+
+
     }
 
     public static class MessengerTokens
@@ -47,6 +49,9 @@ namespace WinFormsApp1.Entitys
         public static readonly Guid 测试开始时间 = new Guid();
         public static readonly Guid 测试结束时间 = new Guid();
 
+        public static readonly Guid 测试总结果 = new Guid();
+        public static readonly Guid 测试数据列表 = new Guid();
+
     }
 
     public record 日志记录消息体(string msg , Color color);
@@ -61,14 +66,20 @@ namespace WinFormsApp1.Entitys
 
     public record 测试结束时间消息体(DateTime DateTime);
 
+    public record 测试总结果消息体(string result, Color Color);
+    public record 测试数据列表消息体(List<测试数据项> testList);
 
     public enum 流程状态枚举
     {
         回原,
 
-        获取SN,
+        获取SN中,
         获取SN成功,
         获取SN失败,
+
+        绑定SN和托盘号中,
+        绑定SN和托盘号成功,
+        绑定SN和托盘号失败,
 
         进站中,
         进站成功,
@@ -84,8 +95,12 @@ namespace WinFormsApp1.Entitys
 
         出站中,
         出站成功,
-        出站失败
+        出站失败,
+
+        解绑SN和托盘号中,
+        解绑SN和托盘号成功,
+        解绑SN和托盘号失败,
     }
 
-    
+
 }
