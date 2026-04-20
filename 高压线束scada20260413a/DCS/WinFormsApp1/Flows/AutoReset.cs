@@ -18,7 +18,6 @@ namespace WinFormsApp1.Flows
         private readonly RuntimeContext _RuntimeContext;
         private readonly TaskScheduler _FromUI;
 
-        public int 流程号 { get ; set ; }
         public bool 已执行 { get ; set ; }
         
         public AutoReset(ILogger logger,
@@ -47,7 +46,7 @@ namespace WinFormsApp1.Flows
         {
             foreach (var item in _RuntimeContext.自动流程列表)
             {
-                item.已执行 = false;
+                item.Value.已执行 = false;
             }
 
             await Task.Factory.StartNew(() =>

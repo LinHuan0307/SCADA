@@ -26,7 +26,6 @@ namespace WinFormsApp1.Flows
         private readonly AppDbContext _AppDbContext;
         private readonly TaskScheduler _FromUI;
 
-        public int 流程号 { get ; set ; }
         public bool 已执行 { get ; set ; }
 
         public DataUpload(

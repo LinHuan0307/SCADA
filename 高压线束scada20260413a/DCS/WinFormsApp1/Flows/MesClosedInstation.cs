@@ -19,7 +19,6 @@ namespace WinFormsApp1.Flows
         private readonly TaskScheduler _FromUI;
         private readonly OmronFinsUdp _PLC;
 
-        public int 流程号 { get; set; }
         public bool 已执行 { get; set; }
         
 

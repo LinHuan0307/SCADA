@@ -118,7 +118,8 @@ namespace WinFormsApp1.Entitys
         数据上传,
         出站,
         Sn解绑托盘号,
-
+         
+        演示流程枚举
     }
 
     public class 流程配置列表项

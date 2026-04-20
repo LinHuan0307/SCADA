@@ -41,13 +41,12 @@ namespace WinFormsApp1
             OmronFinsUdp plc,
             NLog.ILogger logger,
             ILifetimeScope lifetimeScope,
+            //自动生成字典 键：流程枚举    值：流程对应的工厂类
             IIndex<自动流程类别, Func<IRunLogic>> 流程索引字典)
         {
             _AppConfig = appConfig;
             _AppConfigManager = appConfigManager;
-
             _AppDbContext = appDbContext;
-
             _RuntimeContext = runtimeContext;
             _Logger = logger;
             _LifetimeScope = lifetimeScope;
@@ -58,10 +57,11 @@ namespace WinFormsApp1
             //添加流程
             foreach (var item in appConfig.流程配置列表)
             {
+                //实例化流程
                 var 对应流程 = 流程索引字典[item.目标执行流程].Invoke();
                 对应流程.已执行 = false;
-                对应流程.流程号 = item.目标流程号;
-                runtimeContext.自动流程列表.Add(对应流程);
+                //添加到流程字典
+                runtimeContext.自动流程列表.Add(item.目标流程号, 对应流程);
             }
 
 
@@ -208,9 +208,10 @@ namespace WinFormsApp1
                 WeakReferenceMessenger.Default.Send(new 流程号消息体(_RuntimeContext.PLC数据.流程号), MessengerTokens.流程号);
 
 
-                foreach (var item in _RuntimeContext.自动流程列表.Where(i => !i.已执行 && i.流程号 == _RuntimeContext.PLC数据.流程号))
+                foreach (var item in 
+                    _RuntimeContext.自动流程列表.Where(i => !i.Value.已执行 && i.Key == _RuntimeContext.PLC数据.流程号))
                 {
-                    var 流程反馈 = await item.流程Async();
+                    var 流程反馈 = await item.Value.流程Async();
                     if (!流程反馈.IsSuccess)
                     {
                         WeakReferenceMessenger.Default.Send(
@@ -488,7 +489,7 @@ namespace WinFormsApp1
         {
             foreach (var item in _RuntimeContext.自动流程列表)
             {
-                item.已执行 = false;
+                item.Value.已执行 = false;
             }
         }
 

@@ -69,8 +69,7 @@ namespace WinFormsApp1
             Build.RegisterType<AutoReset>().Keyed<IRunLogic>(自动流程类别.重置).EnableInterfaceInterceptors()
                 .InterceptedBy("exceptionInterceptor");
 
-            Build.RegisterType<MesClosedInstation>().Keyed<IRunLogic>(自动流程类别.MES屏蔽进站).EnableInterfaceInterceptors()
-                .InterceptedBy("exceptionInterceptor");
+            Build.RegisterType<MesClosedInstation>().Keyed<IRunLogic>(自动流程类别.MES屏蔽进站);
 
             Build.RegisterType<MesClosedDataUpload>().Keyed<IRunLogic>(自动流程类别.MES屏蔽数据上传).EnableInterfaceInterceptors()
                 .InterceptedBy("exceptionInterceptor");

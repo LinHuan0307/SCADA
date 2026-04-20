@@ -9,7 +9,6 @@ namespace WinFormsApp1.Flows
 {
     public interface IRunLogic
     {
-        public int 流程号 { get; set; }
         public bool 已执行 { get; set; }
 
         public Task<OperateResult> 流程Async();

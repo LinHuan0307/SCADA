@@ -28,7 +28,6 @@ namespace WinFormsApp1.Flows
         private readonly AppDbContext _AppDbContext;
 
         public Regex SN_regex { get; }
-        public int 流程号 { get; set; }
         public bool 已执行 { get; set; }
         
 

@@ -13,7 +13,7 @@ namespace WinFormsApp1.Entitys
     {
         
         public PLCData PLC数据 { get; set; } = new PLCData();
-        public List<IRunLogic> 自动流程列表 { get; set; } = new List<IRunLogic>();
+        public Dictionary<int,IRunLogic> 自动流程列表 { get; set; } = new Dictionary<int, IRunLogic> ();
     }
 
     
