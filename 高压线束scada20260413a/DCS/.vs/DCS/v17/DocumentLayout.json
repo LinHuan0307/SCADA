@@ -3,23 +3,47 @@
   "WorkspaceRootPath": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|d:\\program\\scada\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\dcs\\winformsapp1\\flows\\autoreset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\flows\\autoreset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|d:\\program\\scada\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\dcs\\winformsapp1\\forms\\manubindmaterialform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\forms\\manubindmaterialform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|d:\\program\\scada\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\dcs\\winformsapp1\\entitys\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\config\\appconfig.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\config\\appconfig.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\entitys\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\entitys\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|d:\\program\\scada\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\dcs\\winformsapp1\\entitys\\runtimecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|d:\\program\\scada\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\dcs\\winformsapp1\\interceptor\\exceptionhandlingasyncinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\interceptor\\exceptionhandlingasyncinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\forms\\manubindmaterialform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\forms\\manubindmaterialform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\flows\\manumatirialbind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\flows\\manumatirialbind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\flows\\autoreset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\flows\\autoreset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\entitys\\runtimecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\entitys\\runtimecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|d:\\program\\scada\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\dcs\\winformsapp1\\flows\\snbindtraycode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\flows\\snbindtraycode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\flows\\snbindtraycode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|d:\\program\\scada\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\dcs\\winformsapp1\\flows\\getsn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\winformsapp1\\flows\\getsn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401B0959-B91B-454D-BD41-9FCBA423CBAC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\flows\\getsn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -33,25 +57,97 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExceptionHandlingAsyncInterceptor.cs",
+              "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Interceptor\\ExceptionHandlingAsyncInterceptor.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Interceptor\\ExceptionHandlingAsyncInterceptor.cs",
+              "ToolTip": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Interceptor\\ExceptionHandlingAsyncInterceptor.cs",
+              "RelativeToolTip": "WinFormsApp1\\Interceptor\\ExceptionHandlingAsyncInterceptor.cs",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAQwG0AAACMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T14:49:57.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ManuBindMaterialForm.cs [Design]",
+              "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Forms\\ManuBindMaterialForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Forms\\ManuBindMaterialForm.cs",
+              "ToolTip": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Forms\\ManuBindMaterialForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Forms\\ManuBindMaterialForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T14:38:11.934Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManuBindMaterialForm.cs",
+              "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Forms\\ManuBindMaterialForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Forms\\ManuBindMaterialForm.cs",
+              "ToolTip": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Forms\\ManuBindMaterialForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\Forms\\ManuBindMaterialForm.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAewIUAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T14:36:02.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Program.cs",
+              "ToolTip": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Program.cs",
+              "RelativeToolTip": "WinFormsApp1\\Program.cs",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAmwI0AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T14:33:21.306Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AppConfig.xml",
+              "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Config\\AppConfig.xml",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Config\\AppConfig.xml",
+              "ToolTip": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Config\\AppConfig.xml",
+              "RelativeToolTip": "WinFormsApp1\\Config\\AppConfig.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-04-20T14:32:48.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManuMatirialBind.cs",
+              "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Flows\\ManuMatirialBind.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Flows\\ManuMatirialBind.cs",
+              "ToolTip": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Flows\\ManuMatirialBind.cs",
+              "RelativeToolTip": "WinFormsApp1\\Flows\\ManuMatirialBind.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAAAEQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T14:32:08.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AppConfig.cs",
               "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Entitys\\AppConfig.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Entitys\\AppConfig.cs",
               "ToolTip": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Entitys\\AppConfig.cs",
               "RelativeToolTip": "WinFormsApp1\\Entitys\\AppConfig.cs",
-              "ViewState": "AQIAAJQAAAAAAAAAAAAAwHoAAAAFAAAA",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAAwHgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-20T14:23:09.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "AutoReset.cs",
               "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Flows\\AutoReset.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Flows\\AutoReset.cs",
@@ -59,12 +155,11 @@
               "RelativeToolTip": "WinFormsApp1\\Flows\\AutoReset.cs",
               "ViewState": "AQIAACUAAAAAAAAAAAAIwCwAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T14:20:57.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T14:20:57.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "RuntimeContext.cs",
               "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Entitys\\RuntimeContext.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Entitys\\RuntimeContext.cs",
@@ -72,12 +167,11 @@
               "RelativeToolTip": "WinFormsApp1\\Entitys\\RuntimeContext.cs",
               "ViewState": "AQIAADcAAAAAAAAAAAAmwA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T14:20:27.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T14:20:27.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "SNBindTrayCode.cs",
               "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Flows\\SNBindTrayCode.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Flows\\SNBindTrayCode.cs",
@@ -85,12 +179,11 @@
               "RelativeToolTip": "WinFormsApp1\\Flows\\SNBindTrayCode.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAAwBsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T14:20:04.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T14:20:04.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "GetSN.cs",
               "DocumentMoniker": "D:\\Program\\SCADA\\\u9AD8\u538B\u7EBF\u675Fscada20260413a\\DCS\\WinFormsApp1\\Flows\\GetSN.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Flows\\GetSN.cs",
@@ -98,8 +191,7 @@
               "RelativeToolTip": "WinFormsApp1\\Flows\\GetSN.cs",
               "ViewState": "AQIAABIAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T14:19:43.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T14:19:43.63Z"
             }
           ]
         }

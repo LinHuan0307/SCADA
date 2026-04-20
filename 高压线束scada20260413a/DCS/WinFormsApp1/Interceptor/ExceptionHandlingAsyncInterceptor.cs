@@ -24,7 +24,7 @@ namespace WinFormsApp1.Interceptor
         // 1. 同步方法异常拦截
         public void InterceptSynchronous(IInvocation invocation)
         {
-            _logger.Debug($"[同步] 调用 {invocation.Method.Name}，参数: {JsonConvert.SerializeObject(invocation.Arguments)}");
+            //_logger.Debug($"[同步] 调用 {invocation.Method.Name}，参数: {JsonConvert.SerializeObject(invocation.Arguments)}");
 
             for (int attempt = 1; attempt <= MaxRetryCount; attempt++)
             {
@@ -32,7 +32,7 @@ namespace WinFormsApp1.Interceptor
                 {
                     object result = invocation.Method.Invoke(invocation.InvocationTarget, invocation.Arguments);
                     invocation.ReturnValue = result;
-                    _logger.Debug($"[同步] {invocation.Method.Name} 返回: {JsonConvert.SerializeObject(invocation.ReturnValue)}");
+                    //_logger.Debug($"[同步] {invocation.Method.Name} 返回: {JsonConvert.SerializeObject(invocation.ReturnValue)}");
                     return;
                 }
                 catch (Exception ex)
@@ -64,7 +64,7 @@ namespace WinFormsApp1.Interceptor
 
         private async Task InternalInterceptAsynchronous(IInvocation invocation)
         {
-            _logger.Debug($"[异步Task] 调用 {invocation.Method.Name}，参数: {JsonConvert.SerializeObject(invocation.Arguments)}");
+            //_logger.Debug($"[异步Task] 调用 {invocation.Method.Name}，参数: {JsonConvert.SerializeObject(invocation.Arguments)}");
 
             for (int attempt = 1; attempt <= MaxRetryCount; attempt++)
             {
@@ -72,7 +72,7 @@ namespace WinFormsApp1.Interceptor
                 {
                     var task = (Task)invocation.Method.Invoke(invocation.InvocationTarget, invocation.Arguments);
                     await task;
-                    _logger.Debug($"[异步Task] {invocation.Method.Name} 执行成功");
+                    //_logger.Debug($"[异步Task] {invocation.Method.Name} 执行成功");
                     return;
                 }
                 catch (Exception ex)
@@ -99,7 +99,7 @@ namespace WinFormsApp1.Interceptor
 
         private async Task<TResult> InternalInterceptAsynchronous<TResult>(IInvocation invocation)
         {
-            _logger.Debug($"[异步Task<{typeof(TResult).Name}>] 调用 {invocation.Method.Name}，参数: {JsonConvert.SerializeObject(invocation.Arguments)}");
+            //_logger.Debug($"[异步Task<{typeof(TResult).Name}>] 调用 {invocation.Method.Name}，参数: {JsonConvert.SerializeObject(invocation.Arguments)}");
 
             for (int attempt = 1; attempt <= MaxRetryCount; attempt++)
             {
@@ -107,7 +107,7 @@ namespace WinFormsApp1.Interceptor
                 {
                     var task = (Task<TResult>)invocation.Method.Invoke(invocation.InvocationTarget, invocation.Arguments);
                     var result = await task;
-                    _logger.Debug($"[异步Task<{typeof(TResult).Name}>] {invocation.Method.Name} 返回: {JsonConvert.SerializeObject(result)}");
+                    //_logger.Debug($"[异步Task<{typeof(TResult).Name}>] {invocation.Method.Name} 返回: {JsonConvert.SerializeObject(result)}");
                     return result;
                 }
                 catch (Exception ex)

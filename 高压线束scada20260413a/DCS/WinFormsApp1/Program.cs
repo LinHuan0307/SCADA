@@ -95,6 +95,9 @@ namespace WinFormsApp1
             Build.RegisterType<SNUnBindTrayCode>().Keyed<IRunLogic>(自动流程类别.Sn解绑托盘号).EnableInterfaceInterceptors()
                 .InterceptedBy("exceptionInterceptor");
 
+            Build.RegisterType<ManuMatirialBind>().Keyed<IRunLogic>(自动流程类别.手动绑定物料).EnableInterfaceInterceptors()
+                .InterceptedBy("exceptionInterceptor");
+
             //注册数据库上下文
             Build.RegisterType<AppDbContext>().InstancePerLifetimeScope();
 
@@ -135,8 +138,8 @@ namespace WinFormsApp1
 
             //注册主窗体
             Build.RegisterType<Form1>().InstancePerLifetimeScope();
-            Build.RegisterType<SNInputForm>().InstancePerLifetimeScope(); 
-
+            Build.RegisterType<SNInputForm>().InstancePerLifetimeScope();
+            Build.RegisterType<ManuBindMaterialForm>().InstancePerLifetimeScope();
             //实例化主窗体
             IContainer container = Build.Build();
 

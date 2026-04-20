@@ -61,7 +61,6 @@ namespace WinFormsApp1.Forms
             if (!向MES获取待绑定物料反馈.IsSuccess)
             {
                 WeakReferenceMessenger.Default.Send(new MES连接状态消息体(false), MessengerTokens.MES连接状态);
-                //OperateResult.CreateFailedResult<string>(new OperateResult(向MES获取待绑定物料反馈.Message))
                 return;
             }
             WeakReferenceMessenger.Default.Send(new MES连接状态消息体(true), MessengerTokens.MES连接状态);
@@ -69,7 +68,6 @@ namespace WinFormsApp1.Forms
             var 向MES获取待绑定物料结果 = JsonConvert.DeserializeObject<ApiRespose<MaterialBindingStatus>>(向MES获取待绑定物料反馈.Content);
             if (向MES获取待绑定物料结果 == null)
             {
-                //OperateResult.CreateFailedResult<string>(new OperateResult("申请进站异常:反序列化异常"))
                 return;
             }
             //设置下拉列表数据来源
@@ -116,7 +114,6 @@ namespace WinFormsApp1.Forms
                 var 向MES绑定物料结果 = JsonConvert.DeserializeObject<ApiRespose>(向MES绑定物料反馈.Content);
                 if (向MES绑定物料结果 == null)
                 {
-                    //OperateResult.CreateFailedResult<string>(new OperateResult("申请进站异常:反序列化异常"))
                     return;
                 }
 
@@ -134,7 +131,7 @@ namespace WinFormsApp1.Forms
             catch (Exception ex)
             {
                 this.DialogResult = DialogResult.Abort;
-                
+                WeakReferenceMessenger.Default.Send(new 日志记录消息体("串口接收事件异常", Color.Red), MessengerTokens.日志记录);
             }
         }
     }
