@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Program\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "D:\\Program\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Program\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "D:\\Program\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
-        "packagesPath": "C:\\Users\\Administer\\.nuget\\packages\\",
-        "outputPath": "D:\\Program\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\obj\\",
+        "projectPath": "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\WinFormsApp1.csproj",
+        "packagesPath": "C:\\Users\\ADVANTECH\\.nuget\\packages\\",
+        "outputPath": "D:\\CodeHub\\SCADA\\高压线束scada20260413a\\DCS\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files\\DevExpress 25.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 25.1.config",
+          "C:\\Users\\ADVANTECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,7 +25,7 @@
           "net8.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\ADVANTECH\\.nuget\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -119,7 +118,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

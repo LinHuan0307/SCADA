@@ -32,6 +32,8 @@ namespace WinFormsApp1.Flows
         }
         public async Task<OperateResult> 流程Async()
         {
+            已执行 = true;
+
             var 执行手动绑定物料 = await 手动绑定物料流程();
             if (!执行手动绑定物料.IsSuccess)
             {
@@ -48,7 +50,8 @@ namespace WinFormsApp1.Flows
             {
                 return OperateResult.CreateFailedResult<string>(反馈PLC正在处理);
             }
-            WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.进站中), MessengerTokens.流程字状态);
+
+            WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.物料绑定中), MessengerTokens.流程字状态);
 
             //打开模式对话框
             using (var scope = _LifetimeScope.BeginLifetimeScope())
@@ -60,6 +63,8 @@ namespace WinFormsApp1.Flows
                 //窗体关闭后释放
                 if (result != DialogResult.OK)
                 {
+                    WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.物料绑定失败), MessengerTokens.流程字状态);
+
                     return OperateResult.CreateFailedResult<string>(new OperateResult("手动绑定物料异常"));
                 }
                 //离开作用域后窗体注销，释放内存
@@ -78,6 +83,10 @@ namespace WinFormsApp1.Flows
             {
                 return OperateResult.CreateFailedResult<string>(反馈PLC处理完成);
             }
+
+            WeakReferenceMessenger.Default.Send(new 流程字状态消息体(流程状态枚举.物料绑定成功), MessengerTokens.流程字状态);
+
+            WeakReferenceMessenger.Default.Send(new 日志记录消息体($"物料绑定完成", Color.Green), MessengerTokens.日志记录);
 
             return OperateResult.CreateSuccessResult();
         }

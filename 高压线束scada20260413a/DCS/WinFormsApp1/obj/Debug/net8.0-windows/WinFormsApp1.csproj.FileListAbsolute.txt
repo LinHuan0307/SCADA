@@ -476,3 +476,4 @@ D:\Program\SCADA\高压线束scada20260413a\DCS\WinFormsApp1\obj\Debug\net8.0-wi
 D:\Program\SCADA\高压线束scada20260413a\DCS\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.genruntimeconfig.cache
 D:\Program\SCADA\高压线束scada20260413a\DCS\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinFormsApp1.dll
 D:\Program\SCADA\高压线束scada20260413a\DCS\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Forms.ManuBindMaterialForm.resources
+D:\CodeHub\SCADA\高压线束scada20260413a\DCS\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Forms.ManuBindMaterialForm.resources
